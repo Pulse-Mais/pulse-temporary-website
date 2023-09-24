@@ -2,26 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-end-rgb: 243, 244, 246;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 243, 244, 246;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 243, 244, 246;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar {
+    background-color: ;
+    width: 10px;
+    height: 8px;
 }
+
+::-webkit-scrollbar-thumb {
+    background-color: #FFD31B;
+    border-radius: 12px;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+  
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    font-size: 16px;
+    text-align: center;
+}
+
+.swiper-wrapper {
+    height: auto !important;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.wheelOne {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes moveRight {
+    0%, 100% { left: -30px; }
+    50% { left: calc(100% - 120px + 30px); }
+}
+
+@keyframes moveLeft {
+    0%, 100% { left: calc(100% - 120px + 30px); }
+    50% { left: -30px; }
+}
+
+
