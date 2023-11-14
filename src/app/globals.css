@@ -35,6 +35,7 @@
 .swiper {
     width: 100%;
     height: 100%;
+    
 }
   
 .swiper-slide {
@@ -48,6 +49,8 @@
 
 .swiper-wrapper {
     height: auto !important;
+    padding-right: 3px;
+    padding-left: 3px;
 }
 
 @keyframes spin {

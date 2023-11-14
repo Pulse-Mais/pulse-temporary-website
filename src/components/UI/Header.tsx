@@ -1,21 +1,27 @@
 'use client'
-import { usePathname } from "next/navigation"
+import { useSelectedLayoutSegments } from "next/navigation"
 import { Button } from "./Button"
 import { Logo } from "./Logo"
 import { List, X, SignIn, ChalkboardTeacher, GraduationCap, Handshake } from '@/components/UI/icons/icons'
 import { useState, useEffect } from "react"
 import Link from 'next/link';
-import { Linking } from "./Linking"
+
 
 
 export const Header = () => {
 
-    const pathName = usePathname();
 
-    const isTransparent = pathName === '/blog' || pathName === '/apoie' || pathName === '/eventos'
+    const segment = useSelectedLayoutSegments();
+    const isTransparent = segment[1] === 'blog' || segment[1] === 'apoie' || segment[1] === 'eventos'
     const [display, setDisplay] = useState(false)
     const [color, setColor] = useState(false);
 
+    const routes = [
+        { name: "Início", href: "/", current: `${segment}` == "" ? true : false },
+        { name: "Apoie", href: "/apoie", current: `${segment[1]}` === "apoie" ? true : false },
+        { name: "Eventos", href: "/eventos", current: `${segment[1]}` === "eventos" ? true : false },
+        { name: "Contato", href: "/contato", current: `${segment[1]}` === "contato" ? true : false },
+    ]
 
     const changeColor = () => {
         if (window.scrollY >= 64) {
@@ -65,10 +71,15 @@ export const Header = () => {
 
                 <nav className="m-auto flex items-center xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl">
                     <ul className="max-md:hidden flex gap-5 lg:gap-8 items-center text-[1.20rem] justify-center">
-                        <Linking href={"/"}>Início</Linking>
-                        <Linking href={"/apoie"}>Apoie</Linking>
-                        <Linking href={"/contato"}>Contato</Linking>
-                        <Linking href={"/eventos"}>Eventos</Linking>
+                        {routes.map((route, index) => {
+                            return (
+                                <li key={index} className={`relative ${route.current ? 'font-bold hover:after:opacity-100 hover:after:w-full after:bg-yellow-custom after:opacity-100 after:w-full' : ' '} after:absolute after:left-0 after:bottom-0 after:transition-all after:duration-300 after:opacity-0 after:w-0 after:h-[3px]`}>
+                                    <Link href={route.href}>
+                                        {route.name}
+                                    </Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </nav>
                 <aside className="flex gap-3 px-2 max-lg:hidden">
@@ -96,10 +107,15 @@ export const Header = () => {
                             <X size={38} onClick={() => setDisplay(!display)} className={`mr-0 ${display ? "" : "hidden"}`} />
                         </figure>
                         <ul className={`py-5 px-3 flex flex-col gap-2 text-lg font-semibold ${display ? "" : "hidden"} items-start`}>
-                            <Linking href={"/"}>Início</Linking>
-                            <Linking href={"/apoie"}>Apoie</Linking>
-                            <Linking href={"/contato"}>Contato</Linking>
-                            <Linking href={"/eventos"}>Eventos</Linking>
+                            {routes.map((route, index) => {
+                                return (
+                                    <li key={index} className={`relative ${route.current ? 'font-bold hover:after:opacity-100 hover:after:w-full after:bg-yellow-custom after:opacity-100 after:w-full' : ' '} after:absolute after:left-0 after:bottom-0 after:transition-all after:duration-300 after:opacity-0 after:w-0 after:h-[3px]`}>
+                                        <Link href={route.href}>
+                                            {route.name}
+                                        </Link>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </nav>
                     <h4 className={`text-lg px-5 pb-3 font-semibold text-blue-custom ${display ? "" : "hidden"}`}>Registre-se como:</h4>

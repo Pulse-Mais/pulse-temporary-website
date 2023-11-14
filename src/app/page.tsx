@@ -188,14 +188,13 @@ export default function Home() {
 
       <section className='py-10'>
           <aside className='pb-20'>
-            <h3 className='font-semibold text-2xl text-center text-green-custom lg:text-5xl'>Parceiros institucionais</h3>
+            <h3 className='font-semibold text-3xl text-center text-green-custom lg:text-4xl'>Patrocinadores do DPFL</h3>
             <div className='flex flex-col md:flex-row flex-wrap items-center justify-center'>
               <Parceiros id={0} />
-              <Parceiros id={6} />
             </div>
           </aside>
           <aside className='pb-20'>
-            <h3 className='font-semibold text-2xl text-center text-green-custom lg:text-5xl'>Parceiros Educacionais</h3>
+            <h3 className='font-semibold text-3xl text-center text-green-custom lg:text-4xl'>Apoiadores Institucionais</h3>
             <div className='flex flex-wrap items-center justify-center'>
               <div className='flex flex-wrap gap-10 items-center justify-center max-lg:hidden'>
                 <Parceiros id={1} />
@@ -203,6 +202,8 @@ export default function Home() {
                 <Parceiros id={3} />
                 <Parceiros id={4} />
                 <Parceiros id={5} />
+                <Parceiros id={6} />
+                <Parceiros id={7} />
               </div>
               <div className='flex max-w-[18.75rem] lg:hidden m-auto' >
                 <Carrousel CA3 />

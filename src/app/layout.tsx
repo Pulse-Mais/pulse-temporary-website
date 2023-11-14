@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { Comfortaa } from 'next/font/google'
 import { Header } from '@/components/UI/Header'
 import { Footer } from '@/components/UI/Footer'
 
@@ -13,7 +12,7 @@ const PoppinsFont = Poppins({
 
 export const metadata: Metadata = {
   title: 'DPFL',
-  description: 'Projeto da Perifa pra Faria lima!',
+  description: 'Potencializando a jornada de jovens brasileiros através da educação, tecnologia e empregabilidade.',
 }
 
 export default function RootLayout({

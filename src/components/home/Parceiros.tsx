@@ -32,6 +32,10 @@ export const Parceiros = ({ id }: ParceirosProps) => {
         {
             image: "/assents/logos/livesports.svg",
             alt: "logo do Live Sports",
+        },
+        {
+            image: "/assents/logos/italo.svg",
+            alt: "logo da Itálo Brasileiro",
         }
        
     ]

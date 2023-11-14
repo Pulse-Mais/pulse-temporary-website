@@ -1,42 +1,32 @@
 'use client'
 import { useState } from "react"
 
-// interface DialogProps {
-//     display: boolean
-// }
 
 import { CaretRight, CaretDown } from '@/components/home/utils/Utils'
 
 interface DialogProps {
-Question: string;
-Text: string;
+    Question: string;
+    Text: string;
 }
 
 
-export const Dialog = ({Question, Text}: DialogProps) => {
+export const Dialog = ({ Question, Text }: DialogProps) => {
 
     const [display, setDisplay] = useState(false)
 
 
     return (
-        <>
-            <div className='w-full px-3 flex items-center gap-2'>
-                {display
-                    ?
-                    (<button onClick={() => setDisplay(!display)}>
-                        <CaretDown size={32} weight="bold" />
-                    </button>)
-                    :
-                    (<button onClick={() => setDisplay(!display)}>
-                        <CaretRight size={32} weight="bold" />
-                    </button>)
-                }
-                <h2 className='text-xl font-semibold py-3' onClick={() => setDisplay(!display)}>{Question}</h2>
-            </div>
-            <div className={`w-full h-[1px] bg-[#1B2E3A]`}></div>
-            <aside className={`${display ? "" : "hidden"} px-3 w-full  py-5`}>
-                <p className='text-lg'>{Text}</p>
-            </aside>
-        </>
+            <section className="group">
+                <div className='cursor-pointer transition-all w-full px-3 flex items-center gap-2'>
+                    <button onClick={() => setDisplay(!display)} className={`transition-all ${display ? "rotate-90 text-green-custom" : "rotate-0 hover:pt-2 group-hover:text-green-custom"}`}>
+                        <CaretRight size={26} weight="bold" />
+                    </button>
+                    <h2 className={`text-xl font-semibold py-3 ${display ? "text-custom-green" : "text-inherit"}`} onClick={() => setDisplay(!display)}>{Question}</h2>
+                </div>
+                <aside className={`transition-all ${display ? "h-auto py-5" : "h-0"} px-3 w-full `}>
+                    <p className={`text-lg ${display ? "block" : "hidden"}`}>{Text}</p>
+                </aside>
+                <div className={`transition-all w-full h-[1px] bg-gray-400 group-hover:bg-green-custom`}></div>
+            </section>
     )
 }

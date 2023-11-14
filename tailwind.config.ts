@@ -19,7 +19,7 @@ const config: Config = {
         'yellowbanner': "url('/assents/backgrounds/yellowbanner.png')",
         'about': "url('/assents/backgrounds/about.jpg')",
         'aboutsmall': "url('/assents/backgrounds/aboutsmall.jpg')",
-        'eventos': "url('/assents/backgrounds/eventos.jpg')",
+        'eventos': "url('/assents/backgrounds/capeone.svg')",
         'eventossmall': "url('/assents/backgrounds/summitsmall.jpg')",
         'wavegreen': "url('/assents/backgrounds/wavegreen.svg')",
         'verticalgreen': "url('/assents/backgrounds/verticalgreen.svg')",

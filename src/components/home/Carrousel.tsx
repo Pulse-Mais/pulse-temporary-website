@@ -93,6 +93,10 @@ export default function Carrousel({ CA1 = false, CA2 = false, CA3 = false, CA4 =
             image: "/assents/logos/toro.svg",
             alt: "logo da Rafael Toro",
         },
+        {
+            image: "/assents/logos/italo.svg",
+            alt: "logo da Itálo Brasileiro",
+        },
 
 
     ]
