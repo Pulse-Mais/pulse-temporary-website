@@ -5,6 +5,7 @@ import { X } from "@phosphor-icons/react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
+import { Logo } from "./Logo"
 
 interface ModalProps {
     title: string,
@@ -40,7 +41,8 @@ export const Modal = ({ content, title }: ModalProps) => {
                 <p style={{ width: "-webkit-fill-available" }} className="py-10 text-xl text-center">{content}</p>
                 <figure className="w-full relative min-h-20">
                     <motion.figure initial={{ x: -1000, rotate: -180 }} animate={{ x: 0, rotate: 0 }} transition={{ duration: 1.3 }} className="relative overflow-hidden">
-                        <Image src={"/assets/ilustration/errormodal.svg"} width={75} height={60} alt="Ilustração de robô quebrado, para simbolizar o erro" />
+                        <Image src={"/assents/logos/DPFL.svg"} width={75} height={60} alt="Logo do DPFL" />
+                        {/* <Logo /> */}
                     </motion.figure>
                 </figure>
             </dialog>

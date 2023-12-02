@@ -1,20 +1,15 @@
 import Image from "next/image"
-import { Comfortaa } from 'next/font/google'
 
 interface LogoProps {
-Variant?: "default" | "white"
+    Variant?: "default" | "white"
 }
 
-export const Logo = ({Variant = "default"}: LogoProps) => {
+export const Logo = ({ Variant = "default" }: LogoProps) => {
 
-    
-     
     return (
-    <>
-        <figure className="flex gap-2 text-2xl items-center  ">
+        <figure className="flex gap-2 text-2xl items-center">
             <p className="max-lg:hidden font-semibold text-4xl">DPFL</p>
-            <Image src={Variant == "default" ? '/assents/logos/DPFL.svg' : '/assents/logos/DPFLWhite.svg'} alt="Logo da DPFL" width={52} height={34} quality={100} className="max-md:px-2 max-md:py-2"/>
+            <Image src={Variant == "default" ? '/assents/logos/DPFL.svg' : '/assents/logos/DPFLWhite.svg'} alt="Logo da DPFL" width={52} height={34} quality={100} className="max-md:px-2 max-md:py-2" />
         </figure>
-    </> 
     )
-    }
+}
