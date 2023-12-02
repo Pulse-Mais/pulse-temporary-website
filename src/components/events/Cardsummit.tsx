@@ -1,7 +1,8 @@
 'use client'
 import { useEffect, useRef } from "react"
 import Image from "next/image"
-
+import { Suspense } from "react"
+import { Skeleton } from "../suspense/Skeleton"
 
 export const Cardsummit = () => {
 
@@ -207,58 +208,20 @@ export const Cardsummit = () => {
 
     ];
 
-    const observedElements = useRef<(HTMLDivElement | null)[]>([]);
-
-
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(entries => {
-    //         entries.forEach(entry => {
-    //             if (entry.isIntersecting) {
-    //                entry.target.className = "absolute left-0 m-auto relative w-72 h-96 shadow-2xl group rounded-2xl opacity-1 transition-all delay-300 duration-300";
-    //             } else {
-    //                 entry.target.className = "absolute left-[-100%] m-auto relative w-72 h-96 shadow-2xl group rounded-2xl opacity-1 transition-all delay-300 duration-300"
-    //             }
-    //         });
-    //     });
-    
-    //     // Observar elementos
-    //     observedElements.current.forEach(element => {
-    //         if (element) {
-    //           observer.observe(element);
-    //         }
-    //     });
-    
-    //     // Retornar uma função de limpeza para parar de observar quando o componente for desmontado
-    //     return () => {
-    //         observedElements.current.forEach(element => {
-    //             if (element) {
-    //               observer.unobserve(element);
-    //             }
-    //         });
-    //     };
-    // }, []);
-      
-    
-    
-    
-
-
     return (
         <>
             {Persons.map((person, index) => {
                 return (
 
-
-                    <aside className="left-0 m-auto relative w-72 h-96 shadow-2xl group rounded-2xl opacity-1 transition-all delay-300 duration-300" key={index} >
+                    <aside className="left-0 m-auto relative w-72 h-96 shadow-2xl group rounded-2xl opacity-1 transition-all delay-300 duration-300 max-lg:m-auto" key={index} >
                         <div className="h-full z-20 relative flex items-center justify-end flex-col text-white transition-all group-hover:hidden py-10">
-                            <h1 className="font-extrabold text-2xl px-3">{person.name}</h1>
+                            <h4 className="font-extrabold text-2xl px-3">{person.name}</h4>
                             <p className="text-center px-3 font-bold">{person.subdescription}</p>
                         </div>
-                        <Image src={`/assents/youngers/${person.img}`} alt={`Uma curta apresentação sobre ${person.name}, contendo sua foto e uma breve descrição`} fill className="transition-all brightness-75 group-hover:opacity-80 z-0 rounded-lg" />
+                        <Image src={`/assents/youngers/${person.img}`} alt={`Uma curta apresentação sobre ${person.name}, contendo sua foto e uma breve descrição`} fill className="transition-all brightness-75 group-hover:opacity-80 z-0 rounded-lg" loading="lazy" />
                         <div className="shadow-2xl group-hover:overflow-y-auto group-hover:bg-white group-hover:h-full absolute bg-transparent w-full h-[0.1px] bottom-0 transition-all delay-200 origin-bottom rounded-lg py-5">
                             <div className="px-4 py-3 hidden group-hover:block">
-                                <h1 className="hidden group-hover:block font-extrabold text-left text-xl text-green-custom">{person.name}</h1>
-                                {/* <h3 className="hidden group-hover:block text-left text-base font-semibold">{person.subdescription}</h3> */}
+                                <h5 className="hidden group-hover:block font-extrabold text-left text-xl text-green-custom">{person.name}</h5>
                             </div>
                             <p className="text-justify px-4 py-3 text-base hidden group-hover:block">{person.description}</p>
                         </div>

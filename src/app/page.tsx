@@ -5,6 +5,7 @@ import { DonateSection } from '@/components/apoie/DonateSection';
 import { ProfileIcon } from '@/components/home/ProfileIcon';
 import { Card2 } from '@/components/home/Card2';
 import TestCa from '@/components/UI/TestCa';
+import { Modal } from '@/components/UI/Modal';
 
 
 export default function Home() {
@@ -27,13 +28,11 @@ export default function Home() {
           </div>
         </aside>
         <div className='max-w-[450px] max-sm:m-auto max-lg:py-10'>
-          <Image src="/assents/images/artblue.svg" alt="DPFL Summit" width={672} height={449} quality={100} className='py-1 px-3' />
+          <Image src="/assents/images/artblue.svg" alt="DPFL Summit" width={672} height={449} quality={100} className='py-1 px-3' priority />
         </div>
       </section>
 
-      {/* <div className="w-full h-[20px] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-0 h-0 border-r-[100vw] border-r-transparent border-b-[20px] border-b-green-custom"></div>
-      </div> */}
+      
       <section id='comofunciona' className='relative flex justify-center bg-[#27C86F] bg-wavegreen bg-contain bg-bottom bg-no-repeat'>
         <aside className='pt-10 w-full flex md:max-w-2xl min-[992px]:max-w-[940px] min-[1200px]:flex-row-reverse lg:justify-between xg:max-w-[1050px] min-[1200px]:gap-12 min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
           <div className='text-white px-4'>
@@ -54,10 +53,7 @@ export default function Home() {
       </section>
 
 
-
-
       <section className='lg:pt-28 py-16 md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto'>
-
         <aside className='flex flex-col gap-32 m-auto'>
           <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Trabalhamos para alcançar <br className='max-[624px]:hidden st:hidden lg:block' /> resultados <br className='max-[375px]:hidden min-[455px]:hidden' /> de alto impacto</h2>
           <ul className='flex flex-col items-center md:flex-row md:flex-wrap md:justify-evenly' >
@@ -212,7 +208,7 @@ export default function Home() {
           </aside>
         </section >  
 
-
+        <Modal content='testando' title='testando2'/>
     </>
   )
 }

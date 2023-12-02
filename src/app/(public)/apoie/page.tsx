@@ -1,9 +1,7 @@
-import { Image, Button, BookOpenText, Carrousel, CardRoot, ChalkboardTeacher, Donate, CopySimple, Info, Parceiros, Student, UsersFour, Target, CaretRight, MapPin, BagSimple, GraduationCap } from '@/components/home/utils/Utils'
+import { Button, Donate, Info, MapPin, BagSimple, GraduationCap } from '@/components/home/utils/Utils'
 import Link from 'next/link';
 import { CopyText } from '@/components/home/CopyText';
 import { Dialog } from '@/components/UI/Dialog';
-import { Questions } from '@/components/apoie/Questions';
-import { DonateSection } from '@/components/apoie/DonateSection';
 import TestCa from '@/components/UI/TestCa';
 
 export default function Apoie() {
@@ -49,10 +47,7 @@ export default function Apoie() {
               <Info textSize='max-w-[500px]' text='Promova oportunidades de emprego formal para jovens de grupos subrepresentados.' size='70' icon={BagSimple} color='text-black-custom' />
               <Info textSize='max-w-[500px]' text='Faça parte de uma rede de impacto nacional e inspire-se com as histórias de transformação dos nossos jovens.' size='70' icon={MapPin} color='text-black-custom' />
             </div>
-
           </aside>
-
-
         </section>
 
         <section className='pt-12'>
@@ -95,14 +90,11 @@ export default function Apoie() {
         <section className='max-lg:px-3 flex flex-col sl:max-w-md sl:m-auto min-[660px]:max-w-[575px] md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
           <aside className='flex flex-col py-20 max-w-[65rem] m-auto w-full gap-3'>
             <Dialog Question="Como posso doar?" Text="Você pode optar por dois métodos de doação, doação pontual (uma única doação) ou doação recorrente. Caso opte pela doação pontual, você pode optar por realizá-la diretamente em nossa chave PIX - 48.621.188/0001-11 (CPNJ) ou escanear o QRCode acima. Agora, caso deseje apoiar o DPFL mensalmente, basta selecionar o valor dentre os disponíveis acima e realizar a aquisição da assinatura. Caso opte por apoiar mensalmente sob um valor personalizado, não hesite e entrar em contato conosco. " />
-
             <Dialog Question="Onde o valor da minha doação será usado?" Text="A sua doação será usada na manutenção e desenvolvimento do projeto DPFL, impactando a vida de jovens em diversas regiões do Brasil através da educação de qualidade." />
-
             <Dialog Question="Onde posso acompanhar o projeto?" Text="Você pode acompanhar o nosso projeto através das nossas redes sociais e do nosso podcast  Quebrando a Regra." />
           </aside>
         </section>
-
-      </div >
+      </div>
     </>
   )
 }

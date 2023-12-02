@@ -1,4 +1,3 @@
-import { Container } from "@/components/UI/Container"
 import { Button } from "@/components/UI/Button"
 import Carrousel from "@/components/about/Carrousel"
 

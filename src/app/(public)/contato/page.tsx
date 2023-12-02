@@ -2,7 +2,6 @@ import { Image, Button } from '@/components/home/utils/Utils'
 import Link from 'next/link';
 import { Questions } from '@/components/apoie/Questions';
 
-
 export default function Contato() {
     return (
         <>
