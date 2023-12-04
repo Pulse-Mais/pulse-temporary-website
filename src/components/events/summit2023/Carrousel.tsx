@@ -2,7 +2,7 @@
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { UsersThree, CalendarBlank, PresentationChart, ChalkboardTeacher, FlagPennant, GraduationCap } from "@/components/UI/icons/icons";
-import { CardRoot } from '../home/Card/CardRoot';
+import { CardRoot } from '../../home/Card/CardRoot';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';

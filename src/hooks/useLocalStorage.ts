@@ -5,8 +5,10 @@ export const useLocalStorage = () => {
 
 
     const setModalStatus = () => {
+        
+        // https://developer.school/snippets/react/localstorage-is-not-defined-nextjs 
+        // fix do erro not defined
 
-        // Prevent build error "window is undefined" but keeps working
         if (typeof window !== 'undefined') {
 
             window.localStorage.setItem('hasBeenSeen', 'true')

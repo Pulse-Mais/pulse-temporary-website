@@ -1,12 +1,14 @@
 import Image from "next/image"
-import { Cardsummit } from "@/components/events/Cardsummit";
+import { Cardsummit } from "@/components/events/summit2023/Cardsummit";
 import { CalendarBlank } from "@/components/UI/icons/icons"
-import Carrousel from "@/components/events/Carrousel";
+import Carrousel from "@/components/events/summit2023/Carrousel";
 import { Partness } from "@/components/events/partness";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/suspense/Skeleton";
 import { Button } from "@/components/UI/Button";
 import Link from "next/link";
+import { Timeline } from "@/components/events/main-page/Timeline";
+import { PastEvents } from "@/components/events/main-page/Pastevents";
 
 export default async function Eventos() {
 
@@ -27,68 +29,82 @@ export default async function Eventos() {
 
 
 
-      <section className='max-lg:px-3 lg:py-40 py-14 flex flex-col m-auto sl:max-w-md min-[660px]:max-w-[575px] md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
-        <aside className='w-full flex flex-col lg:flex-row lg:justify-between lg:px-0 lg:gap-8 lg:items-center' >
-          <div className='flex flex-col max-w-2xl m-auto'>
-            <h2 className='px-3 text-3xl text-green-custom font-semibold'>Sobre o evento</h2>
-            <p className='py-5 text-lg lg:text-left px-3'>
-              Muito mais do que um evento, DPFL Summit será uma oportunidade para se conectar com profissionais experientes e adquirir conhecimento. <span className="text-green-custom font-semibold"> Um dia repleto de palestras inspiradoras, conexões valiosas e oportunidades únicas.</span> Você jovem, prepare-se para impulsionar sua carreira, conectar-se com mentores incríveis e mergulhar na cultura da inovação.
+      <section className='max-lg:px-3 lg:py-40 py-14 flex flex-col m-auto container'>
+        <aside className='w-full flex flex-col xl:flex-row lg:justify-between lg:px-0 lg:gap-8 lg:items-center' >
+          <article className='flex flex-col max-w-2xl max-lg:pb-20 '>
+            <h2 className='px-3 text-3xl text-black-custom font-bold'>Sobre o evento</h2>
+            <p className='py-5 text-lg px-3'>
+              O Jantar DPFL1000 será um momento especial para reunir parceiros, apoiadores, mentores e convidados especiais para celebrar o lançamento da nova marca do DPFL, que irá traduzir com maior assertividade nosso propósito, e para apoiar a organização no atingimento de 1000 jovens impactos até o final de 2024.
             </p>
-            <p className='text-lg px-3 text-left'>
-              O evento contará com uma variedade de atividades, incluindo painéis de discussão esclarecedores, palestras inspiradoras, workshops interativos e oportunidades de networking. Palestrantes renomados, artistas, líderes comunitários distinguidos e especialistas reconhecidos compartilharão suas experiências e conhecimentos, iluminando tópicos críticos de como Quebrar a Regra da Pobreza.</p>
-          </div>
+          </article>
           <Suspense fallback={<Skeleton />}>
-            <Image src="/assents/images/graybanner.svg" alt="DPFL Summit" width={466} height={506} quality={100} className='max-lg:pt-20 px-3 m-auto h-full' loading="lazy" />
+            <Image src={'https://content-dpfl.s3.amazonaws.com/eltranvia.svg'} width={649} height={478} alt="Uma foto do restaurante eltravia" quality={100} loading="lazy" className='px-3 m-auto rounded-3xl' />
           </Suspense >
         </aside>
       </section>
 
 
-      <section className="pt-14 m-auto sl:max-w-md min-[660px]:max-w-[575px] md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl scroll-m-10" id="video">
-        <h2 className='px-3 text-3xl lg:text-4xl text-green-custom font-semibold text-center'>Confira como foi o evento</h2>
+      <section className="pt-14 m-auto container scroll-m-10" id="video">
+        <h2 className='px-3 text-3xl lg:text-4xl text-black-custom font-bold text-center'>Agenda</h2>
         <aside className="pt-10 pb-40 px-3">
-          <Suspense fallback={<Skeleton type="video" />}>
-            <video className="w-full max-w-5xl m-auto rounded-2xl border-[1px] border-solid border-green-700" controls >
-              <source src="/assents/summit/2023.mp4" type="video/mp4" />
-            </video>
-          </Suspense>
+            <Timeline />
+        </aside>
+      </section>
+
+      <section className="container m-auto flex flex-col-reverse justify-center gap-10 xl:gap-32 max-lg:pt-10 xl:flex-row xl:pt-20">
+        <Suspense fallback={<Skeleton />}>
+          <Image src={"https://content-dpfl.s3.amazonaws.com/people.svg"} alt="pessoas em uma confraternização" width={540} height={423} className='px-3 m-auto rounded-3xl' />
+        </Suspense>
+        <aside className="max-st:max-w-2xl max-xl:max-w-3xl st:m-auto">
+          <h2 className='px-3 text-3xl text-black-custom font-bold'>Para quem é esse evento?</h2>
+          <p className='py-5 text-lg lg:text-left px-3'>
+            O evento é dedicado para pessoas  que acreditam na potências das juventudes para transformação do pais. Pessoas da nossa rede, como parceiros, apoiadores, mentores e alunos, convidados especiais e pessoas que queiram se aproximar e acreditam no nosso propósito serão muito bem-vindas.
+          </p>
         </aside>
       </section>
 
 
-      <section className="md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto flex flex-col justify-center gap-10 xl:gap-32 lg:flex-row">
-        <aside className="max-st:max-w-2xl st:m-auto ">
-          <h2 className='px-3 text-3xl text-green-custom font-semibold'>Palestrantes inspiradores</h2>
+      <section className="py-20 container m-auto flex flex-col justify-center gap-10 xl:gap-32 max-lg:pt-10 xl:flex-row xl:pt-20">
+        <aside className="max-st:max-w-2xl max-xl:max-w-3xl st:m-auto">
+          <h2 className='px-3 text-3xl text-black-custom font-bold'>Transforme vidas</h2>
           <p className='py-5 text-lg lg:text-left px-3'>
-            Palestras inesquecíveis, inspiradoras, cantivantes! Foi esse o sentimento que os participantes do DPFL Summit 2023 tiveram ao fim do evento. Mais de 15 palestras em diversas áreas como carreira tech, educação, diversidade, trajetória e inspiração! A cada palestra, um novo aprendizado, uma maior motivação e inúmeros caminhos que se formam pelos jovens que se inspiram em nossos palestrantes, motivados ao mudar a realidade do jovens periférico brasileiro, alinhados com o propósito do DPFL.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
+          <aside className="max-w-xs">
+            <Button title="Saiba mais" color="green" NotFill />
+          </aside>
         </aside>
-
         <Suspense fallback={<Skeleton />}>
-          <Image src={"/assents/images/crowd.svg"} alt="" width={540} height={423} className="max-lg:py-5 px-3 max-lg:m-auto" />
+          <Image src={"https://content-dpfl.s3.amazonaws.com/people.svg"} alt="pessoas em uma confraternização" width={540} height={423} className='px-3 m-auto rounded-3xl' />
         </Suspense>
-
       </section>
 
-      <section className="md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto flex flex-col-reverse justify-center gap-10 xl:gap-32 max-lg:pt-10 lg:flex-row lg:pt-20">
+
+
+      <section className="container m-auto flex flex-col-reverse justify-center gap-10 xl:gap-32 max-lg:pt-10 xl:flex-row xl:pt-20">
         <Suspense fallback={<Skeleton />}>
-          <Image src={"/assents/images/onugirls.svg"} alt="" width={540} height={423} className="max-lg:py-5 px-3 max-lg:m-auto" />
+          <Image src={"https://content-dpfl.s3.amazonaws.com/ingresso.svg"} alt="pessoas em uma confraternização" width={540} height={423} className='px-3 m-auto rounded-3xl' />
         </Suspense>
-        <aside className="max-st:max-w-2xl st:m-auto">
-          <h2 className='px-3 text-3xl text-green-custom font-semibold'>Jovens impactados</h2>
+        <aside className="max-st:max-w-2xl max-xl:max-w-3xl st:m-auto">
+          <h2 className='px-3 text-3xl text-black-custom font-bold'>Garanta o seu ingresso</h2>
           <p className='py-5 text-lg lg:text-left px-3'>
-            Foram mais de 80 jovens participantes no Summit que tiveram uma experiência verdadeiramente única. Ao terem a oportunidade de ouvir trajetórias inspiradoras, desde campeões olímpicos até mestres em finanças, os jovens foram impactados e envolvidos por cada palestra. Essas experiências não apenas expandiram seus horizontes, mas também os motivaram profundamente.
+            Tenha um experiência incrível de jantar e apoie financeiramente o DPFL para atingir 1000 jovens impactados em 2024.
+            <br />
+            <br />
+            <span><strong>Valor:</strong> R$ 550,00</span>
           </p>
+          <aside className="max-w-xs">
+            <Button title="Adquira o seu ingresso" color="green" />
+          </aside>
         </aside>
       </section>
 
       <section className='py-28 m-auto sl:max-w-md sl:m-auto min-[660px]:max-w-[575px] md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
-        <h2 className="text-green-custom text-center font-bold text-3xl pt-10 px-3">LINEUP DPFL SUMMIT 2023</h2>
-        <p className="text-black-custom text-center py-3 text-lg px-3">Palestrantes renomados, artistas e líderes comunitários</p>
+        <hr className="w-full bg-gray-500 h-[2px] px-5" />
+        <h2 className="text-black-custom text-center font-bold text-3xl pt-10 px-3">Confira eventos passados</h2>
+
         <aside className="py-10 flex max-lg:overflow-x-scroll">
-          <picture className="flex max-lg:gap-10 lg:justify-evenly lg:w-full px-3 lg:flex-wrap lg:gap-8">
-            <Cardsummit />
-          </picture>
+          <PastEvents altImage="Summit 2023" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do" title="Summit 2023" srcImage="https://content-dpfl.s3.amazonaws.com/summit2023.svg" />
         </aside>
       </section>
 

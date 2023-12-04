@@ -1,7 +1,5 @@
 import { Image, Button, BookOpenText, Carrousel, CardRoot, ChalkboardTeacher, Donate, CopySimple, Info, Parceiros, Student, UsersFour, Target, GraduationCap, Handshake, Buildings, LinkedinLogo } from '@/components/home/utils/Utils'
 import Link from 'next/link';
-import { CopyText } from '@/components/home/CopyText';
-import { DonateSection } from '@/components/apoie/DonateSection';
 import { ProfileIcon } from '@/components/home/ProfileIcon';
 import { Card2 } from '@/components/home/Card2';
 import TestCa from '@/components/UI/TestCa';
