@@ -4,41 +4,39 @@ import { CalendarBlank } from "@/components/UI/icons/icons"
 import Carrousel from "@/components/events/summit2023/Carrousel";
 import { Partness } from "@/components/events/partness";
 import { Suspense } from "react";
-import { Skeleton } from "@/components/suspense/Skeleton";
+import { Skeleton } from "@/components/UI/suspense/Skeleton";
 import { Button } from "@/components/UI/Button";
 import Link from "next/link";
 import { Timeline } from "@/components/events/main-page/Timeline";
-import { PastEvents } from "@/components/events/main-page/Pastevents";
+import { PastEvents } from "@/components/events/main-page/PastEvents";
+import { InfiniteSlider } from "@/components/UI/InfiniteSlider";
 
 export default async function Eventos() {
 
   return (
     <>
-      <main className="relative max-lg:h-screen flex items-center justify-center text-white">
+      <main className="min-h-[100dvh] flex items-center lg:py-40 pb-10">
         <picture className="z-0 h-full w-full absolute bg-eventos bg-center bg-cover brightness-50" />
-        <aside className='z-10 text-center px-3 flex flex-col sl:items-center py-60'>
-          <div className="flex flex-col items-center gap-3">
-            <Image src="/assents/logos/summit.svg" alt="Logo do DPFL Summit" width={156} height={161} priority />
-            <p className='text-xl py-2 lg:py-6 lg:text-4xl max-w-[864px]'>Uma jornada de transformação pessoal e profissional de jovens da periferia</p>
-            <Link href={"#video"} className="max-w-xl">
-              <Button title="Confira como foi o evento!" Custom="font-bold" color="blue" />
-            </Link>
-          </div>
+        <aside className="container text-white max-lg:m-auto w-full z-10 px-3 lg:px-8 max-w-2xl min-[992px]:max-w-3xl flex flex-col gap-2 md:py-10 xl:self-start lg:pt-40">
+          <h1 className="px-3 text-2xl font-bold md:text-5xl">Jantar de lançamento da Nova Marca DPFL</h1>
+          <h3 className="px-3 text-lg py-5 md:text-xl lg:text-2xl">29 de Fevereiro, 2024 - El Tranvia</h3>
+          <Link className="w-full" href={"#calculo"}>
+            <Button title={"Garanta seu ingresso"} color="green" Custom="max-w-xs py-2" />
+          </Link>
         </aside>
-      </main >
-
+      </main>
 
 
       <section className='max-lg:px-3 lg:py-40 py-14 flex flex-col m-auto container'>
         <aside className='w-full flex flex-col xl:flex-row lg:justify-between lg:px-0 lg:gap-8 lg:items-center' >
-          <article className='flex flex-col max-w-2xl max-lg:pb-20 '>
+          <article className='flex flex-col max-w-2xl'>
             <h2 className='px-3 text-3xl text-black-custom font-bold'>Sobre o evento</h2>
-            <p className='py-5 text-lg px-3'>
+            <p className='pt-5 text-lg px-3'>
               O Jantar DPFL1000 será um momento especial para reunir parceiros, apoiadores, mentores e convidados especiais para celebrar o lançamento da nova marca do DPFL, que irá traduzir com maior assertividade nosso propósito, e para apoiar a organização no atingimento de 1000 jovens impactos até o final de 2024.
             </p>
           </article>
           <Suspense fallback={<Skeleton />}>
-            <Image src={'https://content-dpfl.s3.amazonaws.com/eltranvia.svg'} width={649} height={478} alt="Uma foto do restaurante eltravia" quality={100} loading="lazy" className='px-3 m-auto rounded-3xl' />
+            <Image src={'https://content-dpfl.s3.amazonaws.com/eltranvia.svg'} width={649} height={478} alt="Uma foto do restaurante eltravia" quality={100} loading="lazy" className='m-auto rounded-3xl' />
           </Suspense >
         </aside>
       </section>
@@ -46,12 +44,12 @@ export default async function Eventos() {
 
       <section className="pt-14 m-auto container scroll-m-10" id="video">
         <h2 className='px-3 text-3xl lg:text-4xl text-black-custom font-bold text-center'>Agenda</h2>
-        <aside className="pt-10 pb-40 px-3">
-            <Timeline />
+        <aside className="pt-10 lg:pb-40 px-3">
+          <Timeline />
         </aside>
       </section>
 
-      <section className="container m-auto flex flex-col-reverse justify-center gap-10 xl:gap-32 max-lg:pt-10 xl:flex-row xl:pt-20">
+      <section className="container m-auto flex flex-col-reverse justify-center gap-10 xl:gap-32 max-lg:py-20 xl:flex-row xl:pt-20">
         <Suspense fallback={<Skeleton />}>
           <Image src={"https://content-dpfl.s3.amazonaws.com/people.svg"} alt="pessoas em uma confraternização" width={540} height={423} className='px-3 m-auto rounded-3xl' />
         </Suspense>
@@ -70,7 +68,7 @@ export default async function Eventos() {
           <p className='py-5 text-lg lg:text-left px-3'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-          <aside className="max-w-xs">
+          <aside className="max-w-xs px-3">
             <Button title="Saiba mais" color="green" NotFill />
           </aside>
         </aside>
@@ -93,7 +91,7 @@ export default async function Eventos() {
             <br />
             <span><strong>Valor:</strong> R$ 550,00</span>
           </p>
-          <aside className="max-w-xs">
+          <aside className="max-w-xs px-3">
             <Button title="Adquira o seu ingresso" color="green" />
           </aside>
         </aside>
@@ -109,15 +107,13 @@ export default async function Eventos() {
       </section>
 
 
-      <section className='py-20'>
-        <h2 className='font-semibold text-3xl text-center text-green-custom'>Apoiadores e patrocinadores do DPFL Summit</h2>
-        <div className='flex flex-wrap gap-10 items-center justify-center max-lg:hidden min-[992px]:max-w-[940px] xg:max-w-[1050px] lg:flex-row min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto'>
-          <Partness />
-        </div>
-        <div className='flex max-w-[15.625rem] w-full lg:hidden m-auto' >
-          <Carrousel CA2 />
-        </div>
+      <section className='py-20 container m-auto'>
+        <h2 className='font-semibold text-3xl text-center text-green-custom pb-20'>Apoiadores e patrocinadores do DPFL Summit</h2>
+      
       </section>
+      <aside className="border-t-green-custom border-b-green-custom border-t-[1px] border-b-[1px] w-full px-3 py-10">
+          <InfiniteSlider />
+        </aside>
     </>
   )
 }

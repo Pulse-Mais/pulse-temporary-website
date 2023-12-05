@@ -1,4 +1,4 @@
-import { Bike } from "@/components/loading.tsx/Bike";
+import { Bike } from "@/components/UI/loading.tsx/Bike";
 import { Button } from "@/components/UI/Button";
 import Link from "next/link";
 

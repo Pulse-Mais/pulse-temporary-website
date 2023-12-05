@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react"
 import Image from "next/image"
 import { Suspense } from "react"
-import { Skeleton } from "../../suspense/Skeleton"
+import { Skeleton } from "../../UI/suspense/Skeleton"
 
 export const Cardsummit = () => {
 

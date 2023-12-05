@@ -1,4 +1,4 @@
-import { Bike } from "@/components/loading.tsx/Bike"
+import { Bike } from "@/components/UI/loading.tsx/Bike"
 
 export default function Loading() {
     return (

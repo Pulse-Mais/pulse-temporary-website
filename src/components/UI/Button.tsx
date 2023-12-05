@@ -11,7 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = ({ title, color, NotFill = false, Custom = "text-xl", icon: Icon, ...rest }: ButtonProps) => {
 
-    const commonClass = "md:px-7 md:py-3 px-3 py-2 rounded-3xl w-full text-lg";
+    const commonClass = "md:px-7 px-3 py-1 rounded-3xl w-full text-lg";
     let finalClass;
 
     switch (color) {
