@@ -1,10 +1,10 @@
-import { Image, Button, BookOpenText, Carrousel, CardRoot, ChalkboardTeacher, Donate, CopySimple, Info, Parceiros, Student, UsersFour, Target, GraduationCap, Handshake, Buildings, LinkedinLogo } from '@/components/home/utils/Utils'
+import { Image, Button, BookOpenText, ChalkboardTeacher, Info, Parceiros, Student, UsersFour, LinkedinLogo } from '@/components/home/utils/Utils'
 import Link from 'next/link';
 import { ProfileIcon } from '@/components/home/ProfileIcon';
 import { Card2 } from '@/components/home/Card2';
 import TestCa from '@/components/UI/TestCa';
 import { Modal } from '@/components/UI/Modal';
-
+import { InfiniteSlider } from '@/components/UI/InfiniteSlider';
 
 export default function Home() {
 
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
       </section>
 
-      
+
       <section id='comofunciona' className='relative flex justify-center bg-[#27C86F] bg-wavegreen bg-contain bg-bottom bg-no-repeat'>
         <aside className='pt-10 w-full flex md:max-w-2xl min-[992px]:max-w-[940px] min-[1200px]:flex-row-reverse lg:justify-between xg:max-w-[1050px] min-[1200px]:gap-12 min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
           <div className='text-white px-4'>
@@ -116,97 +116,78 @@ export default function Home() {
         <h2 className='text-center font-semibold text-3xl lg:text-5xl text-black-custom w-full pt-10 px-3'>Depoimentos de jovens transformados</h2>
         <TestCa CA1 />
       </section>
-       
+
       <section className='bg-[#009EE6] bg-smallwaveblue bg-cover bg-bottom w-full'>
         <h2 className='font-semibold text-white text-3xl text-center pt-10 pb-3 px-3 lg:text-5xl'>Conheça o Time DPFL</h2>
         <p className='text-lg text-center text-white px-3'>Conheça quem trabalha para transformar a vida de jovens através do nosso projeto.</p>
         <aside className='flex flex-col gap-10 py-10 lg:20 md:flex-row md:flex-wrap md:justify-evenly m-auto sl:max-w-md md:max-w-3xl xg:max-w-[1050px] xg:gap-20'>
-            <picture className='relative flex flex-col gap-3 items-center text-white'>
-              <Image alt='Foto do Diretor da DPFL' src={"/assents/youngers/dudu2.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-              <Image alt='Foto do Diretor da DPFL' src={"/assents/youngers/dudu2.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-              <h4 className='font-bold  text-lg'>Eduardo Moura</h4>
-              <span>Diretor Executivo</span>
-              <Link href={"https://www.linkedin.com/in/eduardocmoura/"} target='_blank' >
-                <LinkedinLogo size={32} />
-              </Link>
-            </picture>
-            <picture className='relative flex flex-col gap-3 items-center text-white'>
-              <Image alt='Foto da Diretora Financeira da DPFL' src={"/assents/youngers/cida.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-              <Image alt='Foto da Diretora Financeira da DPFL' src={"/assents/youngers/cida.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-              <h4 className='font-bold  text-lg '>Cida Oliveira</h4>
-              <span>Diretora Financeira</span>
-              <Link href={"https://www.linkedin.com/in/maria-aparecida-de-oliveira-59085731/"} target='_blank'  >
-                <LinkedinLogo size={32} />
-              </Link>
-            </picture>
-            <picture className='relative flex flex-col gap-3 items-center text-white'>
-              <Image alt='Foto da UI, UX Designer da DPFL' src={"/assents/youngers/gabs.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-              <Image alt='Foto da UI, UX Designer da DPFL' src={"/assents/youngers/gabs.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-              <h4 className='font-bold text-lg'>Gabriela Souza</h4>
-              <span>Designer e Scrum</span>
-              <Link href={"https://www.linkedin.com/in/gabrielaasouza/"} target='_blank' >
-                <LinkedinLogo size={32} />
-              </Link>
-            </picture>
-            <picture className='relative flex flex-col gap-3 items-center text-white'>
-              <Image alt='Foto de líder de tecnologia e desenvolvimento da nova plataforma do DPFL e também um dos nossos melhores Mentores' src={"/assents/youngers/calabro.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-              <Image alt='Foto de líder de tecnologia e desenvolvimento da nova plataforma do DPFL e também um dos nossos melhores Mentores' src={"/assents/youngers/calabro.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-              <h4 className='font-bold text-lg'>Renato Calabro</h4>
-              <span>Mentor e Líder de Tecnologia</span>
-              <Link href={"https://www.linkedin.com/in/renatocalabro/"} target='_blank'>
-                <LinkedinLogo size={32} />
-              </Link>
-            </picture>
-            <picture className='relative flex flex-col gap-3 items-center text-white'>
-              <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/matheus.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-              <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/matheus.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-              <h4 className='font-bold text-lg'>Matheus Passos</h4>
-              <span>Desenvolvedor Full Stack</span>
-              <Link href={"https://www.linkedin.com/in/passosmatheus/"} target='_blank' >
-                <LinkedinLogo size={32} />
-              </Link>
-            </picture>
-            <picture className='relative flex flex-col gap-3 items-center text-white'>
-              <Image alt='Foto do Fundador da DPFL' src={"/assents/youngers/thiago2.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-              <Image alt='Foto do Fundador da DPFL' src={"/assents/youngers/thiago2.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-              <h4 className='font-bold text-lg'>Thiago Lima</h4>
-              <span>Fundador e conselheiro</span>
-              <Link href={"https://www.linkedin.com/in/thiagolimap/"} target='_blank' >
-                <LinkedinLogo size={32} />
-              </Link>
-            </picture>
-          </aside>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto do Diretor da DPFL' src={"/assents/youngers/dudu2.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto do Diretor da DPFL' src={"/assents/youngers/dudu2.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold  text-lg'>Eduardo Moura</h4>
+            <span>Diretor Executivo</span>
+            <Link href={"https://www.linkedin.com/in/eduardocmoura/"} target='_blank' >
+              <LinkedinLogo size={32} weight='fill'/>
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto da Diretora Financeira da DPFL' src={"/assents/youngers/cida.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto da Diretora Financeira da DPFL' src={"/assents/youngers/cida.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold  text-lg '>Cida Oliveira</h4>
+            <span>Diretora Financeira</span>
+            <Link href={"https://www.linkedin.com/in/maria-aparecida-de-oliveira-59085731/"} target='_blank'  >
+              <LinkedinLogo size={32} weight='fill'/>
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto da UI, UX Designer da DPFL' src={"/assents/youngers/gabs.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto da UI, UX Designer da DPFL' src={"/assents/youngers/gabs.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold text-lg'>Gabriela Souza</h4>
+            <span>Designer e Scrum</span>
+            <Link href={"https://www.linkedin.com/in/gabrielaasouza/"} target='_blank' >
+              <LinkedinLogo size={32} weight='fill'/>
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto de líder de tecnologia e desenvolvimento da nova plataforma do DPFL e também um dos nossos melhores Mentores' src={"/assents/youngers/calabro.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto de líder de tecnologia e desenvolvimento da nova plataforma do DPFL e também um dos nossos melhores Mentores' src={"/assents/youngers/calabro.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold text-lg'>Renato Calabro</h4>
+            <span>Mentor e Líder de Tecnologia</span>
+            <Link href={"https://www.linkedin.com/in/renatocalabro/"} target='_blank'>
+              <LinkedinLogo size={32} weight='fill'/>
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/matheus.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/matheus.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold text-lg'>Matheus Passos</h4>
+            <span>Desenvolvedor Full Stack</span>
+            <Link href={"https://www.linkedin.com/in/passosmatheus/"} target='_blank' >
+              <LinkedinLogo size={32} weight='fill' />
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto do Fundador da DPFL' src={"/assents/youngers/thiago2.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto do Fundador da DPFL' src={"/assents/youngers/thiago2.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold text-lg'>Thiago Lima</h4>
+            <span>Fundador e conselheiro</span>
+            <Link href={"https://www.linkedin.com/in/thiagolimap/"} target='_blank' >
+              <LinkedinLogo size={32} weight='fill'/>
+            </Link>
+          </picture>
+        </aside>
       </section>
 
-
-
       <section className='py-10'>
-          <aside className='pb-20'>
-            <h3 className='font-semibold text-3xl text-center text-green-custom lg:text-4xl'>Patrocinadores do DPFL</h3>
-            <div className='flex flex-col md:flex-row flex-wrap items-center justify-center'>
-              <Parceiros id={0} />
-            </div>
+        <aside className='pb-20'>
+          <h3 className='font-semibold text-3xl text-center text-green-custom lg:text-4xl'>Apoiadores Institucionais</h3>
+          <aside className="w-full px-3 py-10 lg:pb-5">
+            <InfiniteSlider />
           </aside>
-          <aside className='pb-20'>
-            <h3 className='font-semibold text-3xl text-center text-green-custom lg:text-4xl'>Apoiadores Institucionais</h3>
-            <div className='flex flex-wrap items-center justify-center'>
-              <div className='flex flex-wrap gap-10 items-center justify-center max-lg:hidden'>
-                <Parceiros id={1} />
-                <Parceiros id={2} />
-                <Parceiros id={3} />
-                <Parceiros id={4} />
-                <Parceiros id={5} />
-                <Parceiros id={6} />
-                <Parceiros id={7} />
-              </div>
-              <div className='flex max-w-[18.75rem] lg:hidden m-auto' >
-                <Carrousel CA3 />
-              </div>
-            </div>
-          </aside>
-        </section >  
+        </aside>
+      </section >
 
-        <Modal content='testando' title='testando2'/>
+      <Modal content='testando' title='testando2' />
     </>
   )
 }

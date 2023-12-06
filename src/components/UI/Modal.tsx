@@ -40,9 +40,8 @@ export const Modal = ({ content, title }: ModalProps) => {
                 <h1 className="text-center font-semibold text-2xl text-red-900">{title}</h1>
                 <p style={{ width: "-webkit-fill-available" }} className="py-10 text-xl text-center">{content}</p>
                 <figure className="w-full relative min-h-20">
-                    <motion.figure initial={{ x: -1000, rotate: -180 }} animate={{ x: 0, rotate: 0 }} transition={{ duration: 1.3 }} className="relative overflow-hidden">
-                        <Image src={"/assents/logos/DPFL.svg"} width={75} height={60} alt="Logo do DPFL" />
-                        {/* <Logo /> */}
+                    <motion.figure initial={{ x: -100, opacity: 0}} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1.3 }} className="relative overflow-hidden">
+                        <Image src={"/assents/logos/DPFL.svg"} width={55} height={40} alt="Logo do DPFL" />
                     </motion.figure>
                 </figure>
             </dialog>

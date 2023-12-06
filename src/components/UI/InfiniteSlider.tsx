@@ -76,9 +76,9 @@ export const InfiniteSlider = () => {
             >
                 {images.map((logo, index) => {
                     return (
-                        <figure className="px-10">
+                        <figure className="max-lg:px-10 bg-partness" key={index}>
                             <SwiperSlide key={index} style={{ transitionTimingFunction: "linear" }} className="m-auto px-2">
-                                <Image src={logo.image} alt={logo.alt} width={200} height={60} className="px-1 max-w-[200px] max-h-[80px]" />
+                                <Image src={logo.image} alt={logo.alt} width={200} height={60} className="px-1 max-w-[200px] max-h-[80px] lg:max-h-[120px]" />
                             </SwiperSlide>
                         </figure>
                     )

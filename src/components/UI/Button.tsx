@@ -11,12 +11,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = ({ title, color, NotFill = false, Custom = "text-xl", icon: Icon, ...rest }: ButtonProps) => {
 
-    const commonClass = "md:px-7 px-3 py-1 rounded-3xl w-full text-lg";
+    const commonClass = "transition-all md:px-7 px-3 py-1 rounded-3xl w-full text-lg";
     let finalClass;
 
     switch (color) {
         case "green":
-            finalClass = `${commonClass} ${NotFill ? "border-[1px] border-green-custom border-solid text-green-custom hover:bg-green-custom hover:text-white" : "bg-green-custom text-white hover:bg-[#34A853]"}`;
+            finalClass = `${commonClass} ${NotFill ? "border-[1px] border-green-custom border-solid text-green-custom hover:bg-green-custom hover:text-white" : "bg-green-custom text-white hover:bg-[#27A06F]"}`;
             break;
         case "yellow":
             finalClass = `${commonClass} ${NotFill ? "border-[1px] border-yellow-custom border-solid text-yellow-custom hover:bg-yellow-custom hover:text-white" : "bg-yellow-custom text-white hover:bg-[#F8B800]"}`;

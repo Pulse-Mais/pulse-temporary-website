@@ -72,23 +72,26 @@ export default function TestCa({ CA1 = false, Custom = "bg-green-custom bg-waveg
 
                 {CA1 && C1.map((pessoaAtual, id) => (
                     <SwiperSlide key={id}>
-                        <div className='flex flex-col items-center w-full py-10 lg:flex-row lg:justify-center lg:gap-10'>
-                            <aside className='flex justify-between sl:justify-evenly items-center lg:gap-5 max-lg:w-full'>
-                                <button className='flex items-center' onClick={prevSlide} >
-                                    <CaretLeft size={32} />
-                                </button>
-                                <picture className='py-1 bg-bigwavegreen bg-contain px-1 border-green-custom border-[1px] rounded-lg '>
-                                    <Image src={pessoaAtual.image} width={201} height={192} quality={100} alt={`Depoimento da ${pessoaAtual.name}`} style={{ borderRadius: 10 }} />
-                                </picture>
+                        <article className='flex flex-col items-center w-full py-10'>
+                            <div className='flex flex-col items-center w-full py-10 lg:flex-row lg:justify-center lg:gap-10'>
+                                <aside className='flex justify-between sl:justify-evenly items-center lg:gap-5 max-lg:w-full'>
+                                    <button className='flex items-center' onClick={prevSlide} >
+                                        <CaretLeft size={32} />
+                                    </button>
+                                    <picture className='bg-bigwavegreen bg-contain rounded-full max-w-[200px]'>
+                                        <Image src={pessoaAtual.image} width={200} height={200} quality={100} alt={`Depoimento da ${pessoaAtual.name}`} className='rounded-full' />
+                                    </picture>
+                                </aside>
+                                <aside className='flex flex-col items-start'>
+                                    <h3 className='max-lg:self-center px-5 font-semibold text-green-custom text-xl py-10'>{pessoaAtual.name}</h3>
+                                    <p className='px-5 pb-10 justify-self-center text-left max-w-xs sl:max-w-lg md:max-w-2xl lg:max-w-3xl'>{pessoaAtual.text}</p>
+                                </aside>
                                 <button className='flex items-center' onClick={nextSlide}>
                                     <CaretRight size={32} />
                                 </button>
-                            </aside>
-                            <aside className='flex flex-col items-start'>
-                                <h3 className='max-lg:self-center px-5 font-semibold text-green-custom text-xl py-10'>{pessoaAtual.name}</h3>
-                                <p className='px-5 pb-10 justify-self-center text-left max-w-xs sl:max-w-lg md:max-w-2xl lg:max-w-3xl'>{pessoaAtual.text}</p>
-                            </aside>
-                        </div>
+                            </div>
+                            <hr className='w-full px-5 max-w-4xl h-2' />
+                        </article>
                     </SwiperSlide>
                 ))}
 

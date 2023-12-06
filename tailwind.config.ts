@@ -23,7 +23,8 @@ const config: Config = {
         'eventossmall': "url('/assents/backgrounds/summitsmall.jpg')",
         'wavegreen': "url('/assents/backgrounds/wavegreen.svg')",
         'verticalgreen': "url('/assents/backgrounds/verticalgreen.svg')",
-        'verticalblue': "url('/assents/backgrounds/verticalblue.svg')"
+        'verticalblue': "url('/assents/backgrounds/verticalblue.svg')",
+        'partness': 'radial-gradient(circle, #e2e8f0, #eaedf4, #f2f3f7, #f9f9fb, #ffffff)'
       },
       screens: {  
         'sl': '575px',
