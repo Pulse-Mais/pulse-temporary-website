@@ -1,5 +1,4 @@
-import { GraduationCap } from '@/components/UI/icons/icons'
-import { Icon, IconProps } from '@phosphor-icons/react'
+import { IconProps } from '@phosphor-icons/react'
 
 interface ProfileIconProps extends IconProps {
     icon?: React.FC<IconProps>;

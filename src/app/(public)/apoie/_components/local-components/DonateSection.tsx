@@ -1,7 +1,7 @@
 'use client'
 
-import { Donate } from "../home/Donate"
-import { CopyText } from "../home/CopyText"
+import { Donate } from "./Donate"
+import { CopyText } from "./CopyText"
 
 
 export const DonateSection = () => {

@@ -7,9 +7,9 @@ interface LogoProps {
 export const Logo = ({ Variant = "default" }: LogoProps) => {
 
     return (
-        <figure className="flex gap-2 text-2xl items-center">
-            <p className="max-lg:hidden font-semibold text-4xl">DPFL</p>
-            <Image src={Variant == "default" ? '/assents/logos/DPFL.svg' : '/assents/logos/DPFLWhite.svg'} alt="Logo da DPFL" width={52} height={34} quality={100} className="max-md:px-2 max-md:py-2" />
+        <figure className="flex gap-2 items-center">
+        <Image src={Variant == "default" ? '/assents/brand/pulse_sop.svg' : '/assents/brand/pulse_sop.svg'} alt="Logo da DPFL" width={42} height={24} quality={100} className="max-md:px-2 max-md:py-2" />
+            <p className={`max-lg:hidden font-semibold text-4xl  ${Variant == "default" ? "text-black-custom" : "text-white"}`}>Pulse +</p>
         </figure>
     )
 }

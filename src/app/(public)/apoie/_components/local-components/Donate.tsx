@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "@phosphor-icons/react"
-import { Button } from "../UI/Button"
+import { Button } from "../../../../../components/UI/Button"
 import { useState, useEffect } from "react"
 
 interface DonateProps {

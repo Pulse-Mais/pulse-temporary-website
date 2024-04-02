@@ -1,8 +1,6 @@
 'use client'
 import { useState } from "react"
-
-
-import { CaretRight, CaretDown } from '@/components/home/utils/Utils'
+import { CaretRight } from "@phosphor-icons/react";
 
 interface DialogProps {
     Question: string;

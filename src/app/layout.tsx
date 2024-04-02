@@ -4,11 +4,7 @@ import { Poppins } from 'next/font/google'
 import { Header } from '@/components/UI/Header'
 import { Footer } from '@/components/UI/Footer'
 
-const PoppinsFont = Poppins({
-  weight: ['700', '400', '500', '600'],
-  subsets: ['latin'],
-  variable: '--poppins-default'
-});
+const PoppinsFont = Poppins({ weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'DPFL',

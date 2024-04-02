@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image';
 import { useRef, useState } from 'react';
-import { Copy } from '@/components/home/utils/Utils'
+import { Copy } from '@phosphor-icons/react';
 
 export const CopyText = () => {
     const qrcode = '48.621.188/0001-11';

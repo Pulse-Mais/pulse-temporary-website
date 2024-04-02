@@ -1,5 +1,3 @@
-
-import { BookOpenText, Student, UsersFour, ChalkboardTeacher} from '@/components/UI/icons/icons'
 import { IconProps } from "@phosphor-icons/react";
 
 interface InfoProps {

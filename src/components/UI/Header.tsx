@@ -19,8 +19,8 @@ export const Header = () => {
     const routes = [
         { name: "Início", href: "/", current: `${segment}` == "" ? true : false },
         { name: "Apoie", href: "/apoie", current: `${segment[1]}` === "apoie" ? true : false },
-        { name: "Eventos", href: "/eventos", current: `${segment[1]}` === "eventos" ? true : false },
         { name: "Contato", href: "/contato", current: `${segment[1]}` === "contato" ? true : false },
+        { name: "Eventos", href: "/eventos", current: `${segment[1]}` === "eventos" ? true : false},
     ]
 
     const changeColor = () => {
@@ -63,9 +63,9 @@ export const Header = () => {
         <>
             <header className=
                 {isTransparent ?
-                    `fixed ${color ? "bg-white text-[#1B2E3A] shadow-sm " : "bg-transparent text-white"} h-10 md:h-20 w-full fixed z-30 top-0 px-3 py-2 flex items-center`
+                    `fixed ${color ? "bg-white text-[#1B2E3A] shadow-md" : "bg-transparent text-white"} w-full fixed z-30 top-0 px-3 md:py-1 lg:py-3 flex items-center`
                     :
-                    `fixed text-[#1B2E3A] h-12 md:h-20 w-full shadow-sm z-30 top-0 px-3 py-2 flex items-center bg-white`
+                    `fixed text-[#1B2E3A] w-full shadow-sm z-30 top-0 px-3 md:py-1 lg:py-3 flex items-center bg-white`
                 }>
                 {isTransparent ? (<Logo Variant={color ? `default` : `white`} />) : (<Logo Variant="default" />)}
 

@@ -2,15 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 243, 244, 246;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #FFD31B;
+  border-radius: 12px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,11 +25,6 @@
     --background-end-rgb: 243, 244, 246;
   }
 }
-
-
-
-
-
 
 .swiper {
     width: 100%;
@@ -42,9 +43,6 @@
     display: block;
     width: 100%;
   }
-
-
-
 
 @keyframes spin {
     from {

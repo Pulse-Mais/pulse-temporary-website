@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { CaretLeft, CaretRight } from '@phosphor-icons/react';
 import Image from 'next/image'
 import { Swiper, SwiperClass, SwiperProps, SwiperRef, SwiperSlide, SwiperSlideProps } from 'swiper/react';
@@ -17,7 +17,7 @@ interface CarrouselProps {
 }
 
 
-export default function TestCa({ CA1 = false, Custom = "bg-green-custom bg-wavegreen bg-contain" }: CarrouselProps) {
+export const DepoimentCarrousel = ({ CA1 = false, Custom = "bg-green-custom bg-wavegreen bg-contain" }: CarrouselProps) => {
 
 
 
@@ -75,18 +75,28 @@ export default function TestCa({ CA1 = false, Custom = "bg-green-custom bg-waveg
                         <article className='flex flex-col items-center w-full py-10'>
                             <div className='flex flex-col items-center w-full py-10 lg:flex-row lg:justify-center lg:gap-10'>
                                 <aside className='flex justify-between sl:justify-evenly items-center lg:gap-5 max-lg:w-full'>
-                                    <button className='flex items-center' onClick={prevSlide} >
+                                    <button className='flex items-center max-lg:hidden' onClick={prevSlide} >
                                         <CaretLeft size={32} />
                                     </button>
-                                    <picture className='bg-bigwavegreen bg-contain rounded-full max-w-[200px]'>
-                                        <Image src={pessoaAtual.image} width={200} height={200} quality={100} alt={`Depoimento da ${pessoaAtual.name}`} className='rounded-full' />
+                                    <picture className='bg-gray-300 bg-animate-pulse rounded-full w-[200px] h-[200px] max-lg:m-auto'>
+                                        <Suspense fallback={<figure className='w-full h-full rounded-full bg-gray-300 animate-pulse'/>}>
+                                            <Image src={pessoaAtual.image} width={200} height={200} quality={100} alt={`Depoimento da ${pessoaAtual.name}`} className='rounded-full' />
+                                        </Suspense>
                                     </picture>
                                 </aside>
                                 <aside className='flex flex-col items-start'>
-                                    <h3 className='max-lg:self-center px-5 font-semibold text-green-custom text-xl py-10'>{pessoaAtual.name}</h3>
+                                    <div className='m-auto max-lg:flex justify-center gap-5'>
+                                        <button className='flex items-center lg:hidden' onClick={prevSlide} >
+                                            <CaretLeft size={32} />
+                                        </button>
+                                        <h3 className='max-lg:self-center px-5 font-semibold text-green-custom text-xl py-10'>{pessoaAtual.name}</h3>
+                                        <button className='flex items-center lg:hidden' onClick={nextSlide}>
+                                            <CaretRight size={32} />
+                                        </button>
+                                    </div>
                                     <p className='px-5 pb-10 justify-self-center text-left max-w-xs sl:max-w-lg md:max-w-2xl lg:max-w-3xl'>{pessoaAtual.text}</p>
                                 </aside>
-                                <button className='flex items-center' onClick={nextSlide}>
+                                <button className='flex items-center max-lg:hidden' onClick={nextSlide}>
                                     <CaretRight size={32} />
                                 </button>
                             </div>

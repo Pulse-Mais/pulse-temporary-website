@@ -2,17 +2,18 @@ import { UserCircle } from "@/components/UI/icons/icons"
 import { Button } from "../UI/Button"
 import Link from "next/link"
 
-interface Card2Props {
+interface UserPersonaCardProps {
     Theme?: "green" | "yellow" | "blue"
     Title: string
     Text: string
 }
 
-export const Card2 = ({ Theme, Title, Text }: Card2Props) => {
+export const UserPersonaCard = ({ Theme, Title, Text }: UserPersonaCardProps) => {
 
     function RenderButton() {
         switch (Theme) {
 
+            
             case "green":
                 return (<Link href="https://daperiferiaparafarialima.org/?pagina=mentor" className="px-3" target="_blank">
                     <Button title="Quero ser Mentor(a)" color="green" Custom="text-base" />

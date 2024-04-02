@@ -14,14 +14,14 @@ export const Footer = () => {
                         <ul>
                             <li>
                                 <span className="font-bold py-2">Redes Sociais</span>
-                                <Link href={"https://www.instagram.com/daperifaparafarialima/"} target="_blank" className="py-2 flex gap-1 items-center"><span><InstagramLogo size={32} color="white" weight="fill" /></span>@DPFL</Link>
-                                <Link href={"https://www.linkedin.com/company/dpfl/"} target="_blank" className="py-2 flex gap-1 items-center"><span><LinkedinLogo size={32} color="white" weight="fill" /></span>DPFL</Link>
+                                <Link href={"https://www.instagram.com/pulsemaisong/"} target="_blank" className="py-2 flex gap-1 items-center"><span><InstagramLogo size={32} color="white" weight="fill" /></span>@pulsemaisong</Link>
+                                <Link href={"https://www.linkedin.com/company/pulsemaisong/"} target="_blank" className="py-2 flex gap-1 items-center"><span><LinkedinLogo size={32} color="white" weight="fill" /></span>pulsemaisong</Link>
                             </li>
                         </ul>
                     </nav>
                 </section>
                 <div className="text-center py-3 bg-[#004DBC]">
-                    <span className="text-white text-xl">DPFL - Da Periferia para a Faria Lima</span>
+                    <span className="text-white text-xl">Pulse Mais - Da Periferia para a Faria Lima</span>
                 </div>
             </footer>
         </>

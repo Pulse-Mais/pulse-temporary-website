@@ -1,6 +1,8 @@
-import { Image, Button } from '@/components/home/utils/Utils'
 import Link from 'next/link';
-import { Questions } from '@/components/apoie/Questions';
+import { Questions } from '@/components/global-components/Questions';
+import { Button } from '@/components/UI/Button';
+import Image from 'next/image';
+
 
 export default function Contato() {
     return (
@@ -8,7 +10,7 @@ export default function Contato() {
             <main className='pt-20 bg-[#FEFEFE] flex flex-col sl:items-center sl:max-w-md sl:m-auto min-[660px]:max-w-[575px] md:max-w-2xl min-[992px]:max-w-[940px] lg:flex-row lg:justify-between xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
                 <aside className='px-4 flex flex-col sl:items-center max-w-3xl'>
                     <div className="flex flex-col">
-                        <h1 className='font-extrabold text-3xl md:text-[2.75rem] lg:text-6xl'>Contato</h1>
+                        <h1 className='font-extrabold text-3xl md:text-[2.75rem] lg:text-6xl text-black-custom'>Contato</h1>
                         <p className='text-lg py-6 max-w-[34.375rem] lg:text-2xl'>Dúvidas, sugestões ou elogios? Estamos à sua disposição, basta nos mandar uma mensagem</p>
                     </div>
                     <div className='lg:self-start py-1 sl:w-full lg:max-w-[280px]'>
@@ -51,7 +53,7 @@ export default function Contato() {
                 </aside>
             </section>
 
-            <section className='max-lg:px-3 flex flex-col sl:max-w-md sl:m-auto min-[660px]:max-w-[575px] md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
+            <section className='max-lg:px-3 flex flex-col container m-auto'>
                 <Questions />
             </section>
 
