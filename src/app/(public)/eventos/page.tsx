@@ -34,7 +34,7 @@ export default async function Eventos() {
             <p className='text-lg px-3 pb-8 pt-3 text-black-custom'>A noite do jantar contará com um excelente menu de <strong>comida uruguaia</strong>, que irá potencializar a experiência de conexão e aprofundamento com o impacto que geramos para nossos convidados. No decorrer do evento, entre apresentações e conversas, também teremos um painel com <strong>convidados renomados</strong>.</p>
           </article>
           <Suspense fallback={<Skeleton />}>
-            <Image src={'https://content-dpfl.s3.amazonaws.com/eltranvia.svg'} width={549} height={378} alt="Uma foto do restaurante eltravia" quality={100} loading="lazy" className='m-auto rounded-3xl' />
+            <Image src={'/assents/rebrandevent/eltranvia.svg'} width={549} height={378} alt="Uma foto do restaurante eltravia" quality={100} loading="lazy" className='m-auto rounded-3xl' />
           </Suspense >
         </aside>
       </section>
@@ -61,7 +61,7 @@ export default async function Eventos() {
 
       <section className="md:px-5 py-10 container m-auto flex flex-col-reverse justify-center xl:gap-32 xl:flex-row">
         <Suspense fallback={<Skeleton />}>
-          <Image src={"https://content-dpfl.s3.amazonaws.com/people.svg"} alt="pessoas em uma confraternização" width={549} height={378} className='px-3 m-auto rounded-3xl' />
+          <Image src={"/assents/rebrandevent/people.svg"} alt="pessoas em uma confraternização" width={549} height={378} className='px-3 m-auto rounded-3xl' />
         </Suspense>
         <aside className="max-md:max-w-2xl md:max-w-3xl st:m-auto st:max-w-5xl">
           <h2 className='px-3 text-3xl text-black-custom font-semibold lg:font-bold'>Para quem é esse evento?</h2>
@@ -99,7 +99,7 @@ export default async function Eventos() {
 
       <section id="impacto" className="scroll-mt-20 md:px-5 container m-auto flex flex-col-reverse justify-center gap-10 xl:gap-32 xl:flex-row">
         <Suspense fallback={<Skeleton />}>
-          <Image src={"https://content-dpfl.s3.amazonaws.com/ingresso.svg"} alt="pessoas em uma confraternização" width={540} height={423} className='px-3 m-auto rounded-3xl' />
+          <Image src={"/assents/rebrandevent/ingresso.svg"} alt="pessoas em uma confraternização" width={540} height={423} className='px-3 m-auto rounded-3xl' />
         </Suspense>
         <aside className="max-st:max-w-2xl max-xl:max-w-3xl st:m-auto scroll-mt-6">
           <h2 className='px-3 text-3xl text-black-custom font-semibold lg:font-bold'>Seja parte do impacto!</h2>
@@ -121,7 +121,7 @@ export default async function Eventos() {
         <hr className="w-full bg-gray-500 h-[2px] px-5" />
         <h2 className="text-black-custom text-center font-semibold lg:font-bold text-3xl pt-10 px-3">Confira eventos passados</h2>
         <aside className="py-10 flex max-lg:overflow-x-scroll">
-          <PastEvents href="/eventos/2023/summit" altImage="Summit 2023" description="Uma jornada de transformação pessoal e profissional de jovens da periferia" title="Summit 2023" srcImage="https://content-dpfl.s3.amazonaws.com/summit2023.svg" />
+          <PastEvents href="/eventos/2023/summit" altImage="Summit 2023" description="Uma jornada de transformação pessoal e profissional de jovens da periferia" title="Summit 2023" srcImage="/assents/rebrandevent/summit2023.svg" />
         </aside>
       </section>
 

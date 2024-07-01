@@ -7,7 +7,7 @@ import { Footer } from '@/components/UI/Footer'
 const PoppinsFont = Poppins({ weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DPFL',
+  title: 'Pulse Mais',
   description: 'Potencializando a jornada de jovens brasileiros através da educação, tecnologia e empregabilidade.',
 }
 

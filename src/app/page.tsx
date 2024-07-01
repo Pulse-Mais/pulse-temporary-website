@@ -140,20 +140,20 @@ export default function Home() {
             </Link>
           </picture>
           <picture className='relative flex flex-col gap-3 items-center text-white'>
-            <Image alt='Foto de líder de tecnologia e desenvolvimento da nova plataforma do DPFL e também um dos nossos melhores Mentores' src={"/assents/youngers/calabro.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
-            <Image alt='Foto de líder de tecnologia e desenvolvimento da nova plataforma do DPFL e também um dos nossos melhores Mentores' src={"/assents/youngers/calabro.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
-            <h4 className='font-bold text-lg'>Renato Calabro</h4>
-            <span>Mentor e Líder de Tecnologia</span>
-            <Link href={"https://www.linkedin.com/in/renatocalabro/"} target='_blank'>
-              <LinkedinLogo size={32} weight='fill' />
-            </Link>
-          </picture>
-          <picture className='relative flex flex-col gap-3 items-center text-white'>
             <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/matheus.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
             <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/matheus.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
             <h4 className='font-bold text-lg'>Matheus Passos</h4>
             <span>Desenvolvedor Full Stack</span>
             <Link href={"https://www.linkedin.com/in/passosmatheus/"} target='_blank' >
+              <LinkedinLogo size={32} weight='fill' />
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/vini.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto do Desenvolvedor Full Stack da DPFL' src={"/assents/youngers/vini.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold text-lg'>Vinicius Costa</h4>
+            <span>Desenvolvedor Full Stack</span>
+            <Link href={"https://www.linkedin.com/in/vinicius-scosta/"} target='_blank' >
               <LinkedinLogo size={32} weight='fill' />
             </Link>
           </picture>

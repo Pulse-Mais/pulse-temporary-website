@@ -30,7 +30,7 @@ export default function Contato() {
                 </picture>
                 <aside className='px-4 flex flex-col sl:items-center w-full max-w-2xl'>
                     <h2 className='text-3xl font-semibold py-8'>Nos mande uma mensagem</h2>
-                    <form className='flex flex-col gap-5 w-full' action="https://formsubmit.co/contato@daperiferiaparafarialima.org" method="POST">
+                    <form className='flex flex-col gap-5 w-full' action="https://formsubmit.co/contato@app.pulsemais.org.br" method="POST">
                         <div className='flex flex-col'>
                             <label htmlFor='nome'>Nome completo</label>
                             <input type='text' placeholder='Digite seu nome completo' name='nome' id='nome' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg ' />

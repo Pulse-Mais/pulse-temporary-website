@@ -83,7 +83,7 @@ export const Header = () => {
                     </ul>
                 </nav>
                 <aside className="flex gap-3 px-2 max-lg:hidden">
-                    <Link href={"https://daperiferiaparafarialima.org/?pagina=login"} target="_blank">
+                    <Link href={"https://app.pulsemais.org.br/?pagina=login"} target="_blank">
                         {isTransparent ? renderButton() : (<Button title="Entrar" color="blue" NotFill />)}
                     </Link>
                     <Link href={"/#cards"} >
@@ -119,16 +119,16 @@ export const Header = () => {
                         </ul>
                     </nav>
                     <h4 className={`text-lg px-5 pb-3 font-semibold text-blue-custom ${display ? "" : "hidden"}`}>Registre-se como:</h4>
-                    <Link className={`px-4 py-1 ${display ? "" : "hidden"} flex items-center gap-1 text-black-custom font-semibold`} href={"https://daperiferiaparafarialima.org/?pagina=mentee"} target="_blank" >
+                    <Link className={`px-4 py-1 ${display ? "" : "hidden"} flex items-center gap-1 text-black-custom font-semibold`} href={"https://app.pulsemais.org.br/?pagina=mentee"} target="_blank" >
                         <GraduationCap size={32} weight="fill" /><span> Aluno</span>
                     </Link>
-                    <Link className={`px-4 py-1 ${display ? "" : "hidden"} flex items-center gap-1 text-black-custom font-semibold`} href={"https://daperiferiaparafarialima.org/?pagina=mentee"} target="_blank">
+                    <Link className={`px-4 py-1 ${display ? "" : "hidden"} flex items-center gap-1 text-black-custom font-semibold`} href={"https://app.pulsemais.org.br/?pagina=mentee"} target="_blank">
                         <ChalkboardTeacher size={32} weight="fill" /><span> Mentor</span>
                     </Link>
-                    <Link className={`px-4 py-1 ${display ? "" : "hidden"} flex items-center gap-1 text-black-custom font-semibold`} href={"https://daperiferiaparafarialima.org/?pagina=mentee"} target="_blank">
+                    <Link className={`px-4 py-1 ${display ? "" : "hidden"} flex items-center gap-1 text-black-custom font-semibold`} href={"https://app.pulsemais.org.br/?pagina=mentee"} target="_blank">
                         <Handshake size={32} weight="fill" /><span> Parceiro</span>
                     </Link>
-                    <Link href={"https://daperiferiaparafarialima.org/?pagina=login"} target="_blank" className={`px-5 py-3 ${display ? "" : "hidden"}`}>
+                    <Link href={"https://app.pulsemais.org.br/?pagina=login"} target="_blank" className={`px-5 py-3 ${display ? "" : "hidden"}`}>
                         <Button color="blue" title="Entrar" icon={SignIn} />
                     </Link>
                 </aside>

@@ -15,15 +15,15 @@ export const UserPersonaCard = ({ Theme, Title, Text }: UserPersonaCardProps) =>
 
             
             case "green":
-                return (<Link href="https://daperiferiaparafarialima.org/?pagina=mentor" className="px-3" target="_blank">
+                return (<Link href="https://app.pulsemais.org.br/?pagina=mentor" className="px-3" target="_blank">
                     <Button title="Quero ser Mentor(a)" color="green" Custom="text-base" />
                 </Link>);
             case "yellow":
-                return (<Link href="https://daperiferiaparafarialima.org/?pagina=mentee" className="px-3" target="_blank">
+                return (<Link href="https://app.pulsemais.org.br/?pagina=mentee" className="px-3" target="_blank">
                     <Button title="Quero ser aluno(a)" color="yellow" Custom="text-base" />
                 </Link>);
             case "blue":
-                return (<Link href="https://daperiferiaparafarialima.org/?pagina=parceiro" className="px-3" target="_blank">
+                return (<Link href="https://app.pulsemais.org.br/?pagina=parceiro" className="px-3" target="_blank">
                     <Button title="Quero ser parceiro" color="blue" Custom="text-base" />
                 </Link>);
             default:
