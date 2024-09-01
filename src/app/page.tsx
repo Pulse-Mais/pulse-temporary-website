@@ -9,12 +9,12 @@ export default function Home() {
       <main className='md:m-auto lg:pb-24 md:pt-40 pt-20 bg-[#FEFEFE] flex flex-col sl:items-center md:max-w-2xl min-[992px]:max-w-[940px] lg:flex-row lg:justify-between xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
         <aside className='px-4 flex flex-col sl:items-center max-w-3xl'>
           <div className="flex flex-col">
-            <h1 className='text-black-custom font-extrabold text-4xl md:text-[2.75rem] lg:text-6xl'>Pulse Mais</h1>
-            <p className='py-6 text-lg md:text-xl lg:text-2xl text-black-custom'>Potencializando a jornada de jovens brasileiros em situação de vulnerabilidade econômica através da educação, tecnologia e empregabilidade.</p>
+            <h1 className='text-black-custom font-extrabold text-4xl md:text-[2.75rem] lg:text-6xl'>Seja a mudança que a sua carreira precisa!</h1>
+            <p className='py-6 text-lg md:text-xl lg:text-3xl text-black-custom text-justify'>Impulsione sua qualificação profissional para tecnologia com a Pulse Mais e tenha acesso a mentorias, oportunidades de vagas e bolsas de estudos gratuitas para a universidade!</p>
           </div>
-          <div className='lg:self-start py-1 sl:w-full lg:max-w-[280px]'>
+          <div className='lg:self-start py-1 sl:w-full lg:max-w-[520px]'>
             <Link href={"#cards"} className='w-full'>
-              <Button title='Comece agora' color='blue' Custom='text-[24px]' />
+              <Button title='Inscreva-se no Programa Pulse Mais - Turmas 2025' color='blue' Custom='text-[24px]' />
             </Link>
           </div>
         </aside>
@@ -26,15 +26,15 @@ export default function Home() {
       <section id='comofunciona' className='relative flex justify-center bg-[#27C86F] bg-wavegreen bg-contain bg-bottom bg-no-repeat'>
         <aside className='pt-10 w-full flex md:max-w-2xl min-[992px]:max-w-[940px] min-[1200px]:flex-row-reverse lg:justify-between xg:max-w-[1050px] min-[1200px]:gap-12 min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
           <div className='text-white px-4'>
-            <h2 className='font-semibold text-3xl lg:text-5xl'>Sobre nós</h2>
-            <p className='text-lg py-6 max-w-5xl'>A <strong>Pulse Mais</strong> é uma organização sem fins lucrativos que surgiu para desenvolver habilidades socioemocionais e técnicas da área de tecnologia em pessoas jovens, entre 16 e 24 anos, com objetivo de empregá-las no trabalho formal através de empresas parceiras.</p>
-            <p className='text-lg'>Para isso contamos com:</p>
+            <h2 className='font-semibold text-3xl lg:text-5xl'>Nosso propósito</h2>
+            <p className='text-lg py-6 max-w-5xl'>Possibilitar que todos os jovens brasileiros de baixa renda possam sonhar com um futuro como líderes.</p>
+            <p className='text-lg'>Fazemos isso através de:</p>
             <aside className='flex gap-10 flex-col py-6'>
-              <div className='flex flex-col gap-8'>
-                <Info icon={ChalkboardTeacher} text='Cursos de alta qualidade, principalmente na área de tecnologia, fornecidos por parceiros' />
-                <Info icon={Student} text='Pessoas mentoras com experiência de mercado que encorajam os alunos' />
-                <Info icon={BookOpenText} text='Plataforma gamificada que gera protagonismo às pessoas jovens, levando-as para ação' />
-                <Info icon={UsersFour} text='Oportunidades de trabalho dignas e alinhadas a cada perfil' />
+              <div className='flex flex-col gap-8 font-normal'>
+              <Info icon={ChalkboardTeacher} text={<span className="font-normal">Programas de formação que desenvolvem habilidades essenciais para carreiras em tecnologia e utilizam um <strong>método exclusivo</strong> que integra aulas e mentorias.</span>} />
+              <Info icon={Student} text={<span className="font-normal">Conexão com os executivos de <strong>grandes empresas</strong> na América Latina.</span>} />
+              {/* <Info icon={BookOpenText} text='Plataforma gamificada que gera protagonismo às pessoas jovens, levando-as para ação' /> */}
+              <Info icon={UsersFour} text={<span className="font-normal">Uma <strong>rede de oportunidades</strong> para conquistar o primeiro emprego e acessar o ensino superior com bolsa gratuita.</span>} />
               </div>
             </aside>
           </div>
@@ -44,28 +44,27 @@ export default function Home() {
 
       <section className='lg:pt-28 py-16 md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto'>
         <aside className='flex flex-col gap-32 m-auto'>
-          <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Trabalhamos para alcançar <br className='max-[624px]:hidden st:hidden lg:block' /> resultados <br className='max-[375px]:hidden min-[455px]:hidden' /> de alto impacto</h2>
+          <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Resultados até 2023</h2>
+          {/* <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Trabalhamos para alcançar <br className='max-[624px]:hidden st:hidden lg:block' /> resultados <br className='max-[375px]:hidden min-[455px]:hidden' /> de alto impacto</h2> */}
           <ul className='flex flex-col items-center md:flex-row md:flex-wrap md:justify-evenly' >
             <li className=''>
               <ProfileIcon color='yellow'>
-                <p className='px-3 text-3xl font-semibold max-w-sm text-white '>300 jovens impactados</p>
+                <p className='px-2 text-2xl font-semibold max-w-sm text-black '>350 jovens impactados com formação e mentoria</p>
               </ProfileIcon>
-              <p className='px-3 text-center text-lg py-11 max-w-sm text-black-custom'>Destes jovens, <strong> 90% estão estudando</strong> e <strong>50% estão empregados</strong> através da Pulse Mais.</p>
+              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>50% de empregabilidade após o Programa Pulse Mais</p>
             </li>
             <li>
               <ProfileIcon color='blue'>
-                <p className='px-3 text-3xl font-semibold max-w-sm text-white '>+3600
+                <p className='px-2 text-2xl font-semibold max-w-sm text-black '>+3600
                   horas de mentorias </p>
               </ProfileIcon>
-              <p className='px-3 py-11 text-center text-lg max-w-sm text-black-custom'>Feitas por mais de 200 mentores, sendo que
-                <strong> 100 estão ativos</strong> no projeto.</p>
+              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Rede com mais de 250 mentores cadastrados, mais de 100 finalizadas</p>
             </li>
             <li>
               <ProfileIcon color='green'>
-                <p className='px-3 text-3xl font-semibold max-w-sm text-white '>+10 empresas parceiras</p>
+                <p className='px-2 text-3xl font-semibold max-w-sm text-black '>+10 empresas parceiras</p>
               </ProfileIcon>
-              <p className='px-3 py-11 text-center text-lg max-w-sm text-black-custom'>Permitindo que o projeto realize uma formação
-                de <strong>alta qualidade.</strong></p>
+              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Parceiros e investidores que potencializam nosso impacto</p>
             </li>
           </ul>
         </aside>
@@ -136,6 +135,15 @@ export default function Home() {
             <h4 className='font-bold text-lg'>Gabriela Souza</h4>
             <span>Designer e Scrum</span>
             <Link href={"https://www.linkedin.com/in/gabrielaasouza/"} target='_blank' >
+              <LinkedinLogo size={32} weight='fill' />
+            </Link>
+          </picture>
+          <picture className='relative flex flex-col gap-3 items-center text-white'>
+            <Image alt='Foto da UI, UX Designer da DPFL' src={"/assents/youngers/LaraArruda.svg"} width={165} height={165} className='rounded-full py-3 lg:hidden' />
+            <Image alt='Foto da UI, UX Designer da DPFL' src={"/assents/youngers/LaraArruda.svg"} width={200} height={200} className='rounded-full py-3 hidden lg:block' />
+            <h4 className='font-bold text-lg'>Lara Arruda</h4>
+            <span>Analista de operações</span>
+            <Link href={"https://www.linkedin.com/in/laraa-arruda/"} target='_blank' >
               <LinkedinLogo size={32} weight='fill' />
             </Link>
           </picture>

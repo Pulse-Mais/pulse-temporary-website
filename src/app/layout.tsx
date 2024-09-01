@@ -7,8 +7,8 @@ import { Footer } from '@/components/UI/Footer'
 const PoppinsFont = Poppins({ weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Pulse Mais',
-  description: 'Potencializando a jornada de jovens brasileiros através da educação, tecnologia e empregabilidade.',
+  title: 'Seja a mudança que a sua carreira precisa!',
+  description: 'Impulsione sua qualificação profissional para tecnologia com a Pulse Mais e tenha acesso a mentorias, oportunidades de vagas e bolsas de estudos gratuitas para a universidade!',
 }
 
 export default function RootLayout({

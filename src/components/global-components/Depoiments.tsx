@@ -17,22 +17,22 @@ export const Depoiments = () => {
         {
             name: "Camila",
             image: "/assents/youngers/camila.svg",
-            text: "Eu sempre quis muito estudar e ter uma carreira, e esses sonhos foram ficando pra trás porque eu tive filhos muito cedo. Não sabia por onde começar, não sabia nem criar um Linkedin, me inscrevi no DPFL e consegui mentoria com a mentora mais fantástica que existe, iniciei cursos, organizei minha vida financeira e comecei a fazer brigadeiros como renda extra. Como o Thiago fala levam 9 gerações para mudar o padrão de uma família. E a gente vai quebrar essa regra.",
+            text: "Eu sempre quis muito estudar e ter uma carreira, e esses sonhos foram ficando pra trás porque eu tive filhos muito cedo.. Não sabia por onde começar, não sabia nem criar um Linkedin, me inscrevi no projeto, tive a mentora mais fantástica que existe e fiz os cursos. Conseguir organizar minha vida financeira, comecei a fazer brigadeiros como renda extra, comecei a investir o meu tempo para estudar e eu estou aqui para agradecer por essa oportunidade que eu tenho certeza de que vai mudar a vida de muitos jovens no Brasil, assim como mudou a minha…",
         },
         {
             name: "Débora",
             image: "/assents/youngers/debora.svg",
-            text: "Graças às orientações do meu mentor e ao DPFL consegui emprego na Cataventos - Distribuidoras de Livros. Tudo o que eu falei na entrevista, as pesquisas que fiz da empresa, como que comportei foi graças ao meu mentor, e só tive acesso porque a DPFL deu esse acesso pra mim. Eu só tenho a agradecer, porque Graças a Deus eu tive acesso a esses anjos.",
+            text: "Graças às orientações do meu mentor consegui emprego na minha área, consegui emprego na cataventos - distribuidoras de livros… tudo o que eu falei na entrevista, as pesquisas que fiz na empresa,  como que comportei .. fois graças ao meu mentor, e só  tive acesso porque a DPFL deu esse acesso pra mim. Eu só tenho a agradecer, porque Graças a Deus eu tive acesso a esses anjos.. Então tenho muito a agradecer, é um projeto sincero, verdadeiro e de muito comprometimento, eu sou a prova viva…",
         },
         {
             name: "Francis",
             image: "/assents/youngers/francis.svg",
-            text: "Nada disso seria possível sem a mentoria que eu tive e faço parte, só tenho a agradecer a todo mundo que colaborou. Só tenho a agradecer o DPFL porque se não fosse por ele, com certeza não teria a oportunidade de estar aqui, assistir uma palestra do Google e fazer parte do time da Sauter Brasil, empresa em que fui contratado.",
+            text: "Sem a formação e mentoria na Pulse Mais com certeza não teria a oportunidade de estar onde estou hoje, fazendo parte do time da Sauter, uma empresa do ecossistema de parceiros do Google. Só tenho a agradecer ao projeto por me ajudar a atingir meu potencial.",
         },
         {
             name: "Rennan",
             image: "/assents/youngers/rennan.svg",
-            text: "O DPFL está sendo uma benção como sempre foi na minha vida, recebi o retorno da faculdade que o DPFL me conectou e a melhor notícia foi ter 100% de bolsa, portanto não vou pagar nada. Estou muito feliz, só quem sabe da realidade de quem vive na periferia sabe que as condições não são as melhores. Desde já agradeço o Projeto Da Periferia para Faria Lima, no qual foi e está sendo uma ponte para o meu futuro ser melhor.",
+            text: "A Pulse Mais tem sido ótima para a minha vida, sendo que recebi uma bolsa 100% gratuita para graduação na faculdade parceira. Estou muito feliz, só quem sabe da realidade de quem vive na periferia sabe que as condições não são as melhores. Desde já agradeço a organização, no qual foi e está sendo uma ponte para o meu futuro ser bem sucedido!",
         },
 
     ]

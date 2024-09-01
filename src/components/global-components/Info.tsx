@@ -1,8 +1,9 @@
 import { IconProps } from "@phosphor-icons/react";
+import React, { ReactNode } from 'react';
 
 interface InfoProps {
 icon?: React.FC<IconProps>;
-text: string
+text: ReactNode
 size?: string
 textSize?: string
 color?: string
@@ -23,3 +24,4 @@ export const Info = ({icon: Icon, text, size = "42", textSize, color = "text-whi
     )
 }
  
+
