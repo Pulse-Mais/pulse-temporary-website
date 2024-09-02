@@ -10,7 +10,7 @@ import Script from 'next/script'
 const PoppinsFont = Poppins({ weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Seja a mudança que a sua carreira precisa!',
+  title: 'Pulse Mais',
   description: 'Impulsione sua qualificação profissional para tecnologia com a Pulse Mais e tenha acesso a mentorias, oportunidades de vagas e bolsas de estudos gratuitas para a universidade!',
 }
 
