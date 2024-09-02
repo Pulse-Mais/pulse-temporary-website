@@ -9,11 +9,25 @@ interface ProfileIconProps extends IconProps {
 
 export const ProfileIcon = ({ icon: Icon, color, children }: ProfileIconProps) => {
 
+    let colorClass;
 
+    switch (color) {
+    case 'yellow':
+        colorClass = 'border-yellow-600';
+        break;
+    case 'blue':
+        colorClass = 'border-blue-600';
+        break;
+    case 'green':
+        colorClass = 'border-green-600';
+        break;
+    default:
+        colorClass = 'border-gray-600'; // Default color if none of the above match
+    }
     return (
         <>
             <div className='flex flex-col text-center gap-10 items-center'>
-                <figure className={`bg-white-custom bg-whitecape bg-cover rounded-full w-52 h-52 flex items-center justify-center border border-${color}-600`}>
+                <figure className={`bg-white-custom bg-whitecape bg-cover rounded-full w-52 h-52 flex items-center justify-center border-4 ${colorClass}`}>
                     {Icon && <Icon className="text-white self-center" size={150} />}
                     {children}
                 </figure>

@@ -6,7 +6,8 @@ export default function Home() {
   return (
 
     <>
-      <main className='md:m-auto lg:pb-24 md:pt-40 pt-20 bg-[#FEFEFE] flex flex-col sl:items-center md:max-w-2xl min-[992px]:max-w-[940px] lg:flex-row lg:justify-between xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
+      {/* Seja a mudança que a sua carreira precisa */}
+      <main className='md:m-auto lg:pb-32 md:pt-20 pt-20 bg-[#FEFEFE] flex flex-col sl:items-center md:max-w-2xl min-[992px]:max-w-[940px] lg:flex-row lg:justify-between xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
         <aside className='px-4 flex flex-col sl:items-center max-w-3xl'>
           <div className="flex flex-col">
             <h1 className='text-black-custom font-extrabold text-4xl md:text-[2.75rem] lg:text-6xl'>Seja a mudança que a sua carreira precisa!</h1>
@@ -23,6 +24,29 @@ export default function Home() {
         </picture >
       </main>
 
+      {/* Inscrições Abertas */}
+      <section
+        className='lg:pb-32 md:pt-20 pt-20 bg-cover bg-center bg-no-repeat py-20 text-center text-white    
+        '
+        style={{ backgroundImage: "url('/assents/backgrounds/fundo-inscricao-abertas.svg')" }}
+      >
+        <aside className='md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-6xl m-auto'>
+        <h2 className='font-bold text-3xl lg:text-5xl mb-4'>Inscrições abertas!</h2>
+        <p className='text-2xl'>Não perca essa oportunidade e inscreva-se para o Programa Pulse Mais - Turmas 1º semestre de 2025. Venha impulsionar o seu futuro conosco.</p>
+        <div className='py-1 sl:w-full flex justify-center'>
+          <Link href={"#cards"} className='inline-block'>
+            <Button title='Clique aqui e se inscreva' color='yellow' Custom='text-[24px]' />
+          </Link>
+        </div>
+
+        
+        {/* <Link href="#" className='bg-yellow-500 text-white px-6 py-3 rounded-md font-bold text-lg hover:bg-yellow-600'>
+          Clique aqui e se inscreva
+        </Link> */}
+        </aside>
+      </section>
+
+      {/* nosso proprósito  */}
       <section id='comofunciona' className='relative flex justify-center bg-[#27C86F] bg-wavegreen bg-contain bg-bottom bg-no-repeat'>
         <aside className='pt-10 w-full flex md:max-w-2xl min-[992px]:max-w-[940px] min-[1200px]:flex-row-reverse lg:justify-between xg:max-w-[1050px] min-[1200px]:gap-12 min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
           <div className='text-white px-4'>
@@ -42,6 +66,7 @@ export default function Home() {
         </aside>
       </section>
 
+      {/* Resultados até 2023 */}
       <section className='lg:pt-28 py-16 md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto'>
         <aside className='flex flex-col gap-32 m-auto'>
           <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Resultados até 2023</h2>
