@@ -24,9 +24,6 @@ jobs:
     - name: Build Next.js app
       run: npm run build
 
-    - name: Export static files
-      run: npm run export # This will generate the static files in the out/ directory
-
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
