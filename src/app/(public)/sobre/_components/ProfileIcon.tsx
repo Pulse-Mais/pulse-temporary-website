@@ -13,21 +13,22 @@ export const ProfileIcon = ({ icon: Icon, color, children }: ProfileIconProps) =
 
     switch (color) {
     case 'yellow':
-        colorClass = 'border-yellow-600';
+        colorClass = '#ffd31b';
         break;
     case 'blue':
-        colorClass = 'border-blue-600';
+        colorClass = '#1c3b6e';
         break;
     case 'green':
-        colorClass = 'border-green-600';
+        colorClass = '#25b957';
         break;
     default:
-        colorClass = 'border-gray-600'; // Default color if none of the above match
+        colorClass = '#ffd31b'; // Default color if none of the above match
     }
     return (
         <>
             <div className='flex flex-col text-center gap-10 items-center'>
-                <figure className={`bg-white-custom bg-whitecape bg-cover rounded-full w-52 h-52 flex items-center justify-center border-4 ${colorClass}`}>
+                {/* <figure className={`bg-white-custom bg-whitecape bg-cover rounded-full w-52 h-52 flex items-center justify-center border-4 ${colorClass}`}> */}
+                <figure className={`bg-white-custom bg-whitecape bg-cover rounded-full w-52 h-52 flex items-center justify-center border-4`} style={{ borderColor: colorClass }}>
                     {Icon && <Icon className="text-white self-center" size={150} />}
                     {children}
                 </figure>

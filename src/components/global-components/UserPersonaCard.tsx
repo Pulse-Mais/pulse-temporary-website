@@ -49,7 +49,7 @@ export const UserPersonaCard = ({ Theme, Title, Text }: UserPersonaCardProps) =>
                         <UserCircle size={90} weight="fill" className="absolute z-20 " />
                         <div className={`relative w-[4rem] h-[4rem] rounded-full bg-white z-10 flex shadow-moldure`}></div>
                     </figure>
-                    <h3 className={`${Theme == "yellow" ? "text-yellow-custom" : Theme == "green" ? "text-green-custom" : Theme == "blue" ? "text-blue-custom" : "text-strongblue-custom"} font-semibold text-lg`}>{Title}</h3>
+                    <h3 className={`${Theme == "yellow" ? "text-yellow-custom" : Theme == "green" ? "text-green-custom" : Theme == "blue" ? "text-blue-custom" : "text-strongblue-custom"} font-semibold text-lg text-center`}>{Title}</h3>
                 </aside>
                 <p className="text-black-custom m-auto px-3 py-5 sl:py-10 text-base md:text-lg">
                     {Text}
@@ -62,7 +62,7 @@ export const UserPersonaCard = ({ Theme, Title, Text }: UserPersonaCardProps) =>
                         <UserCircle size={150} weight="fill" className="absolute z-20 " />
                         <div className={`relative w-[7rem] h-[7rem] rounded-full bg-white z-10 flex shadow-moldure`}></div>
                     </figure>
-                    <h2 className={`${Theme == "yellow" ? "text-yellow-custom" : Theme == "green" ? "text-green-custom" : Theme == "blue" ? "text-blue-custom" : "text-strongblue-custom"} font-semibold text-lg lg:text-2xl`}>{Title}</h2>
+                    <h2 className={`${Theme == "yellow" ? "text-yellow-custom" : Theme == "green" ? "text-green-custom" : Theme == "blue" ? "text-blue-custom" : "text-strongblue-custom"} font-semibold text-lg lg:text-2xl text-center`}>{Title}</h2>
                 </aside>
                 <p className="text-black-custom m-auto px-3 py-5 sl:py-10 text-base md:text-lg lg:text-center">
                     {Text} 

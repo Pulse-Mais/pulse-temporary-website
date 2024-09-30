@@ -11,13 +11,20 @@ export default function Home() {
         <aside className='px-4 flex flex-col sl:items-center max-w-3xl'>
           <div className="flex flex-col">
             <h1 className='text-black-custom font-extrabold text-4xl md:text-[2.75rem] lg:text-6xl'>Seja a mudança que a sua carreira precisa!</h1>
-            <p className='py-6 text-lg md:text-xl lg:text-3xl text-black-custom text-justify'>Impulsione sua qualificação profissional para tecnologia com a Pulse Mais e tenha acesso a mentorias, oportunidades de vagas e bolsas de estudos gratuitas para a universidade!</p>
+            <p className='py-6 text-lg md:text-xl lg:text-2xl text-black-custom text-justify'>
+              Impulsione sua capacitação profissional para carreiras em empresas tecnologia com a Pulse Mais e tenha acesso a cursos, mentorias, oportunidades de emprego e bolsa de estudos para a universidade!
+            </p>
           </div>
-          <div className='lg:self-start py-1 sl:w-full lg:max-w-[520px]'>
-            <Link href={"#cards"} className='w-full'>
-              <Button title='Inscreva-se no Programa Pulse Mais - Turmas 2025' color='blue' Custom='text-[24px]' />
-            </Link>
-          </div>
+          <div className='lg:self-start py-1 sl:w-full lg:max-w-[600px]'>
+              <a
+              href="https://preinscricao.pulsemais.org.br/2025"
+              className='inline-block'
+              target="_blank"  // Opens the link in a new tab
+              rel="noopener noreferrer"  // Security best practice
+            >
+              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-lg md:text-xl lg:text-2xl whitespace-pre-wrap' />
+            </a>
+          </div>›
         </aside>
         <picture className='max-w-[450px] max-sm:m-auto max-lg:py-10'>
           <Image src="/assents/images/artblue.svg" alt="DPFL Summit" width={672} height={449} quality={100} className='py-1 px-3' priority />
@@ -34,9 +41,14 @@ export default function Home() {
         <h2 className='font-bold text-3xl lg:text-5xl mb-4'>Inscrições abertas!</h2>
         <p className='text-2xl'>Não perca essa oportunidade e inscreva-se para o Programa Pulse Mais - Turmas 1º semestre de 2025. Venha impulsionar o seu futuro conosco.</p>
         <div className='py-1 sl:w-full flex justify-center'>
-          <Link href={"#cards"} className='inline-block'>
-            <Button title='Clique aqui e se inscreva' color='yellow' Custom='text-[24px]' />
-          </Link>
+        <a
+          href="https://preinscricao.pulsemais.org.br/2025"
+          className='inline-block'
+          target="_blank"  // Opens the link in a new tab
+          rel="noopener noreferrer"  // Security best practice
+        >
+          <Button title='Clique aqui e se inscreva' color='yellow' Custom='text-[24px]' />
+        </a>
         </div>
 
         
@@ -67,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* Resultados até 2023 */}
-      <section className='lg:pt-28 py-16 md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto'>
+      <section className='lg:pt-12 md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl m-auto'>
         <aside className='flex flex-col gap-32 m-auto'>
           <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Resultados até 2023</h2>
           {/* <h2 className='text-black-custom font-semibold text-3xl px-3 st:m-auto lg:m-0 lg:text-5xl sl:text-center'>Trabalhamos para alcançar <br className='max-[624px]:hidden st:hidden lg:block' /> resultados <br className='max-[375px]:hidden min-[455px]:hidden' /> de alto impacto</h2> */}
@@ -76,35 +88,34 @@ export default function Home() {
               <ProfileIcon color='yellow'>
                 <p className='px-2 text-2xl font-semibold max-w-sm text-black '>350 jovens impactados com formação e mentoria</p>
               </ProfileIcon>
-              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>50% de empregabilidade após o Programa Pulse Mais</p>
+              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>50% de empregabilidade após o Programa Pulse Mais.</p>
             </li>
             <li>
               <ProfileIcon color='blue'>
                 <p className='px-2 text-2xl font-semibold max-w-sm text-black '>+3600
                   horas de mentorias </p>
               </ProfileIcon>
-              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Rede com mais de 250 mentores cadastrados, mais de 100 finalizadas</p>
+              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Rede com mais de 250 mentores cadastrados, mais de 100 finalizadas.</p>
             </li>
             <li>
               <ProfileIcon color='green'>
                 <p className='px-2 text-3xl font-semibold max-w-sm text-black '>+10 empresas parceiras</p>
               </ProfileIcon>
-              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Parceiros e investidores que potencializam nosso impacto</p>
+              <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Parceiros e investidores que potencializam nosso impacto.</p>
             </li>
           </ul>
         </aside>
       </section>
 
+      {/* Venha para a Pulse Mais com a gente */}
       <section id='cards' className='lg:py-20 pb-10 sl:m-auto md:max-w-2xl  min-[992px]:max-w-[940px] xg:max-w-[1050px] lg:flex-row min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
         <section className='px-3 flex flex-col gap-10 justify-center'>
-          <h2 className='font-semibold text-3xl lg:text-5xl text-black-custom lg:pb-10 text-center'>Escolha seu perfil</h2>
+          <h2 className='font-semibold text-3xl lg:text-5xl text-black-custom lg:pb-10 text-center'>Venha para a Pulse Mais com a gente</h2>
           <aside className='flex flex-col max-md:items-center gap-10 st:flex-row st:gap-8 lg:w-full lg:justify-evenly'>
-            <UserPersonaCard Theme='yellow' Title='Aluno(a)' Text='Aprenda com pessoas incríveis, evolua suas habilidades e torne-se protagonista da sua trajetória. Venha crescer conosco!' />
-            <UserPersonaCard Theme='green' Title='Mentor(a)' Text='Contribua com seu conhecimento e sua trajetória para o direcionamento e inspiração para os jovens. Seja parte da transformação.' />
-          </aside>
-          <aside className='flex flex-col max-md:items-center gap-10 st:flex-row st:gap-8 lg:w-full lg:justify-evenly'>
-            <UserPersonaCard Theme='blue' Title='Empresa Parceira' Text='Acesse nossa plataforma e torne-se um parceiro para a contratação dos jovens altamente qualificados. Possibilite novos futuros!' />
-            <UserPersonaCard Title='Doador(a)' Text='Contribua financeiramente para nossa missão através de doações pontuais e recorrentes. Venha fazer parte da nossa rede!' />
+            {/* <UserPersonaCard Theme='yellow' Title='Aluno(a)' Text='Aprenda com pessoas incríveis, evolua suas habilidades e torne-se protagonista da sua trajetória. Venha crescer conosco!' /> */}
+            <UserPersonaCard Theme='green' Title='Mentor(a)' Text='Junte-se à Rede de Mentores(as) da Pulse Mais e faça a diferença! Compartilhe seu conhecimento e experiência, conecte-se a nosso propósito e desenvolva seu potencial de liderança ao impactar as novas gerações. Seja protagonista dessa transformação!' />
+            <UserPersonaCard Theme='blue' Title='Empresa Parceira de Empregabilidade' Text='Converse com a nossa equipe e seja um parceiro na contratação de jovens talentos da Pulse Mais. Reduza o turnover e aumente o engajamento e performance em posições de entrada.' />
+            <UserPersonaCard Title='Doador(a)' Text='Potencialize para nossa atuação causa com doações pontuais ou recorrentes, como pessoa física ou empresa. Integre nossa rede, faça a diferença e desfrute de benefícios exclusivos!' />
           </aside>
         </section>
       </section >
