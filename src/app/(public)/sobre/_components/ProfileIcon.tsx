@@ -16,7 +16,7 @@ export const ProfileIcon = ({ icon: Icon, color, children }: ProfileIconProps) =
         colorClass = '#ffd31b';
         break;
     case 'blue':
-        colorClass = '#1c3b6e';
+        colorClass = '#14a9ff';
         break;
     case 'green':
         colorClass = '#25b957';

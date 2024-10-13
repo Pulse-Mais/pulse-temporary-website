@@ -10,6 +10,7 @@ import {
   GraduationCap, BagSimple, MapPin
 } from "./_components/index";
 
+import {UserPersonaCard} from "@/app/_local-components/index"
 
 
 export default function Apoie() {
@@ -56,6 +57,21 @@ export default function Apoie() {
         <h2 className='text-center font-semibold text-3xl lg:text-5xl text-black-custom w-full pt-10 px-3'>Depoimentos de jovens transformados</h2>
         <DepoimentCarrousel CA1 />
       </section>
+
+
+
+      {/* Venha para a Pulse Mais com a gente */}
+      <section id='cards' className='lg:py-20 pb-10 sl:m-auto md:max-w-2xl  min-[992px]:max-w-[940px] xg:max-w-[1050px] lg:flex-row min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
+        <section className='px-3 flex flex-col gap-10 justify-center'>
+          <h2 className='font-semibold text-3xl lg:text-5xl text-black-custom lg:pb-10 text-center'>Venha para a Pulse Mais com a gente</h2>
+          <aside className='flex flex-col max-md:items-center gap-10 st:flex-row st:gap-8 lg:w-full lg:justify-evenly'>
+            {/* <UserPersonaCard Theme='yellow' Title='Aluno(a)' Text='Aprenda com pessoas incríveis, evolua suas habilidades e torne-se protagonista da sua trajetória. Venha crescer conosco!' /> */}
+            <UserPersonaCard Theme='green' Title='Mentor(a)' Text='Junte-se à Rede de Mentores(as) da Pulse Mais e faça a diferença! Compartilhe seu conhecimento e experiência, conecte-se a nosso propósito e desenvolva seu potencial de liderança ao impactar as novas gerações. Seja protagonista dessa transformação!' />
+            <UserPersonaCard Theme='blue' Title='Empresa Parceira de Empregabilidade' Text='Converse com a nossa equipe e seja um parceiro na contratação de jovens talentos da Pulse Mais. Reduza o turnover e aumente o engajamento e performance em posições de entrada.' />
+            <UserPersonaCard Title='Doador(a)' Text='Potencialize para nossa atuação causa com doações pontuais ou recorrentes, como pessoa física ou empresa. Integre nossa rede, faça a diferença e desfrute de benefícios exclusivos!' />
+          </aside>
+        </section>
+      </section >
 
       <section>
         <section id='apoie' className="bg-[#27C86F] bg-bigwavegreen bg-cover bg-right w-full scroll-mt-20">

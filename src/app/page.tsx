@@ -1,5 +1,4 @@
-
-import {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info} from "@/app/_local-components/index"
+import {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, DepoimentCarrousel, InfiniteSlider, Info} from "@/app/_local-components/index"
 
 export default function Home() {
 
@@ -10,8 +9,8 @@ export default function Home() {
       <main className='md:m-auto lg:pb-32 md:pt-20 pt-20 bg-[#FEFEFE] flex flex-col sl:items-center md:max-w-2xl min-[992px]:max-w-[940px] lg:flex-row lg:justify-between xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
         <aside className='px-4 flex flex-col sl:items-center max-w-3xl'>
           <div className="flex flex-col">
-            <h1 className='text-black-custom font-extrabold text-4xl md:text-[2.75rem] lg:text-6xl'>Seja a mudança que a sua carreira precisa!</h1>
-            <p className='py-6 text-lg md:text-xl lg:text-2xl text-black-custom text-justify'>
+            <h1 className='text-black-custom font-extrabold text-2xl sm:text-3xl md:text-[1.75rem] lg:text-6xl'>Seja a mudança que a sua carreira precisa!</h1>
+            <p className='py-6 text-base sm:text-lg md:text-xl lg:text-2xl text-black-custom text-justify'>
               Impulsione sua capacitação profissional para carreiras em empresas tecnologia com a Pulse Mais e tenha acesso a cursos, mentorias, oportunidades de emprego e bolsa de estudos para a universidade!
             </p>
           </div>
@@ -21,10 +20,10 @@ export default function Home() {
               className='inline-block'
               target="_blank"  // Opens the link in a new tab
               rel="noopener noreferrer"  // Security best practice
-            >
-              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-lg md:text-xl lg:text-2xl whitespace-pre-wrap' />
+              >
+              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-[15px] sm:text-lg md:text-xl lg:text-2xl whitespace-pre-wrap' />
             </a>
-          </div>›
+          </div>
         </aside>
         <picture className='max-w-[450px] max-sm:m-auto max-lg:py-10'>
           <Image src="/assents/images/artblue.svg" alt="DPFL Summit" width={672} height={449} quality={100} className='py-1 px-3' priority />
@@ -106,19 +105,6 @@ export default function Home() {
           </ul>
         </aside>
       </section>
-
-      {/* Venha para a Pulse Mais com a gente */}
-      <section id='cards' className='lg:py-20 pb-10 sl:m-auto md:max-w-2xl  min-[992px]:max-w-[940px] xg:max-w-[1050px] lg:flex-row min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
-        <section className='px-3 flex flex-col gap-10 justify-center'>
-          <h2 className='font-semibold text-3xl lg:text-5xl text-black-custom lg:pb-10 text-center'>Venha para a Pulse Mais com a gente</h2>
-          <aside className='flex flex-col max-md:items-center gap-10 st:flex-row st:gap-8 lg:w-full lg:justify-evenly'>
-            {/* <UserPersonaCard Theme='yellow' Title='Aluno(a)' Text='Aprenda com pessoas incríveis, evolua suas habilidades e torne-se protagonista da sua trajetória. Venha crescer conosco!' /> */}
-            <UserPersonaCard Theme='green' Title='Mentor(a)' Text='Junte-se à Rede de Mentores(as) da Pulse Mais e faça a diferença! Compartilhe seu conhecimento e experiência, conecte-se a nosso propósito e desenvolva seu potencial de liderança ao impactar as novas gerações. Seja protagonista dessa transformação!' />
-            <UserPersonaCard Theme='blue' Title='Empresa Parceira de Empregabilidade' Text='Converse com a nossa equipe e seja um parceiro na contratação de jovens talentos da Pulse Mais. Reduza o turnover e aumente o engajamento e performance em posições de entrada.' />
-            <UserPersonaCard Title='Doador(a)' Text='Potencialize para nossa atuação causa com doações pontuais ou recorrentes, como pessoa física ou empresa. Integre nossa rede, faça a diferença e desfrute de benefícios exclusivos!' />
-          </aside>
-        </section>
-      </section >
 
       <section className='bg-[#009EE6] bg-smallwaveblue bg-contain lg:bg-cover bg-center lg:bg-bottom bg-no-repeat w-full max-xg:pb-10'>
         <aside className='xg:py-20 xg:flex xg:flex-row xg:items-center sl:m-auto sl:max-w-md md:max-w-2xl min-[992px]:max-w-[940px] xg:max-w-[1050px] lg:flex-row min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
