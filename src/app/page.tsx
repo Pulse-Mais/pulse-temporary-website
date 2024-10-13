@@ -21,7 +21,7 @@ export default function Home() {
               target="_blank"  // Opens the link in a new tab
               rel="noopener noreferrer"  // Security best practice
               >
-              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-[15px] sm:text-lg md:text-xl lg:text-2xl whitespace-pre-wrap' />
+              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-[14px] sm:text-lg md:text-xl lg:text-2xl whitespace-pre-wrap' />
             </a>
           </div>
         </aside>
