@@ -3,7 +3,6 @@ import { Questions } from '@/components/global-components/Questions';
 import { Button } from '@/components/UI/Button';
 import Image from 'next/image';
 
-
 export default function Contato() {
     return (
         <>
@@ -11,11 +10,11 @@ export default function Contato() {
                 <aside className='px-4 flex flex-col sl:items-center max-w-3xl'>
                     <div className="flex flex-col">
                         <h1 className='font-extrabold text-3xl md:text-[2.75rem] lg:text-6xl text-black-custom'>Contato</h1>
-                        <p className='text-lg py-6 max-w-[34.375rem] lg:text-2xl'>Dúvidas, sugestões ou elogios? Estamos à sua disposição, basta nos mandar uma mensagem</p>
+                        <p className='text-lg py-6 max-w-[34.375rem] lg:text-2xl text-black-custom'>Dúvidas, sugestões ou elogios? Estamos à sua disposição, basta nos mandar uma mensagem</p>
                     </div>
                     <div className='lg:self-start py-1 sl:w-full lg:max-w-[280px]'>
-                        <Link href={"#contato"} className='w-full'>
-                            <Button title='Entrar em contato' color='blue' Custom='text-[24px]' />
+                        <Link href={"#duvidasfrequentes"} className='w-full'>
+                            <Button title='Dúvidas Frequentes' color='blue' Custom='text-[24px]' />
                         </Link>
                     </div>
                 </aside>
@@ -29,36 +28,34 @@ export default function Contato() {
                     <Image src="/assents/images/metro.svg" alt="DPFL Summit" width={672} height={449} quality={100} className='py-1 px-3' />
                 </picture>
                 <aside className='px-4 flex flex-col sl:items-center w-full max-w-2xl'>
-                    <h2 className='text-3xl font-semibold py-8'>Nos mande uma mensagem</h2>
+                    <h2 className='text-3xl font-semibold py-8 text-black-custom'>Nos mande uma mensagem</h2>
                     <form className='flex flex-col gap-5 w-full' action="https://formsubmit.co/contato@app.pulsemais.org.br" method="POST">
                         <div className='flex flex-col'>
-                            <label htmlFor='nome'>Nome completo</label>
-                            <input type='text' placeholder='Digite seu nome completo' name='nome' id='nome' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg ' />
+                            <label htmlFor='nome' className='text-black-custom'>Nome completo</label>
+                            <input type='text' placeholder='Digite seu nome completo' name='nome' id='nome' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg text-black-custom' />
                         </div>
                         <div className='flex flex-col'>
-                            <label htmlFor='email'>E-mail</label>
-                            <input type='text' placeholder='Por exemplo: email@email.com' name='e-mail' id='email' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg' />
+                            <label htmlFor='email' className='text-black-custom'>E-mail</label>
+                            <input type='text' placeholder='Por exemplo: email@email.com' name='e-mail' id='email' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg text-black-custom' />
                         </div>
                         <div className='flex flex-col'>
-                            <label htmlFor='about'>Assunto da mensagem</label>
-                            <input type='text' placeholder='Sobre o que se trata a mesagem' name='about' id='about' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg' />
+                            <label htmlFor='about' className='text-black-custom'>Assunto da mensagem</label>
+                            <input type='text' placeholder='Sobre o que se trata a mesagem' name='about' id='about' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full rounded-lg text-black-custom' />
                         </div>
                         <div className='flex flex-col'>
-                            <label htmlFor='text'>Mensagem</label>
-                            <textarea title='teste' id='mensagem' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full overflow-y rounded-lg' />
+                            <label htmlFor='text' className='text-black-custom'>Mensagem</label>
+                            <textarea title='teste' id='mensagem' className='border-[1px] border-[#D1D5DB] px-3 py-4 w-full overflow-y rounded-lg text-black-custom' />
                         </div>
                         <input type="hidden" name="_captcha" value="false"></input>
                         <Button title='Enviar mensagem' color='blue' />
                     </form>
                 </aside>
             </section>
-
-            <section className='max-lg:px-3 flex flex-col container m-auto'>
+            
+            {/* dúvidas frequentes */}
+            <section id='duvidasfrequentes' className='max-lg:px-3 flex flex-col container m-auto'>
                 <Questions />
             </section>
-
-
         </>
-
     )
 }
