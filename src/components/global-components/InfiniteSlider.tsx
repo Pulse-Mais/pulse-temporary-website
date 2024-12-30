@@ -12,14 +12,6 @@ export const InfiniteSlider = () => {
 
     const images = [
         {
-            image: "/assents/logos/crossfox.svg",
-            alt: "logo da Crossfox",
-        },
-        {
-            image: "/assents/logos/recode.svg",
-            alt: "Logo da Recode",
-        },
-        {
             image: "/assents/logos/voitto.svg",
             alt: "Logo da Voitto",
         },
@@ -28,20 +20,57 @@ export const InfiniteSlider = () => {
             alt: "logo da Horizon",
         },
         {
-            image: "/assents/logos/soulcode.svg",
-            alt: "logo da SoulCode",
-        },
-        {
-            image: "/assents/logos/toro.svg",
-            alt: "logo da Rafael Toro",
-        },
-        {
-            image: "/assents/logos/livesports.svg",
-            alt: "logo do Live Sports",
-        },
-        {
             image: "/assents/logos/italo.svg",
             alt: "logo da Itálo Brasileiro",
+        },
+
+
+
+
+
+        {
+            image: "/assents/logos/dreamidea.svg",
+            alt: "logo da Dreamidea",
+        },
+        {
+            image: "/assents/logos/matzaacademy.svg",
+            alt: "logo da Matza Academy",
+        },
+        {
+            image: "/assents/logos/institutomarte.svg",
+            alt: "logo do Instituto Marte",
+        },
+        {
+            image: "/assents/logos/reclameaqui.svg",
+            alt: "logo do Reclame Aqui",
+        },
+        {
+            image: "/assents/logos/mvpbuilders.svg",
+            alt: "logo da MVP Builders",
+        },
+        {
+            image: "/assents/logos/jallaspremium.svg",
+            alt: "logo da Jallas Premium",
+        },
+        {
+            image: "/assents/logos/institutoestreladoamanha.svg",
+            alt: "logo do Instituto Estrela do Amanhã",
+        },
+        {
+            image: "/assents/logos/pub.svg",
+            alt: "logo da PUB",
+        },
+        {
+            image: "/assents/logos/fellipelli.svg",
+            alt: "logo da Fellipelli",
+        },
+        {
+            image: "/assents/logos/sala37.svg",
+            alt: "logo da Sala 37",
+        },
+        {
+            image: "/assents/logos/ecossistemacleveltics.svg",
+            alt: "logo do Ecossistema C Level Tics",
         }
 
     ]
@@ -66,7 +95,7 @@ export const InfiniteSlider = () => {
                     delay: 0,
                     pauseOnMouseEnter: true,
                     disableOnInteraction: false,
-                    reverseDirection: true,
+                    reverseDirection: false,
                 }}
 
                 speed={1400}

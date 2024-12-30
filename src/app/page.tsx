@@ -1,9 +1,7 @@
 import {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, DepoimentCarrousel, InfiniteSlider, Info} from "@/app/_local-components/index"
 
 export default function Home() {
-
   return (
-
     <>
       {/* Seja a mudança que a sua carreira precisa */}
       <main className='md:m-auto lg:pb-32 md:pt-20 pt-20 bg-[#FEFEFE] flex flex-col sl:items-center md:max-w-2xl min-[992px]:max-w-[940px] lg:flex-row lg:justify-between xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl'>
@@ -11,7 +9,7 @@ export default function Home() {
           <div className="flex flex-col">
             <h1 className='text-black-custom font-extrabold text-2xl sm:text-3xl md:text-[1.75rem] lg:text-6xl'>Seja a mudança que a sua carreira precisa!</h1>
             <p className='py-6 text-base sm:text-lg md:text-xl lg:text-2xl text-black-custom text-justify'>
-              Impulsione sua capacitação profissional para carreiras em empresas tecnologia com a Pulse Mais e tenha acesso a cursos, mentorias, oportunidades de emprego e bolsa de estudos para a universidade!
+              Impulsione sua carreira em tecnologia com a Pulse Mais: cursos, mentorias, oportunidades de emprego e bolsas universitárias!
             </p>
           </div>
           <div className='lg:self-start py-1 sl:w-full lg:max-w-[600px]'>
@@ -21,7 +19,7 @@ export default function Home() {
               target="_blank"  // Opens the link in a new tab
               rel="noopener noreferrer"  // Security best practice
               >
-              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-[14px] sm:text-lg md:text-xl lg:text-2xl whitespace-pre-wrap' />
+              <Button title={'Inscreva-se no Programa Pulse Mais\nTurmas 1º sem. 2025'} color='blue' Custom='text-[15px] sm:text-lg md:text-xl lg:text-2xl whitespace-pre-wrap rounded-full' />
             </a>
           </div>
         </aside>
@@ -42,11 +40,18 @@ export default function Home() {
         <div className='py-1 sl:w-full flex justify-center'>
         <a
           href="https://preinscricao.pulsemais.org.br/2025"
-          className='inline-block'
+          className='inline-block mr-4'
           target="_blank"  // Opens the link in a new tab
           rel="noopener noreferrer"  // Security best practice
         >
           <Button title='Clique aqui e se inscreva' color='yellow' Custom='text-[24px]' />
+        </a>
+        
+        <a
+          href="contato/#duvidasfrequentes"
+          className='inline-block'
+        >
+          <Button title='Dúvidas Frequentes' color='green' Custom='text-[24px]' />
         </a>
         </div>
 
@@ -85,20 +90,20 @@ export default function Home() {
           <ul className='flex flex-col items-center md:flex-row md:flex-wrap md:justify-evenly' >
             <li className=''>
               <ProfileIcon color='yellow'>
-                <p className='px-2 text-2xl font-semibold max-w-sm text-black '>350 jovens impactados com formação e mentoria</p>
+                <p className='px-2 text-2xl font-semibold max-w-sm text-white '>350 jovens impactados com formação e mentoria</p>
               </ProfileIcon>
               <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>50% de empregabilidade após o Programa Pulse Mais.</p>
             </li>
             <li>
               <ProfileIcon color='blue'>
-                <p className='px-2 text-2xl font-semibold max-w-sm text-black '>+3600
+                <p className='px-2 text-2xl font-semibold max-w-sm text-white '>+3600
                   horas de mentorias </p>
               </ProfileIcon>
               <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Rede com mais de 250 mentores cadastrados, mais de 100 finalizadas.</p>
             </li>
             <li>
               <ProfileIcon color='green'>
-                <p className='px-2 text-3xl font-semibold max-w-sm text-black '>+10 empresas parceiras</p>
+                <p className='px-2 text-3xl font-semibold max-w-sm text-white '>+10 empresas parceiras</p>
               </ProfileIcon>
               <p className='px-2 py-11 text-center text-lg max-w-sm text-black-custom'>Parceiros e investidores que potencializam nosso impacto.</p>
             </li>
@@ -129,6 +134,7 @@ export default function Home() {
         <DepoimentCarrousel CA1 />
       </section>
 
+      {/* Conheça o Time Pulse */}
       <section className='bg-[#009EE6] bg-smallwaveblue bg-cover bg-bottom w-full'>
         <h2 className='font-semibold text-white text-3xl text-center pt-10 pb-3 px-3 lg:text-5xl'>Conheça o Time Pulse</h2>
         <p className='text-lg text-center text-white px-3'>Conheça quem trabalha para transformar a vida de jovens através do nosso projeto.</p>
@@ -199,6 +205,7 @@ export default function Home() {
         </aside>
       </section>
 
+      {/* Apoiadores Institucionais */}
       <section className='py-10'>
         <aside className='pb-20'>
           <h3 className='font-semibold text-3xl text-center text-green-custom lg:text-4xl'>Apoiadores Institucionais</h3>
