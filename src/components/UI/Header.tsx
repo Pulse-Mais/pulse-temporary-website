@@ -83,12 +83,12 @@ export const Header = () => {
                     </ul>
                 </nav>
                 <aside className="flex gap-3 px-2 max-lg:hidden">
-                    <Link href={"https://app.pulsemais.org.br/?pagina=login"} target="_blank">
+                    {/* <Link href={"https://app.pulsemais.org.br/?pagina=login"} target="_blank">
                         {isTransparent ? renderButton() : (<Button title="Entrar" color="blue" NotFill />)}
                     </Link>
                     <Link href={"/#cards"} >
                         {isTransparent ? renderButton2() : (<Button title="Registrar" color="blue" />)}
-                    </Link>
+                    </Link> */}
                 </aside>
                 <figure>
                     <div className="md:hidden">
