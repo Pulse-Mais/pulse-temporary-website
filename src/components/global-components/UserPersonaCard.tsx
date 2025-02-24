@@ -15,7 +15,7 @@ export const UserPersonaCard = ({ Theme, Title, Text }: UserPersonaCardProps) =>
 
             
             case "green":
-                return (<Link href="https://app.pulsemais.org.br/?pagina=mentor" className="px-3" target="_blank">
+                return (<Link href="https://mailchi.mp/pulsemais.org.br/mentores-turma2" className="px-3" target="_blank">
                     <Button title="Quero ser Mentor(a)" color="green" Custom="text-base" />
                 </Link>);
             case "yellow":
