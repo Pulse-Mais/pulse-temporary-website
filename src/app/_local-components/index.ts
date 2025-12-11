@@ -9,6 +9,9 @@ import { UserPersonaCard } from '@/components/global-components/UserPersonaCard'
 import { DepoimentCarrousel } from '@/components/global-components/DepoimentCarrousel';
 import { InfiniteSlider } from '@/components/global-components/InfiniteSlider';
 import { Info } from "@/components/global-components/Info";
+import { Accordion } from "@/components/UI/Accordion";
+import { CTAButton } from "@/components/UI/CTAButton";
+import { ExperienceCard } from "@/components/UI/ExperienceCard";
 
 
-export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info }
+export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard }

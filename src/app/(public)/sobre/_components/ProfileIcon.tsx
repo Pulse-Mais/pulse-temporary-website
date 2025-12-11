@@ -13,20 +13,20 @@ export const ProfileIcon = ({ icon: Icon, color, children }: ProfileIconProps) =
 
     switch (color) {
     case 'yellow':
-        colorClass = '#ffd31b';
-        bgColorClass = 'bg-[#ffd31b] bg-yellowcape bg-cover bg-bottom';
+        colorClass = '#FFD32A';
+        bgColorClass = 'bg-[#FFD32A] bg-yellowcape bg-cover bg-bottom';
         break;
     case 'blue':
-        colorClass = '#14a9ff';
-        bgColorClass = 'bg-[#009EE6] bg-smallwaveblue bg-cover bg-bottom';
+        colorClass = '#0094FF';
+        bgColorClass = 'bg-[#0094FF] bg-smallwaveblue bg-cover bg-bottom';
         break;
     case 'green':
-        colorClass = '#25b957';
-        bgColorClass = 'bg-[#25b957] bg-bigwavegreen bg-cover bg-bottom';
+        colorClass = '#16C172';
+        bgColorClass = 'bg-[#16C172] bg-bigwavegreen bg-cover bg-bottom';
         break;
     default:
-        colorClass = '#ffd31b'; // Default color if none of the above match
-        bgColorClass = 'bg-[#ffd31b] bg-cover bg-mediumwaveyellow';
+        colorClass = '#FFD32A'; // Default color if none of the above match
+        bgColorClass = 'bg-[#FFD32A] bg-cover bg-mediumwaveyellow';
     }
 
     return (
