@@ -12,6 +12,10 @@ import { Info } from "@/components/global-components/Info";
 import { Accordion } from "@/components/UI/Accordion";
 import { CTAButton } from "@/components/UI/CTAButton";
 import { ExperienceCard } from "@/components/UI/ExperienceCard";
+import { HeaderMobile } from "@/components/UI/HeaderMobile";
+import { MenuMobile } from "@/components/UI/MenuMobile";
+import { AccordionItem } from "@/components/UI/AccordionItem";
+import { FooterMobile } from "@/components/UI/FooterMobile";
 
 
-export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard }
+export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard, HeaderMobile, MenuMobile, AccordionItem, FooterMobile }

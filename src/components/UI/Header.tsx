@@ -73,9 +73,9 @@ export const Header = () => {
         <>
             <header className=
                 {isTransparent ?
-                    `fixed ${color ? "bg-white text-[#1B2E3A] shadow-md" : "bg-transparent text-white"} w-full fixed z-30 top-0 px-3 md:py-1 lg:py-3 flex items-center`
+                    `fixed ${color ? "bg-white text-[#1B2E3A] shadow-md" : "bg-transparent text-white"} w-full fixed z-30 top-0 px-3 md:py-1 lg:py-3 flex items-center hidden md:flex`
                     :
-                    `fixed text-[#1B2E3A] w-full shadow-sm z-30 top-0 h-[100px] md:h-auto pl-[30px] pt-[42px] md:pl-3 md:pt-0 md:py-1 lg:py-3 flex items-center bg-white`
+                    `fixed text-[#1B2E3A] w-full shadow-sm z-30 top-0 h-[100px] md:h-auto pl-[30px] pt-[42px] md:pl-3 md:pt-0 md:py-1 lg:py-3 flex items-center bg-white hidden md:flex`
                 }>
                 <div className="ml-[30px] mt-[42px] md:ml-0 md:mt-0">
                     {isTransparent ? (<Logo Variant={color ? `default` : `white`} />) : (<Logo Variant="default" />)}

@@ -12,6 +12,37 @@ Os layouts do mobile estão printados em "M ABA 1.png". Siga a interface do layo
 
 # 1. Diretrizes Gerais de Design
 
+## 1.0 Diretrizes de Layout Global
+
+### **Full Bleed (100% Width)**
+
+* **Princípio:** O layout mobile deve ocupar **100% da largura da viewport** (full-bleed), sem margens laterais no container principal.
+* **Implementação:**
+  * O elemento `<html>` deve ter: `margin: 0`, `padding: 0`, `width: 100%`, `overflow-x: hidden`.
+  * O elemento `<body>` deve ter: `margin: 0`, `padding: 0`, `width: 100%`, `overflow-x: hidden`.
+  * O container principal da Home (`page.tsx`) deve ser `w-full overflow-x-hidden`.
+  * **NÃO** usar classes como `container`, `max-w-screen-sm`, `mx-auto` ou padding horizontal fixo (`px-4`) no container pai que impeça as seções de irem de ponta a ponta.
+
+### **Seções Full-Width**
+
+* Todas as seções coloridas (Hero, Footer, Faixa Azul) devem ser `w-full`.
+* O padding interno deve ficar apenas no **CONTEÚDO** dentro das seções, não no container pai.
+* Exemplo correto:
+  ```tsx
+  <section className="w-full bg-blue-500">
+    <div className="px-[30px]">
+      {/* Conteúdo com padding interno */}
+    </div>
+  </section>
+  ```
+
+### **Prevenção de Scroll Horizontal**
+
+* Sempre usar `overflow-x: hidden` em `html` e `body` para evitar scroll horizontal indesejado.
+* Elementos com `position: absolute` que saem da viewport devem usar `overflow-hidden` no container pai.
+
+---
+
 ## 1.1 Identidade Visual
 
 * **Fonte:** Poppins (todas as variações)

@@ -1,117 +1,175 @@
-import {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, DepoimentCarrousel, InfiniteSlider, Info, CTAButton, ExperienceCard} from "@/app/_local-components/index"
+import { Image, Link, CTAButton, HeaderMobile, AccordionItem } from "@/app/_local-components/index"
+import {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, ProfileIcon, DepoimentCarrousel, InfiniteSlider, Info} from "@/app/_local-components/index"
 
 export default function Home() {
+  // Dados dos cards de acordeão
+  const accordionData = [
+    {
+      title: "Experiências de Mentorias de Curta Duração",
+      content: `<strong>Formato:</strong> Online ou Presencial em São Paulo<br/><strong>Benefícios:</strong><br/>- Clareza sobre temas de carreira<br/>- Rede profissional ampliada<br/>- Aumento de repertório`
+    },
+    {
+      title: "Eventos em Empresas de Tecnologia",
+      content: `<strong>Formato:</strong> Presencial em São Paulo<br/><strong>Benefícios:</strong><br/>- Palestras inspiradoras<br/>- Conheça profissionais do mercado<br/>- Novos horizontes de carreira`
+    },
+    {
+      title: "Programa Pulse Mais",
+      content: `<strong>Formato:</strong> Online ou Híbrido (Presencial/Online)<br/><strong>Dedicação:</strong> 6 meses<br/><strong>Benefícios:</strong><br/>- Formação técnica e comportamental completa<br/>- Computador/Notebook gratuito<br/>- Vagas de emprego e bolsas de estudos para faculdade`
+    },
+    {
+      title: "Programa de Mentoria",
+      content: `<strong>Formato:</strong> (online/híbrido/presencial)<br/><strong>Dedicação:</strong> 4 meses<br/><strong>Benefícios:</strong><br/>- Direcionamento de carreira individualizado<br/>- Preparação para o mercado de trabalho<br/>- Vagas de emprego e bolsas de estudos para faculdade`
+    }
+  ]
+
   return (
     <>
-      {/* ========== VERSÃO MOBILE (v1) - Visível apenas em mobile ========== */}
-      <div className="md:hidden">
-        {/* Hero com Imagem e Chamada - Seção 2.2 */}
-        <main className='px-[30px] pt-[25px] pb-10 bg-white flex flex-col items-center'>
-          {/* Carrossel/Imagem */}
-          <div className="w-[300px] h-[256px] rounded-[25px] overflow-hidden mb-[30px]">
-            <Image 
-              src="/assents/images/artblue.svg" 
-              alt="Pulse Mais" 
-              width={300} 
-              height={256} 
-              quality={100} 
-              className="w-full h-full object-cover rounded-[25px]"
-              priority 
+      {/* ========== VERSÃO MOBILE (vfinal) - Visível apenas em mobile ========== */}
+      <div className="md:hidden w-full overflow-x-hidden">
+        {/* 2.1 Header */}
+        <HeaderMobile />
+
+        {/* 2.2 Hero Section */}
+        <section className="relative w-full h-[482px] mt-[124px] overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/assents/youngers/hero-young-man.png"
+              alt="Jovem Pulsante"
+              fill
+              className="object-cover"
+              priority
             />
           </div>
 
+          {/* Content Overlay */}
+          <div className="relative h-full flex flex-col items-center pt-[122px] px-4">
+            <h1 className="text-[32px] font-extrabold text-[#FCC41F] text-center">
+              Venha ser um jovem Pulsante
+            </h1>
+            <p className="text-[16px] font-normal text-white mt-[8px] text-center max-w-[300px]">
+              Tem entre 17 à 26 anos? Este pode ser o começo da sua jornada no mundo da tecnologia.
+            </p>
+            <div className="mt-[24px]">
+              <CTAButton variant="hero" href="https://preinscricao.pulsemais.org.br/2025">
+                Cadastre-se
+              </CTAButton>
+            </div>
+          </div>
+        </section>
+
+        {/* 2.3 Seção "Quem Somos" */}
+        <section className="relative bg-white pt-[48px] pb-[48px] overflow-hidden">
+          {/* Elementos Decorativos */}
+          <div className="absolute right-0 top-[26px] w-[91px] h-[127px] z-0">
+            <Image
+              src="/assents/brand/plus-amarelo.svg"
+              alt="Decoration"
+              width={91}
+              height={127}
+              className="w-full h-full"
+            />
+          </div>
+          <div className="absolute right-0 top-[160px] w-[46px] h-[64px] z-0">
+            <Image
+              src="/assents/brand/plus-verde.svg"
+              alt="Decoration"
+              width={46}
+              height={64}
+              className="w-full h-full"
+            />
+          </div>
+
+          {/* Conteúdo */}
+          <div className="relative z-10">
+            <h2 className="text-[16px] font-bold text-[#003870] text-left ml-[30px]">
+              Quem somos
+            </h2>
+            <p className="text-[20px] font-light text-[#6B6D6E] mt-[32px] ml-[30px] max-w-[268px]">
+              A Pulse Mais é uma organização sem fins lucrativos, fundada em 2022, que tem o propósito de impulsionar a carreira de jovens talentos de baixa renda no mundo profissional e em tecnologia.
+            </p>
+            <div className="mt-[48px] flex justify-center">
+              <CTAButton variant="outline" href="/sobre">
+                Saiba mais
+              </CTAButton>
+            </div>
+          </div>
+        </section>
+
+        {/* 2.4 e 2.5 Seção "É jovem? Saiba como participar" com Cards */}
+        <section 
+          className="relative w-full min-h-[1000px] bg-[#0F2849] pt-[100px] pb-[100px] overflow-hidden"
+          style={{
+            clipPath: 'polygon(0 50px, 100% 0, 100% 100%, 0 calc(100% - 50px))'
+          }}
+        >
           {/* Título */}
-          <h1 className='text-[30px] font-bold text-[#486284] text-center w-full mt-[30px]'>
-            Venha ser um<br />jovem Pulsante
-          </h1>
+          <div className="ml-[30px] mt-[89px]">
+            <h2 className="text-[40px] font-bold text-white">
+              É jovem?
+            </h2>
+            <h3 className="text-[24px] font-medium text-white mt-2">
+              Saiba como participar
+            </h3>
+          </div>
 
-          {/* Descrição */}
-          <p className='text-[20px] font-normal text-[#486284] text-center w-full mt-2'>
-            Tem entre 17 à 26 anos? Este pode ser<br />
-            o começo da sua jornada no mundo da tecnologia.
-          </p>
+          {/* Cards de Acordeão */}
+          <div className="flex flex-col items-center gap-[25px] mt-10">
+            {accordionData.map((item, index) => (
+              <AccordionItem
+                key={index}
+                title={item.title}
+                content={item.content}
+              />
+            ))}
+          </div>
 
-          {/* Botão CTA */}
-          <div className="w-full flex justify-center mt-6">
-            <CTAButton href="https://preinscricao.pulsemais.org.br/2025">
+          {/* Botões Finais */}
+          <div className="flex flex-col items-center mt-[62px] gap-[13px]">
+            <CTAButton variant="yellow" href="https://preinscricao.pulsemais.org.br/2025">
               Cadastre-se
             </CTAButton>
-          </div>
-        </main>
-
-        {/* Seção "Quem Somos" - Seção 2.3 */}
-        <section className='px-[30px] bg-white flex flex-col items-center'>
-          <h2 className='text-[30px] font-bold text-[#486284] mt-[62px] text-center'>Quem somos</h2>
-          <p className='text-[20px] font-normal text-[#486284] mt-8 text-center'>
-            A Pulse Mais é uma organização sem fins lucrativos que trabalha para transformar 
-            a vida de jovens através da educação, tecnologia e empregabilidade. Nossa missão é 
-            possibilitar que todos os jovens brasileiros de baixa renda possam sonhar com um 
-            futuro como líderes.
-          </p>
-          <div className="w-full flex justify-center mt-6 mb-10">
-            <CTAButton href="/sobre">
-              Saiba mais
+            <CTAButton variant="green" href="/apoie">
+              Torne nosso Parceiro
             </CTAButton>
           </div>
         </section>
 
-        {/* Seção "É jovem? Saiba como participar" - Seção 2.4 */}
-        <section className='px-[30px] bg-white flex flex-col items-center'>
-          <h2 className='text-[40px] font-bold text-[#486284] mt-[62px] text-center'>
-            É jovem? Saiba<br />como participar
-          </h2>
+        {/* 2.6 Torne-se nosso parceiro */}
+        <section className="relative bg-white pt-[57px] pb-[48px] overflow-hidden">
+          {/* Elementos Decorativos */}
+          <div className="absolute right-0 top-0 translate-x-[30%] z-0 pointer-events-none">
+            <Image
+              src="/assents/brand/plus-amarelo.svg"
+              alt="Decoration"
+              width={91}
+              height={127}
+              className="w-full h-full"
+            />
+          </div>
+          <div className="absolute left-0 top-[60%] -translate-x-[30%] z-0 pointer-events-none">
+            <Image
+              src="/assents/brand/plus-verde.svg"
+              alt="Decoration"
+              width={46}
+              height={64}
+              className="w-full h-full"
+            />
+          </div>
 
-          {/* Cards de Experiências - Seção 2.5 */}
-          <div className="mt-10 w-full" style={{ display: 'flex', flexDirection: 'column', gap: '36px' }}>
-            <ExperienceCard
-              title="Experiências de Mentorias de Curta Duração"
-              description="Participe de mentorias individuais com profissionais experientes que vão te ajudar a desenvolver suas habilidades e alcançar seus objetivos profissionais."
-              isLast={false}
-            />
-            
-            <ExperienceCard
-              title="Programas de Formação"
-              description="Acesse programas de formação completos que desenvolvem habilidades essenciais para carreiras em tecnologia através de um método exclusivo."
-              isLast={false}
-            />
-            
-            <ExperienceCard
-              title="Conexão com Empresas"
-              description="Conecte-se com executivos de grandes empresas na América Latina e tenha acesso a oportunidades de emprego e networking."
-              isLast={false}
-            />
-            
-            <ExperienceCard
-              title="Rede de Oportunidades"
-              description="Faça parte de uma rede de oportunidades para conquistar o primeiro emprego e acessar o ensino superior com bolsa gratuita."
-              showCTA={true}
-              ctaHref="https://preinscricao.pulsemais.org.br/2025"
-              isLast={true}
-            />
+          {/* Conteúdo */}
+          <div className="relative z-10">
+            <h2 className="text-[48px] font-bold text-[#486284] text-center mx-auto w-[300px] h-[156px]">
+              Torne-se<br />nosso<br />parceiro.
+            </h2>
+            <div className="mt-[80px] flex justify-center">
+              <CTAButton variant="gray" href="/apoie">
+                Torne nosso Parceiro
+              </CTAButton>
+            </div>
           </div>
         </section>
 
-        {/* Seção de Cadastro - Seção 2.6 */}
-        <section className='px-[30px] bg-white text-center'>
-          <h2 className='text-[40px] font-bold text-[#486284] mt-[27px]'>
-            Para realizar o cadastro e<br />
-            ficar por dentro de novidades.
-          </h2>
-        </section>
-
-        {/* Seção "Torne-se nosso parceiro" - Seção 2.7 */}
-        <section className='px-[30px] bg-white text-center'>
-          <h2 className='text-[50px] font-bold text-[#486284] mt-[62px] leading-[1.1]'>
-            Torne-se<br />
-            nosso<br />
-            parceiro.
-          </h2>
-          <div className="w-full flex justify-center mt-6 mb-10">
-            <CTAButton href="/apoie">
-              Seja parceiro
-            </CTAButton>
-          </div>
-        </section>
       </div>
 
       {/* ========== VERSÃO DESKTOP - Visível apenas em desktop ========== */}
