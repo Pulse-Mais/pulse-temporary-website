@@ -76,3 +76,7 @@ export const FooterMobile = () => {
   )
 }
 
+
+
+
+
