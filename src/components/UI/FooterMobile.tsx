@@ -3,13 +3,17 @@ import Link from 'next/link'
 
 export const FooterMobile = () => {
   return (
-    <footer className="relative bg-white pb-40 overflow-hidden">
-      {/* Conteúdo */}
-      <div className="relative z-10">
+    // 1. Removi 'pb-40'. O controle de espaço será feito no conteúdo interno ou na própria onda.
+    <footer className="relative bg-white overflow-hidden w-full">
+      
+      {/* Conteúdo (z-10 para ficar acima do fundo) */}
+      {/* Adicionei 'pb-[100px]' aqui para dar espaço para a onda não cobrir o texto do CNPJ */}
+      <div className="relative z-10 pb-[120px]">
+        
         {/* Quadrante 1 - Logo e Redes Sociais */}
         <div className="pl-[30px] pt-[63px]">
           <Image
-            src="/assents/logos/pulse-logo-header.svg.svg"
+            src="/assents/logos/pulse-logo-header.svg" // Corrigido: estava .svg.svg
             alt="Pulse Mais"
             width={195}
             height={62}
@@ -38,15 +42,16 @@ export const FooterMobile = () => {
         </div>
 
         {/* Quadrante 2 - Contato */}
-        <div className="pl-[30px] mt-[30px] relative z-10">
+        <div className="pl-[30px] mt-[30px] relative z-10 pr-[30px]">
           <h3 className="text-[20px] font-bold text-[#003870]">
             Mande um email
           </h3>
-          <form className="mt-4 flex flex-col items-start" id="footer-form">
+          <form className="mt-4 flex flex-col items-start w-full" id="footer-form">
             <input
               type="email"
               placeholder="Seu email"
-              className="w-[300px] h-12 border border-gray-300 rounded-lg px-4 bg-white"
+              // Mudei para w-full para se adaptar a qualquer celular
+              className="w-full h-12 border border-gray-300 rounded-lg px-4 bg-white"
             />
             <button
               type="submit"
@@ -56,31 +61,29 @@ export const FooterMobile = () => {
               Enviar
             </button>
           </form>
-          <p className="text-[18px] font-normal text-[#6B6D6E] mt-[54px] text-center mx-auto relative z-10">
+          
+          {/* CNPJ */}
+          <p className="text-[18px] font-normal text-[#6B6D6E] mt-[40px] text-center relative z-10">
             CNPJ: 48.621.188/0001-11
           </p>
         </div>
       </div>
 
-      {/* Onda Decorativa - Posicionada no final do footer */}
-      <div className="absolute right-0 bottom-12 w-full max-w-[600px] z-0 pointer-events-none">
+      {/* Onda Decorativa - FIXADA NO FUNDO */}
+      {/* bottom-0: Cola no fundo */}
+      {/* w-full: Ocupa toda a largura */}
+      {/* z-0: Fica atrás do conteúdo se necessário, mas visível */}
+      <div className="absolute bottom-0 left-0 w-full z-0 pointer-events-none">
         <Image
           src="/assents/backgrounds/footer-wave.svg"
           alt="Footer Wave"
           width={600}
           height={355}
-          className="w-full h-auto object-contain object-bottom-right"
+          // w-full: Força a imagem a esticar na largura
+          // object-cover: Garante que cubra a área sem distorcer demais
+          className="w-full h-auto object-cover object-bottom"
         />
       </div>
     </footer>
   )
 }
-
-
-
-
-
-
-
-
-
