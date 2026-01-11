@@ -1,8 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { Header } from '@/components/UI/Header'
-import { Footer } from '@/components/UI/Footer'
 import Head from 'next/head'
 import Script from 'next/script'
 
@@ -53,9 +51,7 @@ export default function RootLayout({
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC6F3J7R" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
         </noscript>
-        <Header />
-         {children}
-        <Footer />
+        {children}
 
         {/* RD Station Marketing Script */}
         <Script

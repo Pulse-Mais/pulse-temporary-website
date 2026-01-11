@@ -16,6 +16,11 @@ import { HeaderMobile } from "@/components/UI/HeaderMobile";
 import { MenuMobile } from "@/components/UI/MenuMobile";
 import { AccordionItem } from "@/components/UI/AccordionItem";
 import { FooterMobile } from "@/components/UI/FooterMobile";
+import { HeaderDesktop } from "@/components/UI/HeaderDesktop";
+import { HeroCarouselDesktop } from "@/components/UI/HeroCarouselDesktop";
+import { GridPrograms } from "@/components/UI/GridPrograms";
+import { PartnersCarousel } from "@/components/UI/PartnersCarousel";
+import { FooterDesktop } from "@/components/UI/FooterDesktop";
 
 
-export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard, HeaderMobile, MenuMobile, AccordionItem, FooterMobile }
+export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard, HeaderMobile, MenuMobile, AccordionItem, FooterMobile, HeaderDesktop, HeroCarouselDesktop, GridPrograms, PartnersCarousel, FooterDesktop }

@@ -3,7 +3,7 @@
 **Projeto:** Pulse Mais — Página Home (Desktop)
 **Tecnologia:** Next.js + Tailwind CSS
 **Metodologia:** Desktop Adaptation (Responsive from Mobile)
-**Objetivo:** Documentar detalhadamente a tela de Home (versão desktop `md` e `lg`), para envio ao agente Cursor e implementação fiel ao layout.
+**Objetivo:** Documentar detalhadamente a tela de Home, para envio ao agente Cursor e implementação fiel ao layout.
 
 ---
 
