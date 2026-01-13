@@ -81,7 +81,7 @@ Novos assets específicos para a página Sobre.
 * **Conteúdo Card 1 (Esquerda):**
     * **Imagem:**  `/assents/images/nosso-proposito.jpg`
     * **Título:** "Nosso propósito"
-    * **Texto:** "Impulsionar jovens talentos de baixa renda a conquistar carreiras em tecnologia..."
+    * **Texto:** "Impulsionar jovens talentos de baixa renda a conquistar carreiras em tecnologia."
 
 * **Conteúdo Card 2 (Direita):**
     * **Imagem:**  `/assents/images/nosso-sonho.jpg`
@@ -175,8 +175,8 @@ As colunas seguem o padrão: Número Gigante Azul + Texto Branco.
 | :--- | :--- | :--- | :--- |
 | **Título Overlay** (40px Bold Branco) | "Projetos<br>Específicos" | "Programas de<br>até 6 meses" | "Rede de<br>Talentos" |
 | **Subtítulo** (Blue #003870 Bold) | "Conexão com o<br>Mundo Profissional" | "Desenvolvimento<br>de Talentos" | "Emprego e<br>Ensino Superior" |
-| **Texto O QUE** | Expandir a visão dos jovens sobre possibilidades educacionais... | Desenvolver competências técnicas e comportamentais necessárias... | Promover ascensão socioeconômica e melhoria da qualidade... |
-| **Texto COMO** | Workshops e palestras em organizações parceiras... | Capacitações práticas, mentorias de longa duração... | Apoio direto na conquista do primeiro emprego... |
+| **Texto O QUE** | Expandir a visão dos jovens sobre possibilidades educacionais e de carreira, fortalecendo referências positivas e a confiança em seu próprio potencial. | Desenvolver competências técnicas e comportamentais necessárias para o ingresso e a permanência no mundo do trabalho, com foco em carreiras em tecnologia e no acesso a oportunidades. | Promover ascensão socioeconômica e melhoria da qualidade de vida por meio da empregabilidade e do acesso à educação. |
+| **Texto COMO** |  Workshops e palestras em organizações parceiras, mentorias de curta duração e experiências em empresas de tecnologia aproximam os jovens do mercado de trabalho e despertam novas perspectivas de futuro. | Capacitações práticas, mentorias de longa duração, suporte emocional e psicológico, além de vivências estruturadas, preparam os jovens para atuar de forma qualificada e confiante no mercado. | Apoio direto na conquista do primeiro emprego, bolsas de graduação 100% gratuitas, parcerias estratégicas com empresas para divulgação e indicação de jovens talentos, e a integração em uma rede de oportunidades que amplia horizontes e promove a mobilidade social. |
 
 *Nota: As palavras "O QUE:" e "COMO:" devem estar em Negrito.*
 
