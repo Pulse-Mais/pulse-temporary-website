@@ -9,7 +9,7 @@ export const FooterMobile = () => {
         {/* Quadrante 1 - Logo e Redes Sociais */}
         <div className="pl-[30px] pt-[63px]">
           <Image
-            src="/assents/logos/pulse-logo-header.svg.svg"
+            src="/assents/logos/pulse-logo-header.svg"
             alt="Pulse Mais"
             width={195}
             height={62}

@@ -113,15 +113,17 @@ export default function Sobre() {
                 </h2>
               </div>
 
-              {/* Coluna Direita (Imagem) - INVERTIDO */}
-              <div>
-                <Image
-                  src="/assents/images/quemsomos-image.png"
-                  alt="Conheça Jovens"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
+              {/* Coluna Direita (Vídeo) - Substituindo a Imagem */}
+              <div className="w-full">
+                <iframe
+                  className="w-full aspect-video rounded-[24px] shadow-lg"
+                  src="https://www.youtube.com/embed/djpjV28WllM?si=ub-JPmc4bVLlvVoc"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>

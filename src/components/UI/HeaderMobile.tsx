@@ -13,7 +13,7 @@ export const HeaderMobile = () => {
         {/* Logo */}
         <div className="ml-[30px] mt-[42px]">
           <Image
-            src="/assents/logos/pulse-logo-header.svg.svg"
+            src="/assents/logos/pulse-logo-header.svg"
             alt="Pulse Mais"
             width={159}
             height={50}
