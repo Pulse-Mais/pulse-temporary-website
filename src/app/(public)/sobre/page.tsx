@@ -1,4 +1,4 @@
-import { HeaderDesktop, FooterDesktop, FooterMobile, Image, Link } from "@/app/_local-components/index"
+import { HeaderDesktop, FooterDesktop, FooterMobile, Image, Link, HeaderMobile, CTAButton } from "@/app/_local-components/index"
 import AnimatedCounter from "@/components/UI/AnimatedCounter"; // Ajuste o caminho se necessário
 export default function Sobre() {
   return (
@@ -374,11 +374,278 @@ export default function Sobre() {
       </div>
 
       {/* ========== VERSÃO MOBILE ========== */}
-      <div className="md:hidden w-full">
-        {/* TODO: Implementar versão mobile quando houver documentação */}
-        <div className="p-8 text-center">
-          <p className="text-[#6B6D6E]">Versão mobile em desenvolvimento</p>
-        </div>
+      <div className="block md:hidden w-full overflow-x-hidden">
+        {/* 2.1 Header Mobile */}
+        <HeaderMobile />
+
+      
+       {/* 2.2 Hero Section (Imagem Full Width + Texto Sobreposto) */}
+       <section className="w-full flex justify-center mt-[124px]">
+          {/* w-full sem px-4 para ir de ponta a ponta */}
+          <div className="relative w-full h-[269px] overflow-hidden">
+            
+            {/* 1. Imagem de Fundo */}
+            <Image
+              src="/assents/images/hero-sobre-mobile.png"
+              alt="Hero Sobre Mobile"
+              fill
+              className="object-cover"
+            />
+
+            {/* 2. Overlay Escuro */}
+            <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+            {/* 3. Texto Sobreposto */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center p-4">
+              <h1 className="text-[28px] font-bold text-[#FCC41F] text-center leading-tight drop-shadow-md">
+                Conheça jovens<br />
+                empregados e<br />
+                que acessaram o<br />
+                ensino superior!
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        {/* 2.3 Vídeo Institucional */}
+       
+        <section className="w-full flex justify-center mt-[45px] mb-[40px] px-4">
+          
+          <div className="w-full max-w-[350px] aspect-video rounded-[15px] overflow-hidden shadow-lg">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/djpjV28WllM?si=ub-JPmc4bVLlvVoc"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full object-cover"
+            ></iframe>
+          </div>
+        </section>
+
+        {/* 2.4 Seção "Resultados de Impacto" */}
+        <section
+          className="relative w-full bg-[#33B458] py-16 overflow-hidden flex flex-col items-center"
+          style={{
+            clipPath: 'polygon(0 30px, 100% 0, 100% calc(100% - 30px), 0 100%)'
+          }}
+        >
+          {/* Elementos Decorativos - Shapes Brancos */}
+          {/* Shape 1 - Topo Direito */}
+          <div className="absolute top-0 right-[-30px] opacity-20 z-0">
+            <Image
+              src="/assents/backgrounds/shape-plus-white.svg"
+              alt="Shape White"
+              width={150}
+              height={150}
+              className="w-[150px] h-auto"
+            />
+          </div>
+
+          {/* Shape 2 - Topo Esquerdo */}
+          <div className="absolute top-[15%] left-[-20px] opacity-20 z-0">
+            <Image
+              src="/assents/backgrounds/shape-plus-white.svg"
+              alt="Shape White"
+              width={120}
+              height={120}
+              className="w-[120px] h-auto"
+            />
+          </div>
+
+          {/* Shape 3 - Meio Direito */}
+          <div className="absolute top-[45%] right-[-20px] opacity-20 z-0">
+            <Image
+              src="/assents/backgrounds/shape-plus-white.svg"
+              alt="Shape White"
+              width={100}
+              height={100}
+              className="w-[100px] h-auto"
+            />
+          </div>
+
+          {/* Shape 4 - Base Esquerda */}
+          <div className="absolute bottom-[20%] left-[-20px] opacity-20 z-0">
+            <Image
+              src="/assents/backgrounds/shape-plus-white.svg"
+              alt="Shape White"
+              width={110}
+              height={110}
+              className="w-[110px] h-auto"
+            />
+          </div>
+
+          {/* Shape 5 - Canto Inferior */}
+          <div className="absolute bottom-0 left-0 opacity-20 z-0">
+            <Image
+              src="/assents/backgrounds/shape-plus-white.svg"
+              alt="Shape White"
+              width={80}
+              height={80}
+              className="w-[80px] h-auto"
+            />
+          </div>
+
+          {/* Conteúdo */}
+          <div className="relative z-10 flex flex-col items-center px-6">
+            <h2 className="text-[40px] font-bold text-white text-center mb-12">
+              Resultados de Impacto
+            </h2>
+
+            {/* Métricas - Layout Vertical */}
+            <div className="flex flex-col gap-12 items-center">
+              {/* Métrica 1 */}
+              <div className="flex flex-col items-center text-center">
+                <span className="text-[96px] font-extrabold text-[#003870] leading-none">
+                  <AnimatedCounter target={1000} duration={2500} />
+                </span>
+                <p className="text-[24px] text-white mt-2">
+                  <strong>Jovens</strong> atingidos
+                </p>
+              </div>
+
+              {/* Métrica 2 */}
+              <div className="flex flex-col items-center text-center">
+                <span className="text-[96px] font-extrabold text-[#003870] leading-none">
+                  <AnimatedCounter target={110} duration={2000} />
+                </span>
+                <p className="text-[24px] text-white mt-2">
+                  <strong>Jovens formados</strong> em programas
+                </p>
+              </div>
+
+              {/* Métrica 3 */}
+              <div className="flex flex-col items-center text-center">
+                <span className="text-[96px] font-extrabold text-[#003870] leading-none">
+                  <AnimatedCounter target={180} duration={2200} />
+                </span>
+                <p className="text-[24px] text-white mt-2">
+                  <strong>Mentores</strong> formados
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 2.5 Seção "Pilares de Atuação" */}
+        <section className="w-full bg-white py-12 px-6">
+          {/* Título - REMOVIDO: underline decoration-4 underline-offset-8 */}
+          <h2 className="text-[48px] font-extrabold text-[#003870] text-center mb-8">
+            Pilares de Atuação
+          </h2>
+
+          {/* Cards - Layout Vertical */}
+          <div className="flex flex-col gap-6">
+            {/* Card 1 - Projetos Específicos */}
+            <div className="relative w-full h-[180px] rounded-[30px] overflow-hidden flex flex-col justify-center items-center text-center px-4">
+              <Image
+                src="/assents/images/pilar-img.png"
+                alt="Projetos Específicos"
+                fill
+                className="object-cover"
+              />
+              {/* Overlay com Gradiente */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#003870] to-[#33B458] opacity-80"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-md">
+                  Projetos Específicos
+                </h3>
+                <p className="text-sm font-normal mt-1 text-white drop-shadow-md">
+                  Conexão com o Mundo Profissional
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 - Programas de até 6 Meses */}
+            <div className="relative w-full h-[180px] rounded-[30px] overflow-hidden flex flex-col justify-center items-center text-center px-4">
+              <Image
+                src="/assents/images/pilar-img.png"
+                alt="Programas de até 6 Meses"
+                fill
+                className="object-cover"
+              />
+              {/* Overlay com Gradiente */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#003870] to-[#33B458] opacity-80"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-md">
+                  Programas de até 6 Meses
+                </h3>
+                <p className="text-sm font-normal mt-1 text-white drop-shadow-md">
+                  Desenvolvimento de Talentos
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 - Rede de Talentos */}
+            <div className="relative w-full h-[180px] rounded-[30px] overflow-hidden flex flex-col justify-center items-center text-center px-4">
+              <Image
+                src="/assents/images/pilar-img.png"
+                alt="Rede de Talentos"
+                fill
+                className="object-cover"
+              />
+              {/* Overlay com Gradiente */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#003870] to-[#33B458] opacity-80"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-md">
+                  Rede de Talentos
+                </h3>
+                <p className="text-sm font-normal mt-1 text-white drop-shadow-md">
+                  Emprego e Ensino Superior
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Botão CTA */}
+          <div className="mt-8 w-full">
+            <Link href="https://app.pulsemais.org.br/?pagina=mentee" target="_blank" className="block">
+              <button className="w-full h-[60px] bg-[#FBBF24] text-white font-bold rounded-full">
+                Venha ser Pulser
+              </button>
+            </Link>
+          </div>
+        </section>
+
+        {/* 2.6 Seção "Torne-se nosso parceiro" */}
+        <section className="relative bg-white pt-[57px] pb-[48px] overflow-hidden">
+          {/* Elementos Decorativos */}
+          <div className="absolute right-0 top-0 translate-x-[30%] z-0 pointer-events-none">
+            <Image
+              src="/assents/brand/plus-amarelo.svg"
+              alt="Decoration"
+              width={91}
+              height={127}
+              className="w-full h-full"
+            />
+          </div>
+          <div className="absolute left-0 top-[60%] -translate-x-[30%] z-0 pointer-events-none">
+            <Image
+              src="/assents/brand/plus-verde.svg"
+              alt="Decoration"
+              width={46}
+              height={64}
+              className="w-full h-full"
+            />
+          </div>
+
+          {/* Conteúdo */}
+          <div className="relative z-10">
+            <h2 className="text-[48px] font-bold text-[#486284] text-center mx-auto w-[300px] h-[156px]">
+              Torne-se<br />nosso<br />parceiro.
+            </h2>
+            <div className="mt-[80px] flex justify-center">
+              <CTAButton variant="gray" href="/apoie">
+                Saiba Mais
+              </CTAButton>
+            </div>
+          </div>
+        </section>
+
+        {/* 2.7 Footer Mobile */}
         <FooterMobile />
       </div>
     </>

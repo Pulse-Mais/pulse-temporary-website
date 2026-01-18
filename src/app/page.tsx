@@ -164,7 +164,7 @@ export default function Home() {
             </h2>
             <div className="mt-[80px] flex justify-center">
               <CTAButton variant="gray" href="/apoie">
-                Torne nosso Parceiro
+                Saiba Mais
               </CTAButton>
             </div>
           </div>
