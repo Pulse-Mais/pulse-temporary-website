@@ -51,7 +51,7 @@ export const MenuMobile = ({ isOpen, onClose }: MenuMobileProps) => {
           {/* Header do Drawer */}
           <div className="flex justify-between items-center mb-8">
             <Image
-              src="/assents/logos/pulse-logo-header.svg.svg"
+              src="/assents/logos/pulse-logo-header.svg"
               alt="Pulse Mais"
               width={159}
               height={50}
