@@ -1,27 +1,31 @@
 'use client'
 
+import { useState } from 'react'
 import { 
   HeaderMobile, 
   FooterMobile, 
+  HeaderDesktop, 
+  FooterDesktop, 
   CTAButton, 
   Image, 
   Link 
 } from "@/app/_local-components/index"
 
-// Dados dos Parceiros (Section 2.4)
+// =====================================================================
+// DADOS (CONFIGURAÇÃO)
+// =====================================================================
+
 const partners = [
  { name: 'Partner 3', logo: '/assents/logos/magrini-logo.svg' },
  { name: 'Partner 4', logo: '/assents/logos/fiap-logo.svg' },
  { name: 'Partner 5', logo: '/assents/logos/adega-logo.svg' },
-// { name: 'Partner 6', logo: '/assents/logos/sap-logo.svg' },
+ // { name: 'Partner 6', logo: '/assents/logos/sap-logo.svg' },
  { name: 'Partner 7', logo: '/assents/logos/pub-logo.svg' },
  { name: 'Partner 8', logo: '/assents/logos/alura-logo.svg' },
  { name: 'Partner 9', logo: '/assents/logos/logo-italo.svg' },
  { name: 'Partner 10', logo: '/assents/logos/c-levels-logo.svg' },
  { name: 'Partner 11', logo: '/assents/logos/fellipelli.svg' },
- { name: 'Partner 11', logo: '/assents/logos/italo-para.svg' }
-
- 
+ { name: 'Partner 12', logo: '/assents/logos/italo-para.svg' }
 ]
 
 // Dados dos Patrocinadores (Section 2.5)
@@ -36,6 +40,10 @@ const sponsors = [
 ]
 
 export default function Transparencia() {
+  // Estados para controlar o botão "Veja Mais" na versão Desktop
+  const [isPartnersExpanded, setIsPartnersExpanded] = useState(false)
+  const [isSponsorsExpanded, setIsSponsorsExpanded] = useState(false)
+
   return (
     <>
       {/* ==================================================================
@@ -48,7 +56,6 @@ export default function Transparencia() {
         <HeaderMobile />
 
         {/* 2.2 Hero Section */}
-        {/* Margem superior para compensar header fixo (ajuste conforme altura do seu header) */}
         <section className="w-full flex justify-center mt-[124px] px-4">
           <div className="relative w-[300px] h-[256px]">
             <Image
@@ -74,6 +81,7 @@ export default function Transparencia() {
             {/* Botão 1 */}
             <Link
               href="https://heyzine.com/flip-book/32d3cb5076.html"
+              target="_blank"
               className="w-[300px] h-[64px] rounded-full flex items-center justify-center bg-gradient-to-r from-[#003870] to-[#25B957] text-white text-[32px] font-bold shadow-md hover:brightness-110 transition-all"
             >
               2022-23
@@ -93,18 +101,13 @@ export default function Transparencia() {
               href="#"
               className="w-[300px] h-[64px] rounded-full flex flex-col items-center justify-center bg-gradient-to-r from-[#003870] to-[#25B957] text-white shadow-md hover:brightness-110 transition-all cursor-default opacity-90 leading-none"
             >
-              {/* Ano em Negrito (Tamanho ajustado para caber) */}
               <span className="text-[28px] font-bold">2025</span>
-              
-              {/* "(em breve)" Normal e menor */}
               <span className="text-[14px] font-normal mt-1">(em breve)</span>
             </Link>
           </div>
         </section>
 
-      
-
-        {/* 2.4 Seção "Empresas Parceiras"  */}
+        {/* 2.4 Seção "Empresas Parceiras" */}
         <section className="w-full flex flex-col items-center mt-[74px] px-4">
           <h2 className="text-[40px] font-bold text-[#003870] text-center leading-tight">
             Empresas <br /> Parceiras
@@ -115,7 +118,6 @@ export default function Transparencia() {
             {partners.map((partner, index) => (
               <div 
                 key={index} 
-
                 className="w-[100px] h-[100px] flex items-center justify-center"
               >
                 <div className="relative w-full h-full">
@@ -142,7 +144,6 @@ export default function Transparencia() {
             {sponsors.map((sponsor, index) => (
               <div 
                 key={index} 
-                
                 className="w-[100px] h-[100px] flex items-center justify-center"
               >
                 <div className="relative w-full h-full">
@@ -196,10 +197,163 @@ export default function Transparencia() {
         <FooterMobile />
       </div>
 
-      {/* VERSÃO DESKTOP (Placeholder) */}
-      <div className="hidden md:block">
-        {/* Implementação futura Desktop */}
-        <p className="text-center py-20">Versão Desktop em desenvolvimento...</p>
+      {/* ==================================================================
+          VERSÃO DESKTOP (hidden md:block)
+          Baseado na documentação: transparencia.desktop.md
+      ================================================================== */}
+      <div className="hidden md:block w-full">
+        <HeaderDesktop />
+
+        {/* 2.2 Hero Desktop */}
+        <section className="w-full max-w-[1440px] mx-auto mt-[55px] px-6">
+          <Image
+            src="/assents/images/transparencia-hero-desktop.png"
+            alt="Hero Transparência Desktop"
+            width={1200}
+            height={465}
+            quality={100}
+            className="w-full max-w-[1200px] h-[465px] object-cover rounded-[24px] mx-auto"
+          />
+        </section>
+
+        {/* 2.3 Relatórios Desktop */}
+        <section className="w-full mt-[90px] px-6">
+          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
+            <h2 className="text-[60px] font-bold text-[#003870] text-center">Relatórios de Atividades</h2>
+            <p className="text-[32px] font-normal text-[#6B6D6E] text-center mt-[30px]">
+              Acompanhe nossos resultados e prestação de contas
+            </p>
+
+            <div className="flex flex-row justify-center gap-[40px] mt-[60px] w-full flex-wrap">
+               {/* Card 1 - 2022-23 */}
+               <div className="flex flex-col items-center gap-[16px]">
+                  <Link href="https://drive.google.com/file/d/19wIpS56GZn-FavxFJGQCxyQmniw_YIuy/view?usp=sharing" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
+                    <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                      <span className="text-white text-[62px] font-bold">2022-23</span>
+                    </div>
+                  </Link>
+                  <Link href="https://drive.google.com/file/d/19wIpS56GZn-FavxFJGQCxyQmniw_YIuy/view?usp=sharing" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">saiba mais</Link>
+               </div>
+
+               {/* Card 2 - 2024 */}
+               <div className="flex flex-col items-center gap-[16px]">
+                  <Link href="https://heyzine.com/flip-book/26394a3fa9.html" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
+                    <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                      <span className="text-white text-[62px] font-bold">2024</span>
+                    </div>
+                  </Link>
+                  <Link href="https://heyzine.com/flip-book/26394a3fa9.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">saiba mais</Link>
+               </div>
+
+               {/* Card 3 - 2025 (Em breve) */}
+               <div className="flex flex-col items-center gap-[16px]">
+                  <div className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden cursor-default">
+                    <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover" />
+                    <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
+                      <span className="text-white text-[62px] font-bold leading-none">2025</span>
+                      <span className="text-white text-[32px] font-normal mt-2">(em breve)</span>
+                    </div>
+                  </div>
+                  <span className="text-[20px] text-[#6B6D6E] underline opacity-50 cursor-not-allowed">saiba mais</span>
+               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 2.4 Parceiros Desktop */}
+        <section className="w-full mt-[74px] px-6">
+          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
+             <h2 className="text-[48px] font-bold text-[#003870] text-center">Empresas Parceiras</h2>
+             
+             {/* Grid */}
+             <div className="mt-[50px] grid grid-cols-3 gap-[84px]">
+                {partners.slice(0, isPartnersExpanded ? partners.length : 6).map((partner, index) => (
+                   <div key={index} className="w-[343px] h-[232px] rounded-[25px] flex items-center justify-center relative">
+                      {/* Logo contida (Estilo Clean conforme Mobile) */}
+                      <div className="relative w-full h-full p-4">
+                        <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
+                      </div>
+                   </div>
+                ))}
+             </div>
+
+             {/* Botão Veja Mais */}
+             {partners.length > 6 && !isPartnersExpanded && (
+               <button 
+                  onClick={() => setIsPartnersExpanded(true)}
+                  className="mt-[60px] w-[184px] h-[66px] rounded-[50px] border border-[#003870] text-[#003870] text-[18px] font-bold hover:bg-[#33B458] hover:text-white hover:border-[#33B458] transition-all"
+               >
+                 Veja mais
+               </button>
+             )}
+          </div>
+        </section>
+
+        {/* 2.5 Patrocinadores Desktop */}
+        <section className="w-full mt-[74px] px-6">
+          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
+             <h2 className="text-[48px] font-bold text-[#003870] text-center">Empresas Patrocinadoras</h2>
+             
+             {/* Grid */}
+             <div className="mt-[50px] grid grid-cols-3 gap-[84px]">
+                {sponsors.slice(0, isSponsorsExpanded ? sponsors.length : 6).map((sponsor, index) => (
+                   <div key={index} className="w-[343px] h-[232px] rounded-[25px] flex items-center justify-center relative">
+                      <div className="relative w-full h-full p-4">
+                        <Image src={sponsor.logo} alt={sponsor.name} fill className="object-contain" />
+                      </div>
+                   </div>
+                ))}
+             </div>
+
+             {/* Botão Veja Mais */}
+             {sponsors.length > 6 && !isSponsorsExpanded && (
+               <button 
+                  onClick={() => setIsSponsorsExpanded(true)}
+                  className="mt-[60px] w-[184px] h-[66px] rounded-[50px] border border-[#003870] text-[#003870] text-[18px] font-bold hover:bg-[#33B458] hover:text-white hover:border-[#33B458] transition-all"
+               >
+                 Veja mais
+               </button>
+             )}
+          </div>
+        </section>
+
+        {/* 2.6 Seção Apoio ("Quero apoiar") */}
+        <section className="w-full py-16 flex justify-center">
+          <div
+            className="relative w-[1205px] h-[292px] rounded-[15px] overflow-hidden flex flex-col items-center justify-center"
+            style={{
+              backgroundImage: "url('/assents/images/queroapoiar-img.png')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          >
+            <h2 className="text-[65px] font-bold text-white text-center">
+              Quero apoiar
+            </h2>
+            <div className="flex flex-row gap-[105px] mt-[30px]">
+              <Link href="/apoie">
+                <button
+                  className="bg-transparent border border-white text-white text-[16px] font-bold rounded-[50px] hover:bg-white hover:text-[#003870] transition-all duration-300"
+                  style={{ width: '313px', height: '51px' }}
+                >
+                  Seja Mentor Voluntário
+                </button>
+              </Link>
+              <Link href="/apoie">
+                <button
+                  className="bg-transparent border border-white text-white text-[16px] font-bold rounded-[50px] hover:bg-white hover:text-[#003870] transition-all duration-300"
+                  style={{ width: '313px', height: '51px' }}
+                >
+                  Torne-se nosso parceiro
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <FooterDesktop />
       </div>
     </>
   )

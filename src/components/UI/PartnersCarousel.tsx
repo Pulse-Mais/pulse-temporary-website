@@ -13,7 +13,7 @@ const partners: Partner[] = [
   { name: 'Partner 3', logo: '/assents/logos/magrini-logo.svg' },
   { name: 'Partner 4', logo: '/assents/logos/fiap-logo.svg' },
   { name: 'Partner 5', logo: '/assents/logos/adega-logo.svg' },
-  { name: 'Partner 6', logo: '/assents/logos/sap-logo.svg' },
+ // { name: 'Partner 6', logo: '/assents/logos/sap-logo.svg' },
   { name: 'Partner 7', logo: '/assents/logos/pub-logo.svg' },
   { name: 'Partner 8', logo: '/assents/logos/alura-logo.svg' },
   { name: 'Partner 9', logo: '/assents/logos/adega-logo.svg' },
