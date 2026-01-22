@@ -27,7 +27,7 @@
 | :--- | :--- | :--- |
 | **Hero BG** | `/assents/images/hero-contato.png` | 1200x354px |
 | **Hero Logo** | `/assents/brand/pulse-logo-header.svg` | Logo Pulse Branca (629x194px) |
-| **Icone WhatsApp** | `/assents/icons/whatsapp-icon.svg` | 40x40px |
+| **Icone WhatsApp** | `/assents/brand/whatsapp-icon.svg` | 40x40px |
 | **Icone Instagram** | `/assents/icons/social-instagram.svg` | 31x31px (Reaproveitar do desktop) |
 | **Icone LinkedIn** | `/assents/icons/social-linkedin.svg` | 31x31px (Reaproveitar do desktop) |
 
