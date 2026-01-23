@@ -7,6 +7,7 @@ import {
   HeaderDesktop, 
   FooterDesktop, 
   PartnersCarousel,
+  CTAButton,
   Image, 
   Link 
 } from "@/app/_local-components/index"
@@ -77,21 +78,20 @@ export default function Contato() {
   return (
     <>
       {/* ==================================================================
-          TOAST DE SUCESSO (POP-UP)
-          Fixo no topo direito
+          TOAST DE SUCESSO (POP-UP) - RESPONSIVO
       ================================================================== */}
       {status === 'success' && (
-        <div className="fixed top-24 right-6 z-50 bg-white shadow-xl rounded-[10px] overflow-hidden w-[350px] animate-fade-in-down border border-gray-100">
+        <div className="fixed top-32 md:top-24 left-4 md:left-auto md:right-6 z-[99999] bg-white shadow-2xl rounded-[10px] overflow-hidden w-[90%] max-w-[350px] animate-fade-in-down border border-gray-200">
           <div className="p-4 flex items-start gap-3">
              {/* Ícone de Sucesso */}
-             <div className="text-[#33B458] mt-1">
+             <div className="text-[#33B458] mt-1 shrink-0">
                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                </svg>
              </div>
              <div>
                <h4 className="text-[#003870] font-bold text-[16px]">Sucesso!</h4>
-               <p className="text-[#003870] text-[14px]">
+               <p className="text-[#003870] text-[14px] leading-snug">
                  Seu email foi enviado com sucesso! Logo entraremos em contato.
                </p>
              </div>
@@ -104,47 +104,197 @@ export default function Contato() {
       )}
 
       {/* ==================================================================
-          VERSÃO MOBILE 
+          VERSÃO MOBILE (block md:hidden)
+          Documentação: contato.mobile.md
       ================================================================== */}
       <div className="block md:hidden w-full overflow-x-hidden bg-white">
         <HeaderMobile />
-        <section className="mt-[120px] px-4 mb-10">
-           <h1 className="text-3xl font-bold text-[#003870] text-center">Fale Conosco</h1>
-           <p className="text-center text-gray-500 mt-2">Versão mobile simplificada</p>
-           {/* Se desejar, pode-se implementar o form mobile aqui futuramente */}
+
+        {/* 2.2 Hero Mobile */}
+        <section className="w-full flex justify-center mt-[124px] px-4">
+           {/* Container relativo com tamanho fixo 300x256 conforme docs */}
+           <div className="relative w-[300px] h-[256px] rounded-[16px] overflow-hidden">
+             <Image
+               src="/assents/images/hero-contato-mobile.png"
+               alt="Fale com a Pulse Mais"
+               fill
+               className="object-cover"
+             />
+             {/* Overlay */}
+             <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
+                <h1 className="text-[24px] text-white text-center mb-2">Fale com a</h1>
+                <div className="relative w-[223px] h-[68px]">
+                   <Image 
+                      src="/assents/logos/pulse-logo-footer.svg" 
+                      alt="Pulse Mais Logo" 
+                      fill 
+                      className="object-contain"
+                   />
+                </div>
+             </div>
+           </div>
         </section>
+
+        {/* 2.3 Seção Telefone  */}
+        <section className="w-full flex flex-col pl-[55px] pr-4 mt-[52px]">
+           <h2 className="text-[32px] font-bold text-[#003870] text-left mb-4">Telefone</h2>
+           <Link 
+              href="https://wa.me/5511988213886" 
+              target="_blank"
+              className="flex items-center gap-2 group"
+           >
+              <Image src="/assents/brand/whatsapp-icon.svg" alt="WhatsApp" width={40} height={40} />
+              <span className="text-[24px] text-[#6B6D6E]">WhatsApp</span>
+           </Link>
+        </section>
+
+        {/* 2.4 Seção Redes Sociais */}
+        <section className="w-full flex flex-col pl-[55px] pr-4 mt-[40px]">
+           <h2 className="text-[36px] font-bold text-[#003870] text-left mb-4">Rede Sociais</h2>
+           <div className="flex flex-col gap-[10px]">
+              {/* Instagram */}
+              <Link href="https://www.instagram.com/pulsemaisong/" target="_blank" className="flex items-center gap-[1px]">
+                 <Image src="/assents/brand/social-instagram.svg" alt="Instagram" width={40} height={40} />
+                 <span className="text-[24px] font-normal text-[#6B6D6E] ml-2">Instagram</span>
+              </Link>
+              {/* LinkedIn */}
+              <Link href="https://www.linkedin.com/company/pulsemaisong" target="_blank" className="flex items-center gap-[1px]">
+                 <Image src="/assents/brand/social-linkedin.svg" alt="LinkedIn" width={40} height={40} />
+                 <span className="text-[24px] font-normal text-[#6B6D6E] ml-2">LinkedIn</span>
+              </Link>
+           </div>
+        </section>
+
+        {/* 2.5 Seção Formulário Mobile */}
+        <section className="w-full px-4 mt-[50px] flex flex-col items-center">
+           <h2 className="text-[36px] font-bold text-[#003870] text-left w-[330px] leading-tight mb-6">
+             Envie-nos uma <br /> mensagem
+           </h2>
+           
+           <form onSubmit={handleSubmit} className="flex flex-col gap-[20px] w-[330px]">
+              {/* Nome */}
+              <div className="flex flex-col gap-2">
+                 <label htmlFor="name-mobile" className="text-[24px] font-semibold text-[#003870]">Nome</label>
+                 <input 
+                   type="text" 
+                   id="name-mobile"
+                   name="name"
+                   placeholder="Nome"
+                   value={formData.name}
+                   onChange={handleChange}
+                   required
+                   className="w-[330px] h-[48px] border border-[#6B6D6E] rounded-[15px] px-4 text-[#003870] placeholder:text-[#6B6D6E] focus:outline-none focus:border-[#003870]"
+                 />
+              </div>
+
+              {/* E-mail */}
+              <div className="flex flex-col gap-2">
+                 <label htmlFor="email-mobile" className="text-[24px] font-semibold text-[#003870]">E-mail</label>
+                 <input 
+                   type="email" 
+                   id="email-mobile"
+                   name="email"
+                   placeholder="E-mail"
+                   value={formData.email}
+                   onChange={handleChange}
+                   required
+                   className="w-[330px] h-[48px] border border-[#6B6D6E] rounded-[15px] px-4 text-[#003870] placeholder:text-[#6B6D6E] focus:outline-none focus:border-[#003870]"
+                 />
+              </div>
+
+              {/* Assunto */}
+              <div className="flex flex-col gap-2">
+                 <label htmlFor="subject-mobile" className="text-[24px] font-semibold text-[#003870]">Assunto</label>
+                 <input 
+                   type="text" 
+                   id="subject-mobile"
+                   name="subject"
+                   placeholder="Assunto"
+                   value={formData.subject}
+                   onChange={handleChange}
+                   required
+                   className="w-[330px] h-[48px] border border-[#6B6D6E] rounded-[15px] px-4 text-[#003870] placeholder:text-[#6B6D6E] focus:outline-none focus:border-[#003870]"
+                 />
+              </div>
+
+              {/* Mensagem */}
+              <div className="flex flex-col gap-2">
+                 <label htmlFor="message-mobile" className="text-[24px] font-semibold text-[#003870]">Mensagem</label>
+                 <textarea 
+                   id="message-mobile"
+                   name="message"
+                   placeholder="Mensagem"
+                   value={formData.message}
+                   onChange={handleChange}
+                   required
+                   className="w-[330px] h-[182px] border border-[#6B6D6E] rounded-[15px] p-4 text-[#003870] placeholder:text-[#6B6D6E] focus:outline-none focus:border-[#003870] resize-none"
+                 />
+              </div>
+
+              {/* Botão Enviar - Centralizado */}
+              <div className="flex justify-center mt-2">
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className="w-[246px] h-[50px] bg-[#003870] text-white text-[16px] font-bold rounded-[15px] hover:bg-[#33B458] transition-all disabled:opacity-70"
+                >
+                  {loading ? 'Enviando...' : 'Enviar'}
+                </button>
+              </div>
+              
+              {status === 'error' && (
+                <p className="text-red-500 text-sm mt-2 text-center">Ocorreu um erro. Tente novamente.</p>
+              )}
+           </form>
+        </section>
+
+        {/* 2.6 Seção "Torne-se nosso parceiro" Mobile (Com decorações) */}
+        <section className="relative bg-white pt-[57px] pb-[48px] mt-[40px] overflow-hidden w-full">
+          <div className="absolute right-0 top-0 translate-x-[30%] z-0 pointer-events-none">
+            <Image src="/assents/brand/plus-amarelo.svg" alt="" width={91} height={127} className="w-[91px] h-[127px]" />
+          </div>
+          <div className="absolute left-0 top-[60%] -translate-x-[30%] z-0 pointer-events-none">
+            <Image src="/assents/brand/plus-verde.svg" alt="" width={46} height={64} className="w-[46px] h-[64px]" />
+          </div>
+
+          <div className="relative z-10 flex flex-col items-center">
+            <h2 className="text-[48px] font-bold text-[#486284] text-center mx-auto w-[300px] leading-tight">
+              Torne-se<br />nosso<br />parceiro.
+            </h2>
+            <div className="mt-[80px] flex justify-center">
+              <CTAButton variant="gray" href="/apoie">Saiba Mais</CTAButton>
+            </div>
+          </div>
+        </section>
+
         <FooterMobile />
       </div>
 
       {/* ==================================================================
           VERSÃO DESKTOP (hidden md:block)
-          Implementação Fiel ao Design e Documentação
+          Documentação: contato.desktop.md
       ================================================================== */}
       <div className="hidden md:block w-full bg-white">
         <HeaderDesktop />
 
         {/* 2.2 Hero Section */}
         <section className="w-full max-w-[1440px] mx-auto mt-[55px] px-6 relative flex justify-center">
-          {/* Container Relativo para Overlay */}
-          {/* ADICIONADO: border-none, shadow-none, ring-0, outline-none para garantir zero bordas */}
           <div className="relative w-[1200px] h-[354px] rounded-[24px] overflow-hidden border-none shadow-none outline-none ring-0 bg-transparent">
-             {/* BG Image */}
              <Image
                src="/assents/images/hero-contato.png"
                alt="Fale com a Pulse Mais"
                fill
                className="object-cover border-none outline-none"
-               priority // Adicionado para carregar mais rápido e evitar flashes
+               priority
              />
-             {/* Overlay Content */}
              <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center">
                 <h1 className="text-[48px] font-bold text-white mb-2 shadow-sm">Fale com a</h1>
                 <div className="relative w-[629px] h-[194px]">
                    <Image 
-                      src="/assents/logos/pulse-logo-footer.svg" 
-                     alt="Pulse Mais Logo" 
-                     fill 
-                     className="object-contain"
+                      src="/assents/logos/pulse-logo-footer.svg" // Atualizado conforme docs
+                      alt="Pulse Mais Logo" 
+                      fill 
+                      className="object-contain"
                    />
                 </div>
              </div>
@@ -210,6 +360,7 @@ export default function Contato() {
                      value={formData.name}
                      onChange={handleChange}
                      required
+                     // Desktop: placeholder padrão (esquerda)
                      className="w-[628px] h-[48px] border border-[#6B6D6E] rounded-[15px] px-4 text-[#003870] placeholder:text-[#6B6D6E] focus:outline-none focus:border-[#003870] transition-colors"
                    />
                 </div>
@@ -275,16 +426,15 @@ export default function Contato() {
 
         </section>
 
-        {/* 2.4 Seção Empresas Parceiras e Patrocinadoras */}
-        {/* 3.9 Parceiros Desktop */}
+        {/* 2.4 Parceiros Desktop */}
         <section id="parceiro-desktop" className="w-full py-12">
-           <PartnersCarousel />
+            <PartnersCarousel />
         </section>
 
         <FooterDesktop />
       </div>
 
-      {/* Estilos Globais de Animação (Tailwind customizado inline) */}
+      {/* Estilos Globais de Animação */}
       <style jsx global>{`
         @keyframes progress-bar {
           from { width: 100%; }
