@@ -9,6 +9,18 @@ import { UserPersonaCard } from '@/components/global-components/UserPersonaCard'
 import { DepoimentCarrousel } from '@/components/global-components/DepoimentCarrousel';
 import { InfiniteSlider } from '@/components/global-components/InfiniteSlider';
 import { Info } from "@/components/global-components/Info";
+import { Accordion } from "@/components/UI/Accordion";
+import { CTAButton } from "@/components/UI/CTAButton";
+import { ExperienceCard } from "@/components/UI/ExperienceCard";
+import { HeaderMobile } from "@/components/UI/HeaderMobile";
+import { MenuMobile } from "@/components/UI/MenuMobile";
+import { AccordionItem } from "@/components/UI/AccordionItem";
+import { FooterMobile } from "@/components/UI/FooterMobile";
+import { HeaderDesktop } from "@/components/UI/HeaderDesktop";
+import { HeroCarouselDesktop } from "@/components/UI/HeroCarouselDesktop";
+import { GridPrograms } from "@/components/UI/GridPrograms";
+import { PartnersCarousel } from "@/components/UI/PartnersCarousel";
+import { FooterDesktop } from "@/components/UI/FooterDesktop";
 
 
-export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info }
+export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard, HeaderMobile, MenuMobile, AccordionItem, FooterMobile, HeaderDesktop, HeroCarouselDesktop, GridPrograms, PartnersCarousel, FooterDesktop }

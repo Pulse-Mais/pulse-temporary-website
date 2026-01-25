@@ -4,23 +4,18 @@ import { Logo } from "./Logo"
 import { InstagramLogo, LinkedinLogo } from '../UI/icons/icons'
 import Link from "next/link"
 import { FaYoutube } from 'react-icons/fa'
-import { useEffect, useState } from 'react';
+import { FooterMobile } from './FooterMobile'
 
 export const Footer = () => {
-
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    if (!isClient) {
-        return null; // or a loading spinner
-    }
-
     return (
         <>
-            <footer className="bg-[#009EE6] w-full text-white">
+            {/* ========== VERSÃO MOBILE - Usa FooterMobile como padrão ========== */}
+            <div className="md:hidden">
+                <FooterMobile />
+            </div>
+
+            {/* ========== VERSÃO DESKTOP - Visível apenas em desktop ========== */}
+            <footer className="hidden md:block bg-[#009EE6] w-full text-white">
                 <section className="flex justify-between px-5 py-5 m-auto xg:max-w-[1050px] min-[1200px]:max-w-6xl min-[1380px]:max-w-7xl">
                     <figure>
                         <Logo Variant="white" />
