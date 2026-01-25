@@ -305,6 +305,7 @@ Dividido em dois quadrantes.
 ### CNPJ
 
 * Fonte: 30px
+* Texto: "CNPJ: 48.621.188/0001-11"
 * Peso: regular
 * Cor: `#486284`
 * Margem top: 23px
