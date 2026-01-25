@@ -51,7 +51,7 @@ export default function Home() {
               Tem entre 17 à 26 anos? Este pode ser o começo da sua jornada no mundo da tecnologia.
             </p>
             <div className="mt-[24px]">
-              <CTAButton variant="hero" href="https://preinscricao.pulsemais.org.br/2025">
+              <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/inscricoes2026">
                 Cadastre-se
               </CTAButton>
             </div>
@@ -126,7 +126,7 @@ export default function Home() {
 
           {/* Botões Finais */}
           <div className="flex flex-col items-center mt-[62px] gap-[13px]">
-            <CTAButton variant="yellow" href="https://preinscricao.pulsemais.org.br/2025">
+            <CTAButton variant="yellow" href="https://mailchi.mp/pulsemais/inscricoes2026">
               Cadastre-se
             </CTAButton>
             <CTAButton variant="green" href="/apoie">
@@ -238,7 +238,7 @@ export default function Home() {
               Quero apoiar
             </h2>
             <div className="flex flex-row gap-[105px] mt-[30px]">
-              <Link href="/apoie">
+              <Link href="https://mailchi.mp/pulsemais/mentores-turma3">
                 <button
                   className="bg-transparent border border-white text-white text-[16px] font-bold rounded-[50px] hover:bg-white hover:text-[#003870] transition-all duration-300"
                   style={{ width: '313px', height: '51px' }}

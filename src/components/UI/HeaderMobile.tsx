@@ -12,6 +12,7 @@ export const HeaderMobile = () => {
       <header className="fixed top-0 w-full h-[124px] bg-white z-50 flex justify-between items-start md:hidden">
         {/* Logo */}
         <div className="ml-[30px] mt-[42px]">
+        <Link href="/">
           <Image
             src="/assents/logos/pulse-logo-header.svg"
             alt="Pulse Mais"
@@ -20,6 +21,7 @@ export const HeaderMobile = () => {
             className="w-[159px] h-[50px]"
             priority
           />
+          </Link>
         </div>
 
         {/* Menu Hambúrguer */}

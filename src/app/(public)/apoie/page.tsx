@@ -157,7 +157,7 @@ export default function Apoie() {
             <div className="flex flex-col items-center gap-[20px] mt-8">
               {/* Botão Destaque (Amarelo) */}
               <Link
-                href="https://app.cobrefacil.com.br/link-de-pagamento/8PVXZG3JPRRGNW16REOD"
+                href="https://app.cobrefacil.com.br/link-de-pagamento/R0DPK75NZ371NEY8OQ41"
                 target="_blank"
                 
                 className="w-[300px] h-[65px] bg-[#003870] text-white text-[24px] font-normal rounded-full flex items-center justify-center gap-2"
@@ -167,7 +167,7 @@ export default function Apoie() {
 
               {/* Botões Padrão (Azul) */}
               <Link
-                href="https://app.cobrefacil.com.br/link-de-pagamento/0PXYQ45N6QQKN2DELO8K"
+                href="https://app.cobrefacil.com.br/link-de-pagamento/625ZDMXJD6689K7E140Y"
                 target="_blank"
   
                 className="w-[300px] h-[59px] bg-[#003870] text-white text-[16px] font-normal rounded-full flex items-center justify-center gap-2"
@@ -183,7 +183,7 @@ export default function Apoie() {
               </Link>
               
               <Link
-                href="#"
+                href="https://app.cobrefacil.com.br/link-de-pagamento/5YXZ6QMJV885J0P4W2V1"
                 className="w-[300px] h-[59px] bg-[#003870] text-white text-[16px] font-normal rounded-full flex items-center justify-center gap-2"
               >
                 Doe <strong className="font-bold">R$500,00</strong>
@@ -256,7 +256,7 @@ export default function Apoie() {
               </Link>
 
               <Link
-                href="#"
+                href="https://api.whatsapp.com/send?phone=5511988213886&text=Ol%C3%A1%2C%20gostaria%20de%20doar%20outro%20valor"
                 className="w-[300px] h-[83px] bg-[#003870] text-white text-[18px] font-bold rounded-full flex flex-col items-center justify-center leading-tight"
               >
                 <span>Outro</span>
@@ -463,7 +463,7 @@ export default function Apoie() {
               <div className="flex flex-row items-center justify-center gap-[24px] mt-12 w-full">
                 {/* Card 1: R$50,00 (Link real mantido) */}
                 <Link 
-                  href="https://app.cobrefacil.com.br/link-de-pagamento/8PVXZG3JPRRGNW16REOD" 
+                  href="https://app.cobrefacil.com.br/link-de-pagamento/R0DPK75NZ371NEY8OQ41" 
                   target="_blank" 
                   className="w-[241px] h-[106px] bg-[#003870] rounded-[24px] flex flex-col justify-center items-center hover:bg-[#FCC41F] group transition-colors leading-tight shadow-md hover:-translate-y-1 transform duration-300"
                 >
@@ -473,9 +473,9 @@ export default function Apoie() {
                 
                 {/* Cards: 100, 200, 500 (Links placeholder #) */}
                 {[
-                  { value: "100,00", link: "#" },
+                  { value: "100,00", link: "https://app.cobrefacil.com.br/link-de-pagamento/625ZDMXJD6689K7E140Y" },
                   { value: "200,00", link: "#" },
-                  { value: "500,00", link: "#" }
+                  { value: "500,00", link: "https://app.cobrefacil.com.br/link-de-pagamento/5YXZ6QMJV885J0P4W2V1" }
                 ].map((item, idx) => (
                   <Link 
                     key={idx} 
@@ -532,7 +532,7 @@ export default function Apoie() {
 
                  {/* Card 5: Outro Valor */}
                  <Link 
-                   href="#" 
+                   href="https://api.whatsapp.com/send?phone=5511988213886&text=Ol%C3%A1%2C%20gostaria%20de%20doar%20outro%20valor" 
                    className="w-full h-[90px] bg-[#003870] rounded-[24px] flex flex-col justify-center items-center text-white hover:bg-[#25B957] transition-colors leading-tight px-2"
                  >
                     <strong className="text-[22px] lg:text-[24px] font-bold leading-none">Outro <br/> Valor</strong>

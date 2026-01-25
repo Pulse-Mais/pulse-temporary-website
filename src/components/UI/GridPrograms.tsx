@@ -181,7 +181,7 @@ export const GridPrograms = () => {
 
         {/* Botões de Ação */}
         <div className="flex flex-row justify-center gap-[59px] mt-16">
-          <Link href="https://preinscricao.pulsemais.org.br/2025">
+          <Link href="https://mailchi.mp/pulsemais/inscricoes2026">
             <button
               className="bg-[#FCC41F] text-white text-[16px] font-bold rounded-[50px] hover:opacity-90 transition-all"
               style={{ width: '340px', height: '50px' }}

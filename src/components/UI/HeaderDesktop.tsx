@@ -28,16 +28,18 @@ export const HeaderDesktop = () => {
 
       {/* Container Principal */}
       <div className="relative w-full max-w-[1440px] mx-auto flex flex-row justify-between items-center h-[130px] z-10">
-        {/* Logo */}
+        {/* Logo com Link para Home */}
         <div className="ml-[120px]">
-          <Image
-            src="/assents/logos/pulse-logo-header.svg"
-            alt="Pulse Mais"
-            width={250}
-            height={50}
-            className="w-[230px] h-[90px]"
-            priority
-          />
+          <Link href="/">
+            <Image
+              src="/assents/logos/pulse-logo-header.svg"
+              alt="Pulse Mais"
+              width={250}
+              height={50}
+              className="w-[230px] h-[90px] cursor-pointer hover:opacity-90 transition-opacity"
+              priority
+            />
+          </Link>
         </div>
 
         {/* Menu de Navegação */}
@@ -60,6 +62,3 @@ export const HeaderDesktop = () => {
     </header>
   )
 }
-
-
-

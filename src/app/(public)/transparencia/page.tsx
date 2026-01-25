@@ -227,13 +227,13 @@ export default function Transparencia() {
             <div className="flex flex-row justify-center gap-[40px] mt-[60px] w-full flex-wrap">
                {/* Card 1 - 2022-23 */}
                <div className="flex flex-col items-center gap-[16px]">
-                  <Link href="https://drive.google.com/file/d/19wIpS56GZn-FavxFJGQCxyQmniw_YIuy/view?usp=sharing" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
+                  <Link href="https://heyzine.com/flip-book/32d3cb5076.html" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
                     <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                       <span className="text-white text-[62px] font-bold">2022-23</span>
                     </div>
                   </Link>
-                  <Link href="https://drive.google.com/file/d/19wIpS56GZn-FavxFJGQCxyQmniw_YIuy/view?usp=sharing" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">saiba mais</Link>
+                  <Link href="https://heyzine.com/flip-book/32d3cb5076.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">saiba mais</Link>
                </div>
 
                {/* Card 2 - 2024 */}
@@ -333,7 +333,7 @@ export default function Transparencia() {
               Quero apoiar
             </h2>
             <div className="flex flex-row gap-[105px] mt-[30px]">
-              <Link href="/apoie">
+              <Link href="https://mailchi.mp/pulsemais/mentores-turma3">
                 <button
                   className="bg-transparent border border-white text-white text-[16px] font-bold rounded-[50px] hover:bg-white hover:text-[#003870] transition-all duration-300"
                   style={{ width: '313px', height: '51px' }}

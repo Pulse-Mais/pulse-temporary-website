@@ -323,7 +323,7 @@ export default function Sobre() {
 
             {/* Botão de Ação */}
             <div className="flex justify-center mt-[81px]">
-              <Link href="https://app.pulsemais.org.br/?pagina=mentee" target="_blank">
+              <Link href="https://mailchi.mp/pulsemais/inscricoes2026" target="_blank">
                 <button
                   className="bg-[#003870] text-white text-[16px] font-bold rounded-full hover:bg-[#33B458] transition-all duration-300"
                   style={{ width: '615px', height: '81px' }}
@@ -349,7 +349,7 @@ export default function Sobre() {
               Quero apoiar
             </h2>
             <div className="flex flex-row gap-[105px] mt-[30px]">
-              <Link href="/apoie">
+              <Link href="https://mailchi.mp/pulsemais/mentores-turma3">
                 <button
                   className="bg-transparent border border-white text-white text-[16px] font-bold rounded-[50px] hover:bg-white hover:text-[#003870] transition-all duration-300"
                   style={{ width: '313px', height: '51px' }}
@@ -602,7 +602,7 @@ export default function Sobre() {
 
           {/* Botão CTA */}
           <div className="mt-8 w-full">
-            <Link href="https://app.pulsemais.org.br/?pagina=mentee" target="_blank" className="block">
+            <Link href="https://mailchi.mp/pulsemais/inscricoes2026" target="_blank" className="block">
               <button className="w-full h-[60px] bg-[#FBBF24] text-white font-bold rounded-full">
                 Venha ser Pulser
               </button>
