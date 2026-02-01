@@ -176,7 +176,7 @@ export default function Apoie() {
               </Link>
               
               <Link
-                href="#"
+                href="https://app.cobrefacil.com.br/link-de-pagamento/X2OYRL8N0LLPJMQEK6W3"
                 className="w-[300px] h-[59px] bg-[#003870] text-white text-[16px] font-normal rounded-full flex items-center justify-center gap-2"
               >
                 Doe <strong className="font-bold">R$200,00</strong>
@@ -474,7 +474,7 @@ export default function Apoie() {
                 {/* Cards: 100, 200, 500 (Links placeholder #) */}
                 {[
                   { value: "100,00", link: "https://app.cobrefacil.com.br/link-de-pagamento/625ZDMXJD6689K7E140Y" },
-                  { value: "200,00", link: "#" },
+                  { value: "200,00", link: "https://app.cobrefacil.com.br/link-de-pagamento/X2OYRL8N0LLPJMQEK6W3" },
                   { value: "500,00", link: "https://app.cobrefacil.com.br/link-de-pagamento/5YXZ6QMJV885J0P4W2V1" }
                 ].map((item, idx) => (
                   <Link 

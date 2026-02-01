@@ -14,7 +14,7 @@ interface ProgramCard {
 
 const programs: ProgramCard[] = [
   {
-    title: 'Experiências de Mentorias de Curta Duração',
+    title: 'Experiências de Mentoria de Curta Duração',
     content: {
       formato: 'Online ou Presencial em São Paulo',
       beneficios: [
@@ -38,7 +38,7 @@ const programs: ProgramCard[] = [
   {
     title: 'Programa Pulse Mais',
     content: {
-      formato: 'Online ou Híbrido (Presencial/Online)',
+      formato: 'Híbrido (Presencial/Online)',
       dedicacao: '6 meses',
       beneficios: [
         'Formação técnica e comportamental completa',
@@ -50,7 +50,7 @@ const programs: ProgramCard[] = [
   {
     title: 'Programa de Mentoria',
     content: {
-      formato: '(online/híbrido/presencial)',
+      formato: 'Online',
       dedicacao: '4 meses',
       beneficios: [
         'Direcionamento de carreira individualizado',
@@ -181,7 +181,7 @@ export const GridPrograms = () => {
 
         {/* Botões de Ação */}
         <div className="flex flex-row justify-center gap-[59px] mt-16">
-          <Link href="https://mailchi.mp/pulsemais/inscricoes2026">
+          <Link href="https://mailchi.mp/pulsemais/jovens">
             <button
               className="bg-[#FCC41F] text-white text-[16px] font-bold rounded-[50px] hover:opacity-90 transition-all"
               style={{ width: '340px', height: '50px' }}
@@ -189,12 +189,12 @@ export const GridPrograms = () => {
               Cadastre-se
             </button>
           </Link>
-          <Link href="/apoie">
+          <Link href="https://mailchi.mp/pulsemais/inscricoes2026">
             <button
-              className="bg-[#FCC41F] text-white text-[16px] font-bold rounded-[50px] hover:opacity-90 transition-all"
+              className="bg-[#FCC41F] text-white text-center text-[16px] font-bold rounded-[50px] hover:opacity-90 transition-all"
               style={{ width: '340px', height: '50px' }}
             >
-              Torne nosso Parceiro
+              Se inscreva no <br/>Programa Pulse Mais
             </button>
           </Link>
         </div>

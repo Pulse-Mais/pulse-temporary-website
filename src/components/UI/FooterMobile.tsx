@@ -34,6 +34,15 @@ export const FooterMobile = () => {
                 className="w-[50px] h-[50px]"
               />
             </Link>
+            <Link href="https://www.youtube.com/@pulsemais/videos" target="_blank">
+              <Image
+                src="/assents/brand/social-youtube.svg"
+                alt="Youtube"
+                width={50}
+                height={50}
+                className="w-[50px] h-[50px]"
+              />
+            </Link>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { HeaderDesktop, FooterDesktop, FooterMobile, Image, Link, HeaderMobile, CTAButton } from "@/app/_local-components/index"
+  import { HeaderDesktop, FooterDesktop, FooterMobile, Image, Link, HeaderMobile, CTAButton } from "@/app/_local-components/index"
 import AnimatedCounter from "@/components/UI/AnimatedCounter"; // Ajuste o caminho se necessário
 export default function Sobre() {
   return (
@@ -130,7 +130,6 @@ export default function Sobre() {
         </section>
 
         {/* 2.5 Sessão "Resultados de Impacto" */}
-        {/* 2.5 Sessão "Resultados de Impacto" */}
         <section 
           className="relative w-full bg-[#33B458] pt-[100px] pb-[100px] overflow-hidden"
           style={{
@@ -184,7 +183,7 @@ export default function Sobre() {
               <div className="flex flex-col items-center text-center w-full">
                 <span className="text-[128px] font-extrabold text-[#003870] leading-none">
                   {/* AQUI: Trocamos "110" pelo componente */}
-                  <AnimatedCounter target={110} duration={2000} />
+                  <AnimatedCounter target={130} duration={2000} />
                 </span>
                 <p className="text-[32px] text-white mt-4">
                   <strong>Jovens formados</strong><br /> em programas
@@ -256,7 +255,7 @@ export default function Sobre() {
                 <div className="relative h-[200px] bg-gray-200 rounded-t-[30px] overflow-hidden">
                   <Image
                     src="/assents/images/pilar-img.png"
-                    alt="Programas de até 6 meses"
+                    alt="Programas de Carreira"
                     width={400}
                     height={200}
                     className="w-full h-full object-cover"
@@ -264,7 +263,7 @@ export default function Sobre() {
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <h3 
                       className="text-[40px] font-bold text-white text-center"
-                      dangerouslySetInnerHTML={{ __html: "Programas de<br>até 6 meses" }}
+                      dangerouslySetInnerHTML={{ __html: "Programas de<br>Carreira" }}
                     />
                   </div>
                 </div>
@@ -325,7 +324,7 @@ export default function Sobre() {
             <div className="flex justify-center mt-[81px]">
               <Link href="https://mailchi.mp/pulsemais/inscricoes2026" target="_blank">
                 <button
-                  className="bg-[#003870] text-white text-[16px] font-bold rounded-full hover:bg-[#33B458] transition-all duration-300"
+                  className="bg-[#003870] text-white text-[24px] font-bold rounded-full hover:bg-[#33B458] transition-all duration-300"
                   style={{ width: '615px', height: '81px' }}
                 >
                   Quero ser Pulser
@@ -510,7 +509,7 @@ export default function Sobre() {
               {/* Métrica 2 */}
               <div className="flex flex-col items-center text-center">
                 <span className="text-[96px] font-extrabold text-[#003870] leading-none">
-                  <AnimatedCounter target={110} duration={2000} />
+                  <AnimatedCounter target={130} duration={2000} />
                 </span>
                 <p className="text-[24px] text-white mt-2">
                   <strong>Jovens formados</strong> em programas
@@ -563,7 +562,7 @@ export default function Sobre() {
             <div className="relative w-full h-[180px] rounded-[30px] overflow-hidden flex flex-col justify-center items-center text-center px-4">
               <Image
                 src="/assents/images/pilar-img.png"
-                alt="Programas de até 6 Meses"
+                alt="Programas de Carreira"
                 fill
                 className="object-cover"
               />
@@ -571,7 +570,7 @@ export default function Sobre() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#003870] to-[#33B458] opacity-80"></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold leading-tight text-white drop-shadow-md">
-                  Programas de até 6 Meses
+                  Programas de Carreira
                 </h3>
                 <p className="text-sm font-normal mt-1 text-white drop-shadow-md">
                   Desenvolvimento de Talentos

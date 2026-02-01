@@ -162,6 +162,10 @@ export default function Contato() {
                  <Image src="/assents/brand/social-linkedin.svg" alt="LinkedIn" width={40} height={40} />
                  <span className="text-[24px] font-normal text-[#6B6D6E] ml-2">LinkedIn</span>
               </Link>
+              <Link href="https://www.youtube.com/@pulsemais/videos" target="_blank" className="flex items-center gap-[1px]">
+                 <Image src="/assents/brand/social-youtube.svg" alt="LinkedIn" width={40} height={40} />
+                 <span className="text-[24px] font-normal text-[#6B6D6E] ml-2">Youtube</span>
+              </Link>
            </div>
         </section>
 
@@ -341,6 +345,15 @@ export default function Contato() {
                    >
                       <Image src="/assents/brand/social-linkedin.svg" alt="LinkedIn" width={31} height={31} />
                       <span className="text-[20px] text-[#6B6D6E]">LinkedIn</span>
+                   </Link>
+
+                   <Link 
+                     href="https://www.youtube.com/@pulsemais/videos" 
+                     target="_blank" 
+                     className="flex items-center gap-[6px] hover:opacity-80 transition-opacity"
+                   >
+                      <Image src="/assents/brand/social-youtube.svg" alt="LinkedIn" width={31} height={31} />
+                      <span className="text-[20px] text-[#6B6D6E]">Youtube</span>
                    </Link>
                 </div>
              </div>

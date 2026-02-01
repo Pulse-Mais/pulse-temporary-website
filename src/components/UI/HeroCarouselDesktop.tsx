@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+// 1. Interface Atualizada
 interface Slide {
   category: string
-  title?: string
-  subtitle: string | string[] 
+  title?: string | string[] // Aceita string única ou array para quebras de linha
+  subtitle: string[]
   buttonText: string
   buttonHref: string
   image: string
@@ -15,16 +16,17 @@ interface Slide {
   buttonHeight: number
 }
 
+// 2. Dados Atualizados com a quebra de linha no título
 const slides: Slide[] = [
   {
     category: 'Jovens',
-    title: 'Venha ser um jovem Pulsante',
+    title: 'Venha ser Pulser',
     subtitle: [
       'Tem entre 17 à 26 anos? Este pode ser o começo',
       'da sua jornada no mundo da tecnologia'
     ],
     buttonText: 'Saiba Mais',
-    buttonHref: 'https://preinscricao.pulsemais.org.br/2025',
+    buttonHref: 'https://mailchi.mp/pulsemais/inscricoes2026',
     image: '/assents/desktop/hero-jovens.jpg',
     alignment: 'left',
     buttonWidth: 132,
@@ -47,15 +49,15 @@ const slides: Slide[] = [
   },
   {
     category: 'Mentores',
+    // Título em duas linhas recuperado
     title: ['Faça parte',
-            'dessa mudança'
-    ],
+            'dessa mudança'],
     subtitle: [
       'Venha transformar desafios em',
       'oportunidades para jovens.'
     ],
     buttonText: 'Seja um mentor',
-    buttonHref: '/apoie',
+    buttonHref: 'https://mailchi.mp/pulsemais/mentores-turma3',
     image: '/assents/desktop/hero-mentores.jpg',
     alignment: 'right',
     buttonWidth: 175,
@@ -69,7 +71,7 @@ export const HeroCarouselDesktop = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 10000) // 4 segundos por slide
+    }, 10000)
 
     return () => clearInterval(interval)
   }, [])
@@ -78,7 +80,6 @@ export const HeroCarouselDesktop = () => {
 
   return (
     <section className="relative w-full h-[600px] overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src={current.image}
@@ -89,37 +90,34 @@ export const HeroCarouselDesktop = () => {
         />
       </div>
 
-      {/* Content Overlay */}
       <div
         className={`relative h-full flex flex-col items-start pt-[155px] ${
           current.alignment === 'left' 
             ? 'ml-[120px]' 
-            : 'ml-auto mr-[80px] w-fit' // ml-auto é a "mola" que empurra p/ direita
+            : 'ml-auto mr-[80px] w-fit'
         }`}
       >
-        {/* Category */}
         <p className="text-[21px] font-medium text-white mb-[3px]">
           {current.category}
         </p>
 
-        {/* Title (se existir) */}
+        {/* 3. Renderização do Título Atualizada */}
         {current.title && (
           <h1 className="text-[60px] font-bold text-white mb-[15px]">
-          {Array.isArray(current.title) ? (
-            // Se for array, mapeia cada linha
-            current.title.map((line, index) => (
-              <span key={index} className="block">
-                {line}
-              </span>
-            ))
-          ) : (
-            // Se for string normal, exibe direto
-            current.title
-          )}
-        </h1>
+            {Array.isArray(current.title) ? (
+              // Se for array, cria blocos para cada linha
+              current.title.map((line, index) => (
+                <span key={index} className="block">
+                  {line}
+                </span>
+              ))
+            ) : (
+              // Se for string normal, exibe direto
+              current.title
+            )}
+          </h1>
         )}
 
-        {/* Subtitle */}
         <div
           className={`text-[20px] font-normal text-white ${
             current.alignment === 'left'
@@ -134,7 +132,6 @@ export const HeroCarouselDesktop = () => {
           ))}
         </div>
 
-        {/* Button */}
         <Link href={current.buttonHref} className="mt-[24px]">
           <button
             className="border border-white text-white rounded-[50px] font-bold hover:bg-[#33B458] hover:text-white hover:border-[#33B458] transition-all duration-300"
@@ -148,7 +145,6 @@ export const HeroCarouselDesktop = () => {
         </Link>
       </div>
 
-      {/* Navigation Dots */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
         {slides.map((_, index) => (
           <button
@@ -166,6 +162,3 @@ export const HeroCarouselDesktop = () => {
     </section>
   )
 }
-
-
-
