@@ -18,7 +18,7 @@ import {
 const partners = [
  { name: 'Partner 3', logo: '/assents/logos/magrini-logo.svg' },
  { name: 'Partner 4', logo: '/assents/logos/fiap-logo.svg' },
- { name: 'Partner 5', logo: '/assents/logos/adega-logo.svg' },
+ { name: 'Partner 5', logo: '/assents/logos/adega-logo.svg',},
  // { name: 'Partner 6', logo: '/assents/logos/sap-logo.svg' },
  { name: 'Partner 7', logo: '/assents/logos/pub-logo.svg' },
  { name: 'Partner 8', logo: '/assents/logos/alura-logo.svg' },
@@ -33,7 +33,7 @@ const sponsors = [
   { name: 'sponsor 1', logo: '/assents/logos/ClearIt.svg' },
   { name: 'sponsor 2', logo: '/assents/logos/clm.svg' },
   { name: 'sponsor 3', logo: '/assents/logos/simpress.svg' },
-  { name: 'sponsor 4', logo: '/assents/logos/matza.svg' },
+  { name: 'sponsor 4', logo: '/assents/logos/matza.svg'},
   { name: 'sponsor 5', logo: '/assents/logos/fellipelli.svg' },
   { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
   { name: 'sponsor 7', logo: '/assents/logos/reclame-aqui.svg' }
@@ -211,7 +211,6 @@ export default function Transparencia() {
             alt="Hero Transparência Desktop"
             width={1200}
             height={465}
-            quality={100}
             className="w-full max-w-[1200px] h-[465px] object-cover rounded-[24px] mx-auto"
           />
         </section>
@@ -233,7 +232,7 @@ export default function Transparencia() {
                       <span className="text-white text-[62px] font-bold">2022-23</span>
                     </div>
                   </Link>
-                  <Link href="https://heyzine.com/flip-book/32d3cb5076.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">saiba mais</Link>
+                  <Link href="https://heyzine.com/flip-book/32d3cb5076.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">Acesse</Link>
                </div>
 
                {/* Card 2 - 2024 */}
@@ -244,7 +243,7 @@ export default function Transparencia() {
                       <span className="text-white text-[62px] font-bold">2024</span>
                     </div>
                   </Link>
-                  <Link href="https://heyzine.com/flip-book/26394a3fa9.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">saiba mais</Link>
+                  <Link href="https://heyzine.com/flip-book/26394a3fa9.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">Acesse</Link>
                </div>
 
                {/* Card 3 - 2025 (Em breve) */}
@@ -256,7 +255,7 @@ export default function Transparencia() {
                       <span className="text-white text-[32px] font-normal mt-2">(em breve)</span>
                     </div>
                   </div>
-                  <span className="text-[20px] text-[#6B6D6E] underline opacity-50 cursor-not-allowed">saiba mais</span>
+                  <span className="text-[20px] text-[#6B6D6E] underline opacity-50 cursor-not-allowed">Acesse</span>
                </div>
             </div>
           </div>

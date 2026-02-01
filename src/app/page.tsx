@@ -5,7 +5,7 @@ export default function Home() {
   // Dados dos cards de acordeão
   const accordionData = [
     {
-      title: "Experiências de Mentorias de Curta Duração",
+      title: "Experiências de Mentoria de Curta Duração",
       content: `<strong>Formato:</strong> Online ou Presencial em São Paulo<br/><strong>Benefícios:</strong><br/>- Clareza sobre temas de carreira<br/>- Rede profissional ampliada<br/>- Aumento de repertório`
     },
     {
@@ -51,7 +51,7 @@ export default function Home() {
               Tem entre 17 à 26 anos? Este pode ser o começo da sua jornada no mundo da tecnologia.
             </p>
             <div className="mt-[24px]">
-              <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/inscricoes2026">
+              <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/jovens">
                 Cadastre-se
               </CTAButton>
             </div>
@@ -126,11 +126,11 @@ export default function Home() {
 
           {/* Botões Finais */}
           <div className="flex flex-col items-center mt-[62px] gap-[13px]">
-            <CTAButton variant="yellow" href="https://mailchi.mp/pulsemais/inscricoes2026">
+            <CTAButton variant="yellow" href="https://mailchi.mp/pulsemais/jovens">
               Cadastre-se
             </CTAButton>
-            <CTAButton variant="green" href="/apoie">
-              Torne nosso Parceiro
+            <CTAButton variant="green" href="https://mailchi.mp/pulsemais/inscricoes2026" className="text-center leading-tight">
+              Se inscreva no <br/>Programa Pulse Mais
             </CTAButton>
           </div>
         </section>
