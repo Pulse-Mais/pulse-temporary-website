@@ -20,7 +20,7 @@ interface Slide {
 const slides: Slide[] = [
   {
     category: 'Jovens',
-    title: 'Venha ser um jovem Pulsante',
+    title: 'Venha ser Pulser',
     subtitle: [
       'Tem entre 17 à 26 anos? Este pode ser o começo',
       'da sua jornada no mundo da tecnologia'

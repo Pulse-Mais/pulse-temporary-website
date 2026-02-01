@@ -23,14 +23,16 @@ export const FooterDesktop = () => {
         />
       </div>
 
-      {/* Container Principal de Conteúdo */}
-      {/* MUDANÇA 1: gap-[30px] (era 80px). 
-          Isso aproxima drasticamente as colunas da esquerda, "colando" elas na logo.
+      {/* CONTAINER PRINCIPAL 
+         1. justify-between: Joga a Logo pra esquerda e o bloco de textos pra direita.
+         2. px-8: Garante que não cole na borda da tela se o monitor for menor que 1440px.
+         3. max-w-[1440px]: Segura o conteúdo no centro em monitores gigantes.
       */}
-      <div className="relative max-w-[1440px] mx-auto flex flex-row items-start z-10 gap-[30px]">
+      <div className="relative max-w-[1440px] mx-auto flex flex-row justify-between items-start z-10 px-8 pt-[70px]">
         
         {/* Coluna 1 - Logo */}
-        <div className="pt-[70px] pl-8">
+        {/* Removi o pt-[70px] daqui e coloquei no pai para alinhar tudo junto, ou você pode manter individual se preferir desnivelado */}
+        <div className="flex-shrink-0"> 
           <Image
             src="/assents/logos/pulse-logo-footer.svg"
             alt="Pulse Mais"
@@ -40,11 +42,11 @@ export const FooterDesktop = () => {
           />
         </div>
 
-{/* 2. GRUPO DE TEXTOS (Empurrado para a direita em bloco) */}
-        {/* MUDANÇA AQUI: de ml-[180px] para ml-[320px] 
-            Isso empurra todo o bloco de texto bem mais para a direita.
+        {/* 2. GRUPO DE TEXTOS */}
+        {/* REMOVIDO: ml-[320px] (Isso era o vilão)
+           ADICIONADO: gap-[60px] (Mantém o espaço entre as colunas de texto)
         */}
-        <div className="flex flex-row gap-[60px] ml-[320px] pt-[10px]">
+        <div className="flex flex-row gap-[60px]">
           
           {/* Coluna Mapa do Site */}
           <div>
@@ -91,6 +93,12 @@ export const FooterDesktop = () => {
                 <Link href="https://www.linkedin.com/company/pulsemaisong/" target="_blank" className="flex items-center gap-2">
                   <Image src="/assents/brand/social-linkedin.svg" alt="LinkedIn" width={31} height={31} className="w-[31px] h-[31px]" />
                   <span className="text-[16px] font-normal text-[#6B6D6E] hover:text-[#003870] transition-colors">LinkedIn</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.youtube.com/@pulsemais/videos" target="_blank" className="flex items-center gap-2">
+                  <Image src="/assents/brand/social-youtube.svg" alt="LinkedIn" width={31} height={31} className="w-[31px] h-[31px]" />
+                  <span className="text-[16px] font-normal text-[#6B6D6E] hover:text-[#003870] transition-colors">Youtube</span>
                 </Link>
               </li>
             </ul>
