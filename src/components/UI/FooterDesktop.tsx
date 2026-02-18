@@ -54,13 +54,26 @@ export const FooterDesktop = () => {
           <div>
             <h3 className="text-[20px] font-bold text-[#003870] mb-4">Redes sociais</h3>
             <ul className="flex flex-col gap-[10px]">
+              
               <li>
                 <Link href="https://www.instagram.com/pulsemaisong/" target="_blank" className="flex items-center gap-2">
                   <Image src="/assents/brand/social-instagram.svg" alt="Instagram" width={31} height={31} className="w-[31px] h-[31px]" />
                   <span className="text-[16px] font-normal text-[#6B6D6E] hover:text-[#003870] transition-colors">Instagram</span>
                 </Link>
               </li>
-              {/* ... outros itens de rede social ... */}
+              <li>
+                <Link href="https://www.linkedin.com/company/pulsemaisong/" target="_blank" className="flex items-center gap-2">
+                  <Image src="/assents/brand/social-linkedin.svg" alt="LinkedIn" width={31} height={31} className="w-[31px] h-[31px]" />
+                  <span className="text-[16px] font-normal text-[#6B6D6E] hover:text-[#003870] transition-colors">LinkedIn</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.youtube.com/@pulsemais/videos" target="_blank" className="flex items-center gap-2">
+                  <Image src="/assents/brand/social-youtube.svg" alt="LinkedIn" width={31} height={31} className="w-[31px] h-[31px]" />
+                  <span className="text-[16px] font-normal text-[#6B6D6E] hover:text-[#003870] transition-colors">Youtube</span>
+                </Link>
+              </li>
+              
             </ul>
           </div>
 
