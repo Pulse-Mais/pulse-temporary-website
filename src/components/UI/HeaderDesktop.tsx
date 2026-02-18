@@ -1,22 +1,22 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const HeaderDesktop = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const routes = [
-    { name: 'Sobre', href: '/sobre' },
-    { name: 'Apoie', href: '/apoie' },
-    { name: 'Transparência', href: '/transparencia' },
-    { name: 'Contato', href: '/contato' },
-  ]
+    { name: "Sobre", href: "/sobre" },
+    { name: "Apoie", href: "/apoie" },
+    { name: "Transparência", href: "/transparencia" },
+    { name: "Contato", href: "/contato" },
+  ];
 
   return (
     <header className="relative w-full bg-white hidden md:flex">
       {/* Onda Decorativa Esquerda Superior */}
-      <div className="absolute top-0 left-0 z-0">
+      <div className="absolute top-[-15px] left-0 z-0">
         <Image
           src="/assents/backgrounds/menu-wave-desktop.svg"
           alt="Menu Wave"
@@ -50,8 +50,8 @@ export const HeaderDesktop = () => {
               href={route.href}
               className={`text-[20px] font-medium transition-colors ${
                 pathname === route.href
-                  ? 'text-[#003870] font-bold'
-                  : 'text-[#003870] hover:opacity-70'
+                  ? "text-[#003870] font-bold"
+                  : "text-[#003870] hover:opacity-70"
               }`}
             >
               {route.name}
@@ -60,5 +60,5 @@ export const HeaderDesktop = () => {
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
