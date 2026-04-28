@@ -26,7 +26,7 @@ const slides: Slide[] = [
       'da sua jornada no mundo da tecnologia'
     ],
     buttonText: 'Saiba Mais',
-    buttonHref: 'https://mailchi.mp/pulsemais/inscricoes2026',
+    buttonHref: 'https://mailchi.mp/pulsemais/jovens',
     image: '/assents/desktop/hero-jovens.jpg',
     alignment: 'left',
     buttonWidth: 132,
@@ -57,7 +57,7 @@ const slides: Slide[] = [
       'oportunidades para jovens.'
     ],
     buttonText: 'Seja um mentor',
-    buttonHref: 'https://mailchi.mp/pulsemais/mentores-turma3',
+    buttonHref: 'https://mailchi.mp/5f880019d8a5/uuvkdx4axd',
     image: '/assents/desktop/hero-mentores.jpg',
     alignment: 'right',
     buttonWidth: 175,

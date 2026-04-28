@@ -98,11 +98,11 @@ export default function Transparencia() {
 
             {/* Botão 3 - 2025 (Ajustado com duas linhas) */}
             <Link
-              href="#"
+              href="https://heyzine.com/flip-book/d41aa3126b.html"
               className="w-[300px] h-[64px] rounded-full flex flex-col items-center justify-center bg-gradient-to-r from-[#003870] to-[#25B957] text-white shadow-md hover:brightness-110 transition-all cursor-default opacity-90 leading-none"
             >
               <span className="text-[28px] font-bold">2025</span>
-              <span className="text-[14px] font-normal mt-1">(em breve)</span>
+              
             </Link>
           </div>
         </section>
@@ -246,16 +246,15 @@ export default function Transparencia() {
                   <Link href="https://heyzine.com/flip-book/26394a3fa9.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">Acesse</Link>
                </div>
 
-               {/* Card 3 - 2025 (Em breve) */}
+               {/* Card 3 - 2025 */}
                <div className="flex flex-col items-center gap-[16px]">
-                  <div className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden cursor-default">
-                    <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-                      <span className="text-white text-[62px] font-bold leading-none">2025</span>
-                      <span className="text-white text-[32px] font-normal mt-2">(em breve)</span>
+                  <Link href="https://heyzine.com/flip-book/d41aa3126b.html" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
+                    <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                      <span className="text-white text-[62px] font-bold">2025</span>
                     </div>
-                  </div>
-                  <span className="text-[20px] text-[#6B6D6E] underline opacity-50 cursor-not-allowed">Acesse</span>
+                  </Link>
+                  <Link href="https://heyzine.com/flip-book/d41aa3126b.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">Acesse</Link>
                </div>
             </div>
           </div>

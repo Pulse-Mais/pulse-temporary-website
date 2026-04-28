@@ -12,7 +12,7 @@ import {
   Link,
 } from "@/app/_local-components/index";
 
-const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/contato@app.pulsemais.org.br";
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/edu@pulsemais.org.br";
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!;
 
 declare global {
