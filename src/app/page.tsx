@@ -51,7 +51,8 @@ export default function Home() {
               Tem entre 17 à 26 anos? Este pode ser o começo da sua jornada no mundo da tecnologia.
             </p>
             <div className="mt-[24px]">
-              <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/jovens">
+              {/* <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/jovens"> */}
+              <CTAButton variant="hero" href="https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1">
                 Cadastre-se
               </CTAButton>
             </div>
@@ -129,8 +130,9 @@ export default function Home() {
             <CTAButton variant="yellow" href="https://mailchi.mp/pulsemais/jovens">
               Cadastre-se
             </CTAButton>
-            <CTAButton variant="green" href="https://mailchi.mp/pulsemais/inscricoes2026" className="text-center leading-tight">
-              Se inscreva no <br/>Programa Pulse Mais
+            {/* <CTAButton variant="green" href="https://mailchi.mp/pulsemais/inscricoes2026" className="text-center leading-tight"> */}
+            <CTAButton variant="green" href="https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1" className="text-center leading-tight">
+              Se inscreva no <br/>Programa de Mentoria
             </CTAButton>
           </div>
         </section>

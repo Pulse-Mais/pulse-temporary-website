@@ -189,12 +189,13 @@ export const GridPrograms = () => {
               Cadastre-se
             </button>
           </Link>
-          <Link href="https://mailchi.mp/pulsemais/inscricoes2026">
+          {/* <Link href="https://mailchi.mp/pulsemais/inscricoes2026"> */}
+          <Link href="https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1https://mailchi.mp/pulsemais/inscricoes2026">
             <button
               className="bg-[#FCC41F] text-white text-center text-[16px] font-bold rounded-[50px] hover:opacity-90 transition-all"
               style={{ width: '340px', height: '50px' }}
             >
-              Se inscreva no <br/>Programa Pulse Mais
+              Se inscreva no <br/>Programa de Mentoria
             </button>
           </Link>
         </div>

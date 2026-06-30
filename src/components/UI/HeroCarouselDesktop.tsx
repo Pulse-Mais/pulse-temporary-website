@@ -26,7 +26,8 @@ const slides: Slide[] = [
       'da sua jornada no mundo da tecnologia'
     ],
     buttonText: 'Saiba Mais',
-    buttonHref: 'https://mailchi.mp/pulsemais/jovens',
+    //buttonHref: 'https://mailchi.mp/pulsemais/jovens',
+    buttonHref: 'https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1',
     image: '/assents/desktop/hero-jovens.jpg',
     alignment: 'left',
     buttonWidth: 132,
