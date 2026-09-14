@@ -135,7 +135,7 @@ export default function Pulsar() {
       {/* ========================================================
           VERSÃO MOBILE (md:hidden)
       ========================================================= */}
-      <main className="md:hidden w-full overflow-hidden bg-[#003870]">
+      <main className="md:hidden w-full overflow-x-hidden bg-[#003870]">
         {/* Sessão 1 - Hero */}
         <section className="relative w-full h-[578px] flex flex-col items-center">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[500px] overflow-hidden">
@@ -289,7 +289,7 @@ export default function Pulsar() {
         </WhiteOval>
 
         {/* Sessão 5 - Ingressos */}
-        <section id="quero-participar" className="relative flex flex-col items-center pt-[58px] pb-[84px]">
+        <section id="quero-participar-mobile" className="relative flex flex-col items-center pt-[58px] pb-[84px]">
           <h2 className="text-center text-[31px] font-bold leading-[35px] text-white">
             Quero participar<br />
             do evento
@@ -326,9 +326,6 @@ export default function Pulsar() {
         <FooterMobile variant="blue" />
       </main>
 
-      {/* ========================================================
-          VERSÃO DESKTOP (hidden md:block)
-      ========================================================= */}
       {/* ========================================================
           VERSÃO DESKTOP (hidden md:block)
       ========================================================= */}
