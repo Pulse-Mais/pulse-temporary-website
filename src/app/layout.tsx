@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className='!scroll-smooth w-full overflow-x-hidden'>
+    <html lang="pt-br" className='!scroll-smooth w-full overflow-x-hidden' suppressHydrationWarning>
     <Head>
       {/* Google Analytics Tag */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4PBJV9XJC"></script>
