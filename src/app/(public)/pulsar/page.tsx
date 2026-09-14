@@ -52,8 +52,8 @@ const experiences = [
   { title: 'Histórias', text: 'Depoimentos e cases reais de transformação e empregabilidade.', width: 'w-[270px]' },
   {
     title: 'Liderança',
-    text: 'Prática de liderança, give back e fortalecimento da marca junto ao ecossistema.',
-    width: 'w-[270px]',
+    text: 'Fortalece sua liderança, pratica o give back e contribui para aproximar sua marca do ecossistema de impacto.',
+    width: 'w-[260px]',
   },
 ]
 
@@ -78,7 +78,7 @@ const tickets = [
     ),
     desktopTitle: 'Mentor',
     subtitle: 'Pulse Mais',
-    description: 'Ingresso mentor(a) Pulse Mais',
+    description: 'Ingresso exclusivo para mentor(a) Pulse Mais',
     price: 'R$ 900,00',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso de mentor no valor de R$900 para o Pulsar'),
   },
@@ -91,7 +91,7 @@ const tickets = [
     ),
     desktopTitle: 'Doador',
     subtitle: 'Pulse Mais',
-    description: 'Ingresso doador(a) Pulse Mais',
+    description: 'Ingresso exclusivo para doador(a) Pulse Mais',
     price: 'R$ 800,00',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso de doador no valor de R$800 para o Pulsar'),
   },
@@ -101,8 +101,8 @@ const tickets = [
     desktopTitle: 'Duplo',
     subtitle: '2 pessoas',
     description: 'Ingresso casal (2 pessoas)',
-    price: 'R$ 1.800,00',
-    href: getWaLink('Olá, gostaria de comprar dois ingressos no valor de R$1800 para o Pulsar'),
+    price: 'R$ 1.900,00',
+    href: getWaLink('Olá, gostaria de comprar dois ingressos no valor de R$1900 para o Pulsar'),
   },
   {
     name: 'grupo',
@@ -110,15 +110,15 @@ const tickets = [
     desktopTitle: 'Grupo',
     subtitle: '4 pessoas',
     description: 'Ingresso grupo (4 pessoas)',
-    price: 'Consultar',
-    href: getWaLink('Olá, gostaria de comprar 4 ou mais ingressos para o Pulsar, poderia me passar mais informações?'),
+    price: 'R$ 3.600',
+    href: getWaLink('Olá, gostaria de comprar 4 ingressos para o Pulsar'),
   },
 ]
 
 // Ícones + legendas da seção "Experiências" (desktop)
 const highlights = [
   { icon: '/assents/backgrounds/music-gold.svg', label: 'Grupo Musical' },
-  { icon: '/assents/backgrounds/food-gold.svg', label: 'Coquetel Dinâmico' },
+  { icon: '/assents/backgrounds/food-gold.svg', label: 'Coquetel' },
   { icon: '/assents/backgrounds/location-gold.svg', label: 'Lounge Executivo' },
 ]
 
@@ -289,7 +289,7 @@ export default function Pulsar() {
         </WhiteOval>
 
         {/* Sessão 5 - Ingressos */}
-        <section id="quero-participar-mobile" className="relative flex flex-col items-center pt-[58px] pb-[84px]">
+        <section id="quero-participar" className="relative flex flex-col items-center pt-[58px] pb-[84px]">
           <h2 className="text-center text-[31px] font-bold leading-[35px] text-white">
             Quero participar<br />
             do evento
