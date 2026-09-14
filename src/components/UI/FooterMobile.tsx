@@ -1,15 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const FooterMobile = () => {
+interface FooterMobileProps {
+  // 'blue': fundo azul da marca (usado na página Pulsar)
+  variant?: 'light' | 'blue'
+}
+
+export const FooterMobile = ({ variant = 'light' }: FooterMobileProps) => {
+  const isBlue = variant === 'blue'
+
   return (
-    <footer className="relative bg-white pb-0 overflow-hidden">
+    <footer className={`relative pb-0 overflow-hidden ${isBlue ? 'bg-[#003870]' : 'bg-white'}`}>
       {/* Conteúdo */}
       <div className="relative z-10">
         {/* Quadrante 1 - Logo e Redes Sociais */}
         <div className="pl-[30px] pt-[63px]">
           <Image
-            src="/assents/logos/pulse-logo-header.svg"
+            src={isBlue ? '/assents/logos/pulse-logo-footer.svg' : '/assents/logos/pulse-logo-header.svg'}
             alt="Pulse Mais"
             width={195}
             height={62}
@@ -51,7 +58,7 @@ export const FooterMobile = () => {
         {/* Alterado de pb-[30px] para pb-[180px] */}
         {/* Isso cria um espaço branco grande abaixo do CNPJ para a onda ficar */}
         <div className="pl-[30px] mt-[30px] pb-[130px] relative z-10">
-          <h3 className="text-[20px] font-bold text-[#003870]">
+          <h3 className={`text-[20px] font-bold ${isBlue ? 'text-white' : 'text-[#003870]'}`}>
             Mande um email
           </h3>
           {/* ALTERAÇÃO 1: Troquei <form> por <div> */}
@@ -61,17 +68,19 @@ export const FooterMobile = () => {
               placeholder="Seu email"
               className="w-[300px] h-12 border border-gray-300 rounded-lg px-4 bg-white"
             />
-            
+
             {/* ALTERAÇÃO 2: Botão transformado em Link */}
             <Link
               href="/contato"
-              className="px-8 h-10 bg-[#003870] text-white rounded-full font-bold mt-4 relative z-10 flex items-center justify-center"
+              className={`px-8 h-10 rounded-full font-bold mt-4 relative z-10 flex items-center justify-center ${
+                isBlue ? 'bg-white text-[#003870]' : 'bg-[#003870] text-white'
+              }`}
             >
               Enviar
             </Link>
           </div>
           {/* O CNPJ agora ficará na parte branca superior do padding criado acima */}
-          <p className="text-[18px] font-normal text-[#6B6D6E] mt-[54px] text-center relative z-10 w-screen ml-[-30px]">
+          <p className={`text-[18px] font-normal mt-[54px] text-center relative z-10 w-screen ml-[-30px] ${isBlue ? 'text-white' : 'text-[#6B6D6E]'}`}>
             CNPJ: 48.621.188/0001-11
           </p>
         </div>

@@ -21,6 +21,8 @@ import { HeroCarouselDesktop } from "@/components/UI/HeroCarouselDesktop";
 import { GridPrograms } from "@/components/UI/GridPrograms";
 import { PartnersCarousel } from "@/components/UI/PartnersCarousel";
 import { FooterDesktop } from "@/components/UI/FooterDesktop";
+import { QueroApoiarMobile } from "@/components/UI/QueroApoiarMobile";
+import { QueroApoiarDesktop } from "@/components/UI/QueroApoiarDesktop";
 
 
-export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard, HeaderMobile, MenuMobile, AccordionItem, FooterMobile, HeaderDesktop, HeroCarouselDesktop, GridPrograms, PartnersCarousel, FooterDesktop }
+export {BookOpenText, ChalkboardTeacher, Student, UsersFour, LinkedinLogo, Button, Image, Link, ProfileIcon, UserPersonaCard, DepoimentCarrousel, InfiniteSlider, Info, Accordion, CTAButton, ExperienceCard, HeaderMobile, MenuMobile, AccordionItem, FooterMobile, HeaderDesktop, HeroCarouselDesktop, GridPrograms, PartnersCarousel, FooterDesktop, QueroApoiarMobile, QueroApoiarDesktop }
