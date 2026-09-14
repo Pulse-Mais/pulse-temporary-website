@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pulsar - dourado (amostrado do protótipo M LP - PULSAR) */
+:root {
+  --pulsar-gold: linear-gradient(90deg, #D39636 0%, #DEA744 7%, #ECC664 22%, #F3E893 36%, #EAB852 50%, #F3E38E 64%, #EBC160 78%, #E4AB47 92%, #DC9C3E 100%);
+}
+
+@layer utilities {
+  .bg-pulsar-gold {
+    background-image: var(--pulsar-gold);
+  }
+
+  /* Dourado com textura granulada (mesma textura dos SVGs dourados) */
+  .bg-pulsar-gold-texture {
+    background: url('/assents/backgrounds/pulsar-gold-texture.jpg') center / 100% 100% no-repeat, var(--pulsar-gold);
+  }
+
+  /* Borda em gradiente dourado; cor interna via --pulsar-fill */
+  .border-pulsar-gold {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(var(--pulsar-fill, #003870), var(--pulsar-fill, #003870)) padding-box,
+      var(--pulsar-gold) border-box;
+  }
+}
+
 
 
 /* Layout Global - Full Bleed */
