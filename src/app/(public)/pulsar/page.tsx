@@ -18,7 +18,7 @@ import { TicketsGridDesktop } from './_components/TicketsGridDesktop'
 export const metadata: Metadata = {
   title: 'Pulsar 2026 | Pulse Mais',
   description:
-    'Pulsar: o evento anual de relacionamento e celebração da Pulse Mais, conectando quem transforma o futuro do trabalho por meio da tecnologia e inclusão produtiva.',
+    'Pulsar: o evento anual de relacionamento e celebração da Pulse Mais, conectando onde as conexões que transformam o futuro do trabalho acontecem.',
 }
 
 // ==========================================
@@ -38,7 +38,7 @@ const TICKETS_ANCHOR_DESKTOP = '#quero-participar-desktop'
 
 const experiences = [
   {
-    title: 'Match',
+    title: 'Conexões',
     text: (
       <>
         Networking guiado entre<br />
@@ -67,6 +67,7 @@ const tickets = [
     desktopTitle: 'Individual',
     description: 'Convite válido para uma pessoa e é intransferível.',
     price: 'R$ 1.000,00',
+    ctaText: 'Quero estar no Pulsar',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso individual no valor de R$1000 para o Pulsar'),
   },
   {
@@ -79,6 +80,7 @@ const tickets = [
     desktopTitle: 'Mentor',
     subtitle: 'Pulse Mais',
     description: 'Ingresso exclusivo para mentor(a) Pulse Mais',
+    ctaText: 'Quero viver essa experiência',
     price: 'R$ 900,00',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso de mentor no valor de R$900 para o Pulsar'),
   },
@@ -92,6 +94,7 @@ const tickets = [
     desktopTitle: 'Doador',
     subtitle: 'Pulse Mais',
     description: 'Ingresso exclusivo para doador(a) Pulse Mais',
+    ctaText: 'Escolher meu ingresso',
     price: 'R$ 800,00',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso de doador no valor de R$800 para o Pulsar'),
   },
@@ -101,6 +104,7 @@ const tickets = [
     desktopTitle: 'Duplo',
     subtitle: '2 pessoas',
     description: 'Ingresso casal (2 pessoas)',
+    ctaText: 'Garantir meu ingresso',
     price: 'R$ 1.900,00',
     href: getWaLink('Olá, gostaria de comprar dois ingressos no valor de R$1900 para o Pulsar'),
   },
@@ -110,6 +114,7 @@ const tickets = [
     desktopTitle: 'Grupo',
     subtitle: '4 pessoas',
     description: 'Ingresso grupo (4 pessoas)',
+    ctaText: 'Garantir meu ingresso',
     price: 'R$ 3.600',
     href: getWaLink('Olá, gostaria de comprar 4 ingressos para o Pulsar'),
   },
@@ -140,7 +145,7 @@ export default function Pulsar() {
         <section className="relative w-full h-[578px] flex flex-col items-center">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[500px] overflow-hidden">
             <Image
-              src="/assents/backgrounds/evento-pulsar-m2.png"
+              src="/assents/backgrounds/evento-pulsar-m1.png"
               alt=""
               fill
               priority
@@ -161,9 +166,9 @@ export default function Pulsar() {
             />
           </h1>
           <p className="relative mt-[35px] text-center text-[18px] leading-[20px] text-white">
-            Conectando quem transforma o<br />
-            futuro do trabalho por meio da<br />
-            tecnologia e inclusão produtiva.
+            Onde as conexões que transformam  <br />
+            o futuro do trabalho acontecem<br />
+            
           </p>
           <CTAButton variant="gold" href={TICKETS_SECTION_ANCHOR} className="relative mt-[59px]">
             Garantir meu ingresso
@@ -179,21 +184,23 @@ export default function Pulsar() {
         <WhiteOval radiusTop={222.5} radiusBottom={222.5}>
           <div className="relative flex flex-col items-center pt-[67px] pb-[68px] text-center text-[15px] leading-[17px] tracking-[0.04em] text-[#6B6D6E]">
             <p className="w-[250px]">
-              O Pulsar é o evento anual de<br />
-              relacionamento e celebração da<br />
-              Pulse Mais, criado para conectar<br />
-              pessoas que estão<br />
-              transformando o futuro do<br />
-              trabalho por meio da tecnologia<br />
-              e da inclusão produtiva.
+              Uma noite para colocar frente<br />
+              a frente quem está construindo sua carreira,<br />
+              quem está abrindo portas e quem<br />
+              está transformando o mercado de trabalho<br />      
+              
             </p>
             <p className="w-[250px] mt-[23px]">
-              O encontro reúne jovens<br />
-              talentos, mentores, lideranças<br />
-              empresariais, empresas e<br />
-              investidores, fortalecendo<br />
-              conexões, parcerias e<br />
-              oportunidades profissionais.
+              No Pulsar, você encontra jovens talentos,<br />
+              mentores, executivos e empresas em<br />
+              um ambiente pensado para gerar conexões reais,<br />
+              compartilhar experiências e criar novas oportunidades<br />
+              
+            </p>
+            <p className="w-[250px] mt-[23px]">
+              Venha descobrir talentos.<br />
+              Conhecer pessoas.<br />
+              Ampliar possibilidades.
             </p>
             <CTAButton variant="gold-outline" href={TICKETS_SECTION_ANCHOR} className="mt-[35px]">
               Garantir meu ingresso
@@ -204,7 +211,7 @@ export default function Pulsar() {
         {/* Sessão 3 - Experiências */}
         <section className="relative flex flex-col items-center pt-[15px] pb-[47px]">
           <Image
-            src="/assents/backgrounds/evento-pulsar-m1.jpg"
+            src="/assents/backgrounds/evento-pulsar-m1.png"
             alt="Convidados em networking durante o Pulsar"
             width={310}
             height={207}
@@ -216,7 +223,7 @@ export default function Pulsar() {
               <AccordionItem
                 key={item.title}
                 variant="gold"
-                defaultOpen={item.title === 'Match'}
+                defaultOpen={item.title === 'Conexões'}
                 closedTextSize="text-[21px]"
                 title={<span className="uppercase font-extrabold">{item.title}</span>}
               >
@@ -263,8 +270,9 @@ export default function Pulsar() {
                   className="w-[56px] h-[63px]"
                 />
                 <p className="mt-[8px]">
-                  Lounge Executivo<br />
-                  a confirmar
+                  Pobre Juan <br />
+                  Rua Itaguaba, 38 <br />
+                  Higienópolis
                 </p>
               </li>
             </ul>
@@ -272,7 +280,7 @@ export default function Pulsar() {
             <ImpactNote className="mt-[34px] text-[#6B6D6E]" textSizeClassName="text-[14px] leading-[18px]" />
 
             <Image
-              src="/assents/backgrounds/evento-pulsar-m2.png"
+              src="/assents/backgrounds/evento-pulsar-m2.jpg"
               alt="Jantar do Pulsar com convidados à mesa"
               width={290}
               height={210}
@@ -304,7 +312,7 @@ export default function Pulsar() {
                 defaultOpen={ticket.name === 'individual'}
                 title={ticket.mobileTitle}
               >
-                <TicketOption description={ticket.description} price={ticket.price} href={ticket.href} />
+                <TicketOption description={ticket.description} price={ticket.price} href={ticket.href} ctaText={ticket.ctaText} />
               </AccordionItem>
             ))}
           </div>
@@ -334,7 +342,7 @@ export default function Pulsar() {
         <section className="relative w-full flex flex-col items-center pt-[100px] pb-[80px] px-6">
           <div aria-hidden className="absolute inset-0 overflow-hidden">
             <Image
-              src="/assents/backgrounds/evento-pulsar-m2.png"
+              src="/assents/backgrounds/evento-pulsar-m1.png"
               alt=""
               fill
               priority
@@ -349,8 +357,8 @@ export default function Pulsar() {
           </h1>
           
           <p className="relative z-20 text-center text-[24px] leading-[34px] text-white mt-8">
-            Conectando quem transforma o futuro do trabalho<br />
-            por meio da tecnologia e inclusão produtiva.
+            Onde as conexões que transformam  <br />
+            o futuro do trabalho acontecem<br />
           </p>
           
           {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
@@ -374,12 +382,13 @@ export default function Pulsar() {
             />
             <div className="flex flex-col w-[590px]">
               <p className="text-[20px] font-normal leading-[34px] text-white">
-                O Pulsar é o evento anual de relacionamento e celebração da Pulse Mais, criado para conectar pessoas
-                que estão transformando o futuro do trabalho por meio da tecnologia e da inclusão produtiva.
+                Uma noite para colocar frente a frente quem está construindo sua carreira, quem está abrindo portas e quem está transformando o mercado de trabalho.
               </p>
               <p className="mt-10 text-[20px] font-normal leading-[34px] text-white">
-                O encontro reúne jovens talentos, mentores, lideranças empresariais, empresas e investidores,
-                fortalecendo conexões, parcerias e oportunidades profissionais.
+                No Pulsar, você encontra jovens talentos, mentores, executivos e empresas em um ambiente pensado para gerar conexões reais, compartilhar experiências e criar novas oportunidades.
+              </p>
+              <p className="mt-10 text-[20px] font-normal leading-[34px] text-white">
+               Venha descobrir talentos. Conhecer pessoas. Ampliar possibilidades.
               </p>
               
               <div className="mt-[80px]">
@@ -440,7 +449,7 @@ export default function Pulsar() {
               <div className="flex items-center">
                 <Image src="/assents/backgrounds/location-gold.svg" alt="" width={35} height={40} />
                 <p className="ml-[18px] text-[20px] font-bold leading-[26px] text-[#003870]">
-                  Lounge Executivo<br />a confirmar
+                  Pobre Juan<br />Rua Itaguaba, 38 <br /> Unidade Higienópolis
                 </p>
               </div>
             </div>
@@ -468,6 +477,7 @@ export default function Pulsar() {
               description: t.description,
               price: t.price,
               href: t.href,
+              ctaText: t.ctaText,
             }))}
           />
 

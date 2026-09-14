@@ -8,7 +8,8 @@ export interface TicketCardData {
   subtitle?: string
   description: string
   price: string
-  href: string // ✨ O componente agora aceita o link do WhatsApp individual
+  href: string 
+  ctaText?: string 
 }
 
 interface TicketsGridDesktopProps {
@@ -48,8 +49,13 @@ export const TicketsGridDesktop = ({ tickets, pinned, className = '' }: TicketsG
                 <p className="mt-[12px] text-[26px] font-bold text-white">{ticket.price}</p>
                 
                 {/* ✨ O botão agora direciona para o ticket.href */}
-                <CTAButton variant="white" href={ticket.href} target="_blank" className="mt-[20px] w-full">
-                  Garantir meu ingresso
+                <CTAButton 
+                  variant="white" 
+                  href={ticket.href} 
+                  target="_blank" 
+                  className="mt-[20px] w-full !h-auto !min-h-[44px] !py-[10px] !px-[8px] !text-[13px] lg:!text-[14px] !leading-[1.2] !whitespace-normal flex items-center justify-center text-center"
+                >
+                  {ticket.ctaText || 'Garantir meu ingresso'}
                 </CTAButton>
               </div>
               
