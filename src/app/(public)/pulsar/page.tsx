@@ -184,23 +184,24 @@ export default function Pulsar() {
         <WhiteOval radiusTop={222.5} radiusBottom={222.5}>
           <div className="relative flex flex-col items-center pt-[67px] pb-[68px] text-center text-[15px] leading-[17px] tracking-[0.04em] text-[#6B6D6E]">
             <p className="w-[250px]">
-              Uma noite para colocar frente<br />
-              a frente quem está construindo sua carreira,<br />
-              quem está abrindo portas e quem<br />
-              está transformando o mercado de trabalho<br />      
+              No Pulsar, diferentes trajetórias se encontram à mesma mesa<br />
+              jovens talentos, mentores, líderes e empresas que estão construindo,<br />
+              abrindo caminhos e transformando o mercado de trabalho.<br />
               
             </p>
             <p className="w-[250px] mt-[23px]">
-              No Pulsar, você encontra jovens talentos,<br />
-              mentores, executivos e empresas em<br />
-              um ambiente pensado para gerar conexões reais,<br />
-              compartilhar experiências e criar novas oportunidades<br />
+              Entre conversas, experiências e novas conexões, surgem<br />
+              oportunidades que podem ampliarm<br />
+              horizontes e transformar trajetórias.<br />
               
             </p>
             <p className="w-[250px] mt-[23px]">
-              Venha descobrir talentos.<br />
-              Conhecer pessoas.<br />
-              Ampliar possibilidades.
+              Mais do que um jantar, o Pulsar é um encontro com propósito,<br />
+              uma celebração das pessoas e das possibilidades que <br />
+              nascem quando talentos e oportunidades se encontram.
+            </p>
+            <p className="w-[250px] mt-[23px]">
+              Faça parte dessa mesa.
             </p>
             <CTAButton variant="gold-outline" href={TICKETS_SECTION_ANCHOR} className="mt-[35px]">
               Garantir meu ingresso
@@ -372,7 +373,7 @@ export default function Pulsar() {
         </section>
 
         <section className="relative w-full max-w-[1440px] mx-auto px-6 py-[80px]">
-          <div className="flex flex-row justify-center items-center gap-[80px]">
+          <div className="flex flex-row justify-center items-start gap-[80px]">
             <Image
               src="/assents/backgrounds/evento-pulsar-d1.png"
               alt="Convidados em networking"
@@ -382,13 +383,16 @@ export default function Pulsar() {
             />
             <div className="flex flex-col w-[590px]">
               <p className="text-[20px] font-normal leading-[34px] text-white">
-                Uma noite para colocar frente a frente quem está construindo sua carreira, quem está abrindo portas e quem está transformando o mercado de trabalho.
+                No Pulsar, diferentes trajetórias se encontram à mesma mesa: jovens talentos, mentores, líderes e empresas que estão construindo, abrindo caminhos e transformando o mercado de trabalho.
               </p>
               <p className="mt-10 text-[20px] font-normal leading-[34px] text-white">
-                No Pulsar, você encontra jovens talentos, mentores, executivos e empresas em um ambiente pensado para gerar conexões reais, compartilhar experiências e criar novas oportunidades.
+               Entre conversas, experiências e novas conexões, surgem oportunidades que podem ampliar horizontes e transformar trajetórias.
               </p>
               <p className="mt-10 text-[20px] font-normal leading-[34px] text-white">
-               Venha descobrir talentos. Conhecer pessoas. Ampliar possibilidades.
+               Mais do que um jantar, o Pulsar é um encontro com propósito, uma celebração das pessoas e das possibilidades que nascem quando talentos e oportunidades se encontram.
+              </p>
+              <p className="mt-10 text-[20px] font-normal leading-[34px] text-white">
+                Faça parte dessa mesa.
               </p>
               
               <div className="mt-[80px]">
