@@ -67,7 +67,7 @@ const tickets = [
     desktopTitle: 'Individual',
     description: 'Convite válido para uma pessoa e é intransferível.',
     price: 'R$ 1.000,00',
-    ctaText: 'Quero estar no Pulsar',
+    ctaText: 'Garantir meu ingresso',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso individual no valor de R$1000 para o Pulsar'),
   },
   {
@@ -80,7 +80,7 @@ const tickets = [
     desktopTitle: 'Mentor',
     subtitle: 'Pulse Mais',
     description: 'Ingresso exclusivo para mentor(a) Pulse Mais',
-    ctaText: 'Quero viver essa experiência',
+    ctaText: 'Garantir meu ingresso',
     price: 'R$ 900,00',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso de mentor no valor de R$900 para o Pulsar'),
   },
@@ -94,7 +94,7 @@ const tickets = [
     desktopTitle: 'Doador',
     subtitle: 'Pulse Mais',
     description: 'Ingresso exclusivo para doador(a) Pulse Mais',
-    ctaText: 'Escolher meu ingresso',
+    ctaText: 'Garantir meu ingresso',
     price: 'R$ 800,00',
     href: getWaLink('Olá, gostaria de comprar o meu ingresso de doador no valor de R$800 para o Pulsar'),
   },
@@ -171,7 +171,7 @@ export default function Pulsar() {
             
           </p>
           <CTAButton variant="gold" href={TICKETS_SECTION_ANCHOR} className="relative mt-[59px]">
-            Garantir meu ingresso
+            Quero estar no Pulsar
           </CTAButton>
 
           <PlusGold size={103} className="top-[10px] right-[55px]" />
@@ -204,7 +204,7 @@ export default function Pulsar() {
               Faça parte dessa mesa.
             </p>
             <CTAButton variant="gold-outline" href={TICKETS_SECTION_ANCHOR} className="mt-[35px]">
-              Garantir meu ingresso
+              Quero viver essa experiência
             </CTAButton>
           </div>
         </WhiteOval>
@@ -238,7 +238,7 @@ export default function Pulsar() {
           </div>
 
           <CTAButton variant="gold" href={TICKETS_SECTION_ANCHOR} className="relative mt-[33px]">
-            Garantir meu ingresso
+            Escolher meu ingresso
           </CTAButton>
 
           <PlusGold size={110} className="top-[361px] -right-[42px]" />
@@ -364,7 +364,7 @@ export default function Pulsar() {
           
           {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
           <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} className="relative z-20 mt-[50px]">
-            Garantir meu ingresso
+            Quero estar no Pulsar
           </CTAButton>
 
           <PlusGold size={150} className="top-[60px] right-[10%] opacity-80 z-20" />
@@ -398,7 +398,7 @@ export default function Pulsar() {
               <div className="mt-[80px]">
                 {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
                 <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP}>
-                  Garantir meu ingresso
+                  Quero viver essa experiência
                 </CTAButton>
               </div>
             </div>
@@ -462,7 +462,7 @@ export default function Pulsar() {
 
             {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
             <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} className="mt-[40px]">
-              Garantir meu ingresso
+              Escolher meu ingresso
             </CTAButton>
           </div>
         </section>
