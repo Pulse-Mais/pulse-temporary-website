@@ -522,10 +522,10 @@ export default function Pulsar() {
           </div>
 
             {/* ✨ NOVO: Programação da noite (Desktop) - Ajustado */}
-         <div className="relative mt-[40px] w-full max-w-[1085px] mx-auto p-[3px] rounded-[24px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E] z-10">
+         <div className="relative mt-[40px] w-full max-w-[820px] mx-auto p-[3px] rounded-[24px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E] z-10">
             <div className="w-full h-full min-h-[344px] rounded-[21px] bg-[#003870] flex flex-col items-center justify-center px-[80px] py-[50px]">
               <h3 className="text-[48px] font-bold leading-[1.2] text-white mb-[35px] text-center">
-                Programação da noite
+                PROGRAMAÇÃO DA NOITE 
               </h3>
               <ul className="flex flex-col gap-[16px] text-white text-[24px] font-normal leading-[1.5] w-fit mx-auto text-left">
                 <li>18h30 | Welcome Cocktail & Conexões Estratégicas</li>
