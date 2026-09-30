@@ -52,7 +52,7 @@ export default function Home() {
             </p>
             <div className="mt-[24px]">
               {/* <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/jovens"> */}
-              <CTAButton variant="hero" href="https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1">
+              <CTAButton variant="hero" href="https://mailchi.mp/pulsemais/jovens">
                 Cadastre-se
               </CTAButton>
             </div>
@@ -240,7 +240,7 @@ export default function Home() {
               Quero apoiar
             </h2>
             <div className="flex flex-row gap-[105px] mt-[30px]">
-              <Link href="https://mailchi.mp/pulsemais/mentores-turma3">
+              <Link href="https://wkf.ms/46AtjAU">
                 <button
                   className="bg-transparent border border-white text-white text-[16px] font-bold rounded-[50px] hover:bg-white hover:text-[#003870] transition-all duration-300"
                   style={{ width: '313px', height: '51px' }}

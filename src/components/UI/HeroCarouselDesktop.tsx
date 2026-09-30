@@ -27,7 +27,7 @@ const slides: Slide[] = [
     ],
     buttonText: 'Saiba Mais',
     //buttonHref: 'https://mailchi.mp/pulsemais/jovens',
-    buttonHref: 'https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1',
+    buttonHref: 'https://mailchi.mp/pulsemais/jovens',
     image: '/assents/desktop/hero-jovens.jpg',
     alignment: 'left',
     buttonWidth: 132,
@@ -58,7 +58,7 @@ const slides: Slide[] = [
       'oportunidades para jovens.'
     ],
     buttonText: 'Seja um mentor',
-    buttonHref: 'https://mailchi.mp/5f880019d8a5/uuvkdx4axd',
+    buttonHref: 'https://wkf.ms/46AtjAU',
     image: '/assents/desktop/hero-mentores.jpg',
     alignment: 'right',
     buttonWidth: 175,

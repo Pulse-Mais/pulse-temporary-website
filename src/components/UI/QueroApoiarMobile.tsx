@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const actions = [
-  { label: 'Seja Mentor Voluntário', href: 'https://mailchi.mp/5f880019d8a5/uuvkdx4axd', external: true },
+  // { label: 'Seja Mentor Voluntário', href: 'https://mailchi.mp/5f880019d8a5/uuvkdx4axd', external: true },
+  { label: 'Seja Mentor Voluntário', href: 'https://wkf.ms/46AtjAU', external: true },
   { label: 'Torne-se nosso parceiro', href: '/apoie', external: false },
 ]
 

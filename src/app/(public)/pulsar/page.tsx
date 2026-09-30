@@ -3,11 +3,8 @@ import {
   Image,
   CTAButton,
   AccordionItem,
-  HeaderDesktop,
   FooterMobile,
-  FooterDesktop,
-  QueroApoiarMobile,
-  QueroApoiarDesktop,
+  FooterDesktop
 } from '@/app/_local-components/index'
 import { PlusGold } from './_components/PlusGold'
 import { WhiteOval } from './_components/WhiteOval'
@@ -16,10 +13,21 @@ import { TicketOption } from './_components/TicketOption'
 import { TicketsGridDesktop } from './_components/TicketsGridDesktop'
 
 export const metadata: Metadata = {
-  title: 'Pulsar 2026 | Pulse Mais',
+  title: 'Pulsar 2027 | Pulse Mais',
   description:
     'Pulsar: o evento anual de relacionamento e celebração da Pulse Mais, conectando onde as conexões que transformam o futuro do trabalho acontecem.',
 }
+
+// ==========================================
+// Configuração das Empresas Patrocinadoras
+// ==========================================
+const sponsors = [
+  { name: 'sponsor 1', logo: '/assents/logos/ClearIt.svg' },
+  { name: 'sponsor 2', logo: '/assents/logos/clm.svg' },
+  { name: 'sponsor 4', logo: '/assents/logos/matza.svg'},
+  { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
+  { name: 'sponsor 7', logo: '/assents/logos/pub-logo.svg' }
+]
 
 // ==========================================
 // Configuração do WhatsApp Dinâmico
@@ -120,12 +128,7 @@ const tickets = [
   },
 ]
 
-// Ícones + legendas da seção "Experiências" (desktop)
-const highlights = [
-  { icon: '/assents/backgrounds/music-gold.svg', label: 'Grupo Musical' },
-  { icon: '/assents/backgrounds/food-gold.svg', label: 'Coquetel' },
-  { icon: '/assents/backgrounds/location-gold.svg', label: 'Lounge Executivo' },
-]
+
 
 const eventPhotos = [
   '/assents/backgrounds/evento-pulsar-d2.png',
@@ -155,7 +158,7 @@ export default function Pulsar() {
           </div>
 
           <h1 className="relative mt-[159px]">
-            <span className="sr-only">Pulsar - Edição 2026</span>
+            <span className="sr-only">Pulsar - Edição 2027</span>
             <Image
               src="/assents/brand/pulsar-logo.svg"
               alt=""
@@ -241,6 +244,19 @@ export default function Pulsar() {
             Escolher meu ingresso
           </CTAButton>
 
+          {/* ✨ NOVO: Programação da noite (Mobile) */}
+          <div className="relative mt-[48px] w-[calc(100%-32px)] max-w-[330px] min-h-[330px] mx-auto border-[5px] border-[#FDE08B] rounded-[24px] px-[20px] py-[32px] z-10 bg-[#003870] flex flex-col justify-center">
+            <h3 className="text-center text-[26px] font-bold leading-[28px] text-white mb-[24px]">
+              Programação da<br />noite
+            </h3>
+            <ul className="flex flex-col gap-[16px] text-white text-[15px] leading-[22px]">
+              <li>18h30 | Welcome Cocktail & Conexões Estratégicas</li>
+              <li>19h15 | Abertura</li>
+              <li>19h35 | Talk Exclusivo & Histórias de Impacto</li>
+              <li>21h00 | Mobilização, Encerramento & Networking</li>
+            </ul>
+          </div>
+
           <PlusGold size={110} className="top-[361px] -right-[42px]" />
           <PlusGold size={98} className="top-[585px] -left-[24px]" />
         </section>
@@ -258,7 +274,7 @@ export default function Pulsar() {
                   className="w-[67px] h-[63px]"
                 />
                 <p className="mt-[8px]">
-                  30.11.2026<br />
+                  01.03.2027<br />
                   18h30 às 22h
                 </p>
               </li>
@@ -328,10 +344,94 @@ export default function Pulsar() {
           </div>
         </section>
 
-        {/* Sessão 6 - Quero apoiar */}
-        <QueroApoiarMobile className="pb-[89px]" />
+        {/* Sessão 6 - Depoimentos */}
+        <section className="relative flex flex-col items-center mt-[5px] pb-[89px]">
+          <h2 className="text-center text-[31px] font-bold leading-[35px] text-white">
+            Quem participou<br />
+            recomenda
+          </h2>
 
-        {/* Sessão 7 - Footer */}
+          <div className="mt-[44px] flex flex-col items-center gap-[18px]">
+            {/* DEPOIMENTO 1 */}
+            <div className="w-[270px] min-h-[215px] border-[2px] border-[#FDE08B] rounded-[20px] p-[20px] flex flex-col justify-between bg-[#003870]">
+              <p className="text-[11px] font-normal leading-[16px] text-white">
+                “A Pulse Mais foi meu ponto de virada quando eu não sabia para onde ir. Conectar com histórias semelhantes me fez ver que eu não estava desamparado, e a mentoria foi o suporte essencial para me manter firme. Definir essa vivência em uma única palavra é falar de esperança: a certeza renovada no potencial dos jovens.”
+              </p>
+              <div className="mt-[15px] flex items-center gap-[12px]">
+                {/* Imagem com wrapper para ficar perfeitamente redonda */}
+                <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden shrink-0">
+                  <Image src="/assents/images/foto-luiz.jpeg" alt="Luiz Felipe" fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-bold text-white">Luiz Felipe Gonçalves</span>
+                  <span className="text-[10px] font-light text-white leading-[12px] mt-1">Aluno formado pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+
+            {/* DEPOIMENTO 2 */}
+            <div className="w-[270px] min-h-[215px] border-[2px] border-[#FDE08B] rounded-[20px] p-[20px] flex flex-col justify-between bg-[#003870]">
+              <p className="text-[11px] font-normal leading-[16px] text-white">
+                “O que mais me marcou foi a energia das conexões no ambiente. Foi incrível reencontrar amigos da comunidade de tecnologia e, ao mesmo tempo, conhecer muita gente nova e engajada.”
+              </p>
+              <div className="mt-[15px] flex items-center gap-[12px]">
+                {/* Imagem com wrapper para ficar perfeitamente redonda */}
+                <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden shrink-0">
+                  <Image src="/assents/images/foto-domingos.jpeg" alt="Domingos Bruno" fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-bold text-white">Domingos Bruno</span>
+                  <span className="text-[10px] font-light text-white leading-[12px] mt-1">Mentor formado pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+
+            {/* DEPOIMENTO 3 */}
+            <div className="w-[270px] min-h-[215px] border-[2px] border-[#FDE08B] rounded-[20px] p-[20px] flex flex-col justify-between bg-[#003870]">
+              <p className="text-[11px] font-normal leading-[16px] text-white">
+                “O que mais me marcou foram as histórias compartilhadas ao longo do evento. Para mim, o Pulsar não é apenas um evento qualquer, mas sim um espaço para mostrar o real impacto que a Pulse Mais vem causando nas vidas de jovens ao longo dos anos, inclusive na minha história.”
+              </p>
+              <div className="mt-[15px] flex items-center gap-[12px]">
+                {/* Imagem com wrapper para ficar perfeitamente redonda */}
+                <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden shrink-0">
+                  <Image src="/assents/images/foto-eyshilla.jpeg" alt="Eyshilla Lima" fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-bold text-white">Eyshilla Lima</span>
+                  <span className="text-[10px] font-light text-white leading-[12px] mt-1">Aluna formada pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sessão 7 - Empresas Patrocinadoras */}
+  
+        <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
+          <h2 className="text-[31px] font-bold text-white text-center leading-tight">
+            Empresas <br /> Patrocinadoras
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-[20px] mt-[40px] max-w-[350px]">
+            {sponsors.map((sponsor, index) => (
+              <div 
+                key={index} 
+                className="w-[100px] h-[100px] bg-white rounded-[10px] flex items-center justify-center relative p-[10px]"
+              >
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={sponsor.logo} 
+                    alt={sponsor.name} 
+                    fill 
+                    className="object-contain" 
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sessão 8 - Footer */}
         <FooterMobile variant="blue" />
       </main>
 
@@ -353,7 +453,7 @@ export default function Pulsar() {
           </div>
 
           <h1 className="relative w-[700px] max-w-full h-[280px] z-20">
-            <span className="sr-only">Pulsar - Edição 2026</span>
+            <span className="sr-only">Pulsar - Edição 2027</span>
             <Image src="/assents/brand/pulsar-logo.svg" alt="" fill priority className="object-contain" />
           </h1>
           
@@ -396,7 +496,7 @@ export default function Pulsar() {
               </p>
               
               <div className="mt-[80px]">
-                {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
+               
                 <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP}>
                   Quero viver essa experiência
                 </CTAButton>
@@ -405,6 +505,7 @@ export default function Pulsar() {
           </div>
         </section>
 
+        {/* sessao 3  */}
         <section className="relative w-full max-w-[1440px] mx-auto px-6 pb-[100px]">
           <div className="flex flex-row flex-wrap justify-center gap-[30px]">
             {experiences.map((item) => (
@@ -420,14 +521,21 @@ export default function Pulsar() {
             ))}
           </div>
 
-          <div className="flex flex-row flex-wrap justify-center gap-x-[120px] mt-[80px]">
-            {highlights.map((item) => (
-              <div key={item.label} className="flex flex-col items-center">
-                <Image src={item.icon} alt="" width={70} height={70} className="w-[70px] h-[70px] object-contain" />
-                <p className="mt-[20px] text-[24px] font-bold text-white text-center">{item.label}</p>
-              </div>
-            ))}
+            {/* ✨ NOVO: Programação da noite (Desktop) - Ajustado */}
+         <div className="relative mt-[40px] w-full max-w-[1085px] mx-auto p-[3px] rounded-[24px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E] z-10">
+            <div className="w-full h-full min-h-[344px] rounded-[21px] bg-[#003870] flex flex-col items-center justify-center px-[80px] py-[50px]">
+              <h3 className="text-[48px] font-bold leading-[1.2] text-white mb-[35px] text-center">
+                Programação da noite
+              </h3>
+              <ul className="flex flex-col gap-[16px] text-white text-[24px] font-normal leading-[1.5] w-fit mx-auto text-left">
+                <li>18h30 | Welcome Cocktail & Conexões Estratégicas</li>
+                <li>19h15 | Abertura</li>
+                <li>19h35 | Talk Exclusivo & Histórias de Impacto</li>
+                <li>21h00 | Mobilização, Encerramento & Networking</li>
+              </ul>
+            </div>
           </div>
+
         </section>
 
         <section className="relative w-full">
@@ -444,7 +552,7 @@ export default function Pulsar() {
               <div className="flex items-center">
                 <Image src="/assents/backgrounds/calendar-gold.svg" alt="" width={40} height={40} />
                 <p className="ml-[15px] text-[20px] font-bold leading-[26px] text-[#003870]">
-                  30 de novembro de 2026<br />18h30 às 22h
+                  01 de março de 2027<br />18h30 às 22h
                 </p>
               </div>
 
@@ -488,14 +596,107 @@ export default function Pulsar() {
           <ImpactNote className="mt-[80px] max-w-[800px] mx-auto text-white text-center" textSizeClassName="text-[18px] leading-[26px] font-medium" />
 
           <div className="flex justify-center mt-[50px]">
-            {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
+      
             <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP}>
               Garantir meu ingresso
             </CTAButton>
           </div>
         </section>
 
-        <QueroApoiarDesktop />
+        {/* Sessão 6 - Depoimentos (Desktop) */}
+        <section className="relative w-full max-w-[1440px] mx-auto px-6 pt-[60px] pb-[100px]">
+          <h2 className="text-center text-[48px] font-extrabold text-white mb-[80px]">
+            Quem participou recomenda
+          </h2>
+
+          {/* Container dos Cards com gap de 44px */}
+          <div className="flex flex-row flex-wrap justify-center gap-[44px]">
+            
+            {/* DEPOIMENTO 1 */}
+            <div className="w-[414px] h-[536px] p-[5px] rounded-[30px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E]">
+              {/* flex-col com h-full garante que o card use todo o espaço */}
+              <div className="w-full h-full rounded-[25px] bg-[#003870] flex flex-col px-[40px] pt-[50px] pb-[40px]">
+                {/* ✨ AJUSTE: flex-1 empurra a foto lá para baixo; texto reduzido para 14px */}
+                <div className="flex-1">
+                  <p className="text-[14px] font-normal leading-[1.6] text-white text-left">
+                    “A Pulse Mais foi meu ponto de virada quando eu não sabia para onde ir. Conectar com histórias semelhantes me fez ver que eu não estava desamparado, e a mentoria foi o suporte essencial para me manter firme. Definir essa vivência em uma única palavra é falar de esperança: a certeza renovada no potencial dos jovens.”
+                  </p>
+                </div>
+                {/* shrink-0 garante que este bloco de baixo nunca seja esmagado */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden shrink-0 mb-[16px]">
+                    <Image src="/assents/images/foto-luiz.jpeg" alt="Luiz Felipe" fill className="object-cover" />
+                  </div>
+                  <span className="text-[20px] font-bold text-white text-center">Luiz Felipe Gonçalves</span>
+                  <span className="text-[15px] font-light text-white text-center leading-[1.3] mt-[4px]">Aluno formado pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+
+            {/* DEPOIMENTO 2 */}
+            <div className="w-[414px] h-[536px] p-[5px] rounded-[30px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E]">
+              <div className="w-full h-full rounded-[25px] bg-[#003870] flex flex-col px-[40px] pt-[50px] pb-[40px]">
+                <div className="flex-1">
+                  <p className="text-[15px] font-normal leading-[1.6] text-white text-left">
+                    “O que mais me marcou foi a energia das conexões no ambiente. Foi incrível reencontrar amigos da comunidade de tecnologia e, ao mesmo tempo, conhecer muita gente nova e engajada.”
+                  </p>
+                </div>
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden shrink-0 mb-[16px]">
+                    <Image src="/assents/images/foto-domingos.jpeg" alt="Domingos Bruno" fill className="object-cover" />
+                  </div>
+                  <span className="text-[20px] font-bold text-white text-center">Domingos Bruno</span>
+                  <span className="text-[15px] font-light text-white text-center leading-[1.3] mt-[4px]">Mentor formado pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+
+            {/* DEPOIMENTO 3 */}
+            <div className="w-[414px] h-[536px] p-[5px] rounded-[30px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E]">
+              <div className="w-full h-full rounded-[25px] bg-[#003870] flex flex-col px-[40px] pt-[50px] pb-[40px]">
+                <div className="flex-1">
+                  <p className="text-[15px] font-normal leading-[1.6] text-white text-left">
+                    “O que mais me marcou foram as histórias compartilhadas ao longo do evento. Para mim, o Pulsar não é apenas um evento qualquer, mas sim um espaço para mostrar o real impacto que a Pulse Mais vem causando nas vidas de jovens ao longo dos anos, inclusive na minha história.”
+                  </p>
+                </div>
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden shrink-0 mb-[16px]">
+                    <Image src="/assents/images/foto-eyshilla.jpeg" alt="Eyshilla Lima" fill className="object-cover" />
+                  </div>
+                  <span className="text-[20px] font-bold text-white text-center">Eyshilla Lima</span>
+                  <span className="text-[15px] font-light text-white text-center leading-[1.3] mt-[4px]">Aluna formada pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      {/* Sessão 7 - Empresas Patrocinadoras (Desktop) */}
+        <section className="relative w-full mt-[74px] px-6 pb-[100px]">
+          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
+             <h2 className="text-[48px] font-bold text-white text-center">Empresas Patrocinadoras</h2>
+             
+             <div className="mt-[50px] flex flex-wrap justify-center gap-[40px] w-full">
+                {sponsors.map((sponsor, index) => (
+                   <div 
+                     key={index} 
+                     className="w-[380px] h-[200px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
+                   >
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={sponsor.logo} 
+                          alt={sponsor.name} 
+                          fill 
+                          className="object-contain" 
+                        />
+                      </div>
+                   </div>
+                ))}
+             </div>
+          </div>
+        </section>
+
         <FooterDesktop variant="blue" />
       </main>
     </>

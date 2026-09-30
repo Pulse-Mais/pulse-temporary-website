@@ -272,7 +272,8 @@ export default function Apoie() {
             </h2>
 
             <Link
-              href="https://mailchi.mp/5f880019d8a5/uuvkdx4axd"
+              // href="https://mailchi.mp/5f880019d8a5/uuvkdx4axd"
+              href="https://wkf.ms/46AtjAU"
               target="_blank"
               className="w-[245px] h-[48px] bg-transparent border border-[#003870] rounded-[50px] text-[16px] font-bold text-[#003870] flex items-center justify-center mt-[40px]"
             >
@@ -602,7 +603,8 @@ export default function Apoie() {
                 conecta-se ao nosso propósito e desenvolve sua liderança ao mentorar o jovem.
               </p>
               <Link
-                href="https://mailchi.mp/5f880019d8a5/uuvkdx4axd"
+                // href="https://mailchi.mp/5f880019d8a5/uuvkdx4axd"
+                href="https://wkf.ms/46AtjAU"
                 target="_blank"
                 className="mt-[40px] px-8 py-3 rounded-[50px] border border-[#003870] text-[#003870] font-bold text-[16px] hover:bg-[#33B458] hover:text-white hover:border-[#33B458] transition-colors"
               >
