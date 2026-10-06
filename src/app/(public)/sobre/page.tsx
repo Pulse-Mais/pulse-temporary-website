@@ -172,7 +172,7 @@ export default function Sobre() {
               <div className="flex flex-col items-center text-center w-full">
                 <span className="text-[128px] font-extrabold text-[#003870] leading-none">
                   {/* AQUI: Trocamos "1000" pelo componente */}
-                  <AnimatedCounter target={1000} duration={2500} />
+                  <AnimatedCounter target={1213} duration={2500} />
                 </span>
                 <p className="text-[32px] text-white mt-4">
                   Jovens <br /><strong>atingidos</strong>
@@ -183,7 +183,7 @@ export default function Sobre() {
               <div className="flex flex-col items-center text-center w-full">
                 <span className="text-[128px] font-extrabold text-[#003870] leading-none">
                   {/* AQUI: Trocamos "110" pelo componente */}
-                  <AnimatedCounter target={130} duration={2000} />
+                  <AnimatedCounter target={240} duration={2000} />
                 </span>
                 <p className="text-[32px] text-white mt-4">
                   <strong>Jovens formados</strong><br /> em programas
@@ -194,10 +194,21 @@ export default function Sobre() {
               <div className="flex flex-col items-center text-center w-full">
                 <span className="text-[128px] font-extrabold text-[#003870] leading-none">
                   {/* AQUI: Trocamos "180" pelo componente */}
-                  <AnimatedCounter target={180} duration={2200} />
+                  <AnimatedCounter target={320} duration={2200} />
                 </span>
                 <p className="text-[32px] text-white mt-4">
                   <strong>Mentores</strong><br /> formados
+                </p>
+              </div>
+
+               {/* Coluna 4 */}
+              <div className="flex flex-col items-center text-center w-full md:col-start-2 mt-8 md:mt-0">
+                <span className="text-[128px] font-extrabold text-[#003870] leading-none">
+                  {/* AQUI: Trocamos "180" pelo componente */}
+                  <AnimatedCounter target={114} duration={2200} />
+                </span>
+                <p className="text-[32px] text-white mt-4">
+                  <strong>Jovens</strong><br /> empregados
                 </p>
               </div>
             </div>
@@ -499,7 +510,7 @@ export default function Sobre() {
               {/* Métrica 1 */}
               <div className="flex flex-col items-center text-center">
                 <span className="text-[96px] font-extrabold text-[#003870] leading-none">
-                  <AnimatedCounter target={1000} duration={2500} />
+                  <AnimatedCounter target={1213} duration={2500} />
                 </span>
                 <p className="text-[24px] text-white mt-2">
                   <strong>Jovens</strong> atingidos
@@ -509,7 +520,7 @@ export default function Sobre() {
               {/* Métrica 2 */}
               <div className="flex flex-col items-center text-center">
                 <span className="text-[96px] font-extrabold text-[#003870] leading-none">
-                  <AnimatedCounter target={130} duration={2000} />
+                  <AnimatedCounter target={240} duration={2000} />
                 </span>
                 <p className="text-[24px] text-white mt-2">
                   <strong>Jovens formados</strong> em programas
@@ -519,10 +530,20 @@ export default function Sobre() {
               {/* Métrica 3 */}
               <div className="flex flex-col items-center text-center">
                 <span className="text-[96px] font-extrabold text-[#003870] leading-none">
-                  <AnimatedCounter target={180} duration={2200} />
+                  <AnimatedCounter target={320} duration={2200} />
                 </span>
                 <p className="text-[24px] text-white mt-2">
                   <strong>Mentores</strong> formados
+                </p>
+              </div>
+
+              {/* Métrica 4 */}
+              <div className="flex flex-col items-center text-center">
+                <span className="text-[96px] font-extrabold text-[#003870] leading-none">
+                  <AnimatedCounter target={114} duration={2200} />
+                </span>
+                <p className="text-[24px] text-white mt-2">
+                  <strong>Jovens</strong> empregados
                 </p>
               </div>
             </div>
