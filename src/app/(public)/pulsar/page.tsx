@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+"use client"
 import {
   Image,
   CTAButton,
@@ -10,13 +10,11 @@ import { PlusGold } from './_components/PlusGold'
 import { WhiteOval } from './_components/WhiteOval'
 import { ImpactNote } from './_components/ImpactNote'
 import { TicketOption } from './_components/TicketOption'
+import { PrivacyNotice } from './_components/PrivacyNotice'
+import { DataSharingTerm } from './_components/DataSharingTerm'
 import { TicketsGridDesktop } from './_components/TicketsGridDesktop'
+import { useState, FormEvent } from 'react'
 
-export const metadata: Metadata = {
-  title: 'Pulsar 2027 | Pulse Mais',
-  description:
-    'Pulsar: o evento anual de relacionamento e celebração da Pulse Mais, conectando onde as conexões que transformam o futuro do trabalho acontecem.',
-}
 
 // ==========================================
 // Configuração das Empresas Patrocinadoras
@@ -27,6 +25,10 @@ const sponsors = [
   { name: 'sponsor 4', logo: '/assents/logos/matza.svg'},
   { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
   { name: 'sponsor 7', logo: '/assents/logos/pub-logo.svg' }
+]
+
+const sponsors2 = [
+  { name: 'sponsor 1', logo: '/assents/logos/Match_IT.png' }
 ]
 
 // ==========================================
@@ -137,13 +139,70 @@ const eventPhotos = [
   '/assents/backgrounds/evento-pulsar-d5.png',
 ]
 
+const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwHUuPGoOO1Cy-Osq0yOqfRkmTFUEBnNOrgSb80u20BIrqphELtWuyhFkeZR9Iak5LroQ/exec'
+
 export default function Pulsar() {
+   // =========================================================
+  // 1. ESTADOS DO MODAL E FORMULÁRIO
+  // =========================================================
+ const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentWaLink, setCurrentWaLink] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [consentErrors, setConsentErrors] = useState({ imagem: false, comunicacoes: false })
+  const [openTerm, setOpenTerm] = useState<'privacidade' | 'compartilhamento' | null>(null)
+
+  // Abre o modal e guarda qual link do WhatsApp foi clicado
+  const handleOpenModal = (link: string) => {
+  setCurrentWaLink(link)
+  setConsentErrors({ imagem: false, comunicacoes: false })
+  setOpenTerm(null)
+  setIsModalOpen(true)
+}
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setOpenTerm(null)
+  }
+
+  // Valida, envia os dados para a planilha e redireciona para o WhatsApp
+const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+  if (isSubmitting) return
+
+  const form = new FormData(e.currentTarget)
+  const faltaImagem = form.get('consentimento_imagem') !== 'Sim'
+const faltaComunicacoes = form.get('consentimento_comunicacoes') !== 'Sim'
+if (faltaImagem || faltaComunicacoes) {
+  setConsentErrors({ imagem: faltaImagem, comunicacoes: faltaComunicacoes })
+  return
+}
+
+  setIsSubmitting(true)
+
+  const data = new URLSearchParams()
+  form.forEach((value, key) => {
+    data.append(key, value.toString())
+  })
+ 
+
+  try {
+    await fetch(URL_APPS_SCRIPT, { method: 'POST', mode: 'no-cors', body: data, keepalive: true })
+  } catch (err) {
+    console.error('Erro ao enviar para a planilha:', err)
+  }
+
+  setIsSubmitting(false)
+  setIsModalOpen(false)
+  window.location.href = currentWaLink
+}
+
   return (
     <>
       {/* ========================================================
           VERSÃO MOBILE (md:hidden)
       ========================================================= */}
       <main className="md:hidden w-full overflow-x-hidden bg-[#003870]">
+      
         {/* Sessão 1 - Hero */}
         <section className="relative w-full h-[578px] flex flex-col items-center">
           <div aria-hidden className="absolute inset-x-0 top-0 h-[500px] overflow-hidden">
@@ -287,12 +346,21 @@ export default function Pulsar() {
                   className="w-[56px] h-[63px]"
                 />
                 <p className="mt-[8px]">
-                  Pobre Juan <br />
-                  Rua Itaguaba, 38 <br />
-                  Higienópolis
+                  MZ Arena <br />
+                  Alameda Vicente <br />
+                  Pinzon, 51 - Vila Olímpia
                 </p>
               </li>
             </ul>
+
+          <iframe
+            className="mt-[34px] aspect-video w-[290px] rounded-[20px]"
+            src="https://www.youtube.com/embed/07HI0T6HqpQ"
+            title="Vídeo do local do evento"
+            loading="lazy"
+            allow="encrypted-media; picture-in-picture"
+            allowFullScreen
+            />
 
             <ImpactNote className="mt-[34px] text-[#6B6D6E]" textSizeClassName="text-[14px] leading-[18px]" />
 
@@ -329,7 +397,16 @@ export default function Pulsar() {
                 defaultOpen={ticket.name === 'individual'}
                 title={ticket.mobileTitle}
               >
-                <TicketOption description={ticket.description} price={ticket.price} href={ticket.href} ctaText={ticket.ctaText} />
+                {/* Passamos o onClick para abrir o modal com o link específico do ingresso */}
+                <TicketOption 
+                  description={ticket.description} 
+                  price={ticket.price} 
+                  href={ticket.href}
+                  onClick={() => {
+                    handleOpenModal(ticket.href);
+                  }}
+                  ctaText={ticket.ctaText} 
+                />
               </AccordionItem>
             ))}
           </div>
@@ -337,7 +414,14 @@ export default function Pulsar() {
           <ImpactNote className="mt-[30px] text-white" textSizeClassName="text-[12px] leading-[16px]" />
 
           <div className="relative mt-[29px] flex w-full justify-center">
-            <CTAButton variant="gold" href={TICKETS_SECTION_ANCHOR}>
+            {/* O botão geral também abre o modal (usando o link do ingresso individual como padrão) */}
+            <CTAButton 
+              variant="gold" 
+              href={TICKETS_SECTION_ANCHOR}
+              onClick={() => {
+                handleOpenModal(tickets[0].href);
+              }}
+            >
               Garantir meu ingresso
             </CTAButton>
             <PlusGold size={66} className="top-[27px] -right-[12px]" />
@@ -409,14 +493,14 @@ export default function Pulsar() {
   
         <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
           <h2 className="text-[31px] font-bold text-white text-center leading-tight">
-            Empresas <br /> Patrocinadoras
+            Empresas Patrocinadoras <br /> da Pulse Mais 
           </h2>
 
           <div className="flex flex-wrap justify-center gap-[20px] mt-[40px] max-w-[350px]">
             {sponsors.map((sponsor, index) => (
               <div 
                 key={index} 
-                className="w-[100px] h-[100px] bg-white rounded-[10px] flex items-center justify-center relative p-[10px]"
+                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative p-[10px]"
               >
                 <div className="relative w-full h-full">
                   <Image 
@@ -431,6 +515,33 @@ export default function Pulsar() {
           </div>
         </section>
 
+
+        {/* Sessao 7.2 - Parceiras do Pulsar  */}
+        <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
+          <h2 className="text-[31px] font-bold text-white text-center leading-tight">
+            Parceiras <br /> do Pulsar 
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-[20px] mt-[40px] max-w-[350px]">
+            {sponsors2.map((sponsor2, index) => (
+              <div 
+                key={index} 
+                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative p-[10px]"
+              >
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={sponsor2.logo} 
+                    alt={sponsor2.name} 
+                    fill 
+                    className="object-contain" 
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+  
         {/* Sessão 8 - Footer */}
         <FooterMobile variant="blue" />
       </main>
@@ -561,14 +672,27 @@ export default function Pulsar() {
               <div className="flex items-center">
                 <Image src="/assents/backgrounds/location-gold.svg" alt="" width={35} height={40} />
                 <p className="ml-[18px] text-[20px] font-bold leading-[26px] text-[#003870]">
-                  Pobre Juan<br />Rua Itaguaba, 38 <br /> Unidade Higienópolis
+                  MZ Arena<br /> Alameda Vicente Pinzon, 51 <br /> Vila Olímpia
                 </p>
               </div>
             </div>
 
+            {/* Vídeo do local do evento */}
+            <div className="mt-[50px] w-full max-w-[800px] aspect-video overflow-hidden rounded-[24px] shadow-2xl">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/07HI0T6HqpQ?si=NbYbn5WrX90hv6tA"
+                title="Vídeo do local do evento"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+
             <ImpactNote className="mt-[50px] max-w-[800px] text-[#003870] text-center" textSizeClassName="text-[18px] leading-[26px] font-medium" />
 
-            {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
+            {/* href atualizado para a âncora do desktop */}
             <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} className="mt-[40px]">
               Escolher meu ingresso
             </CTAButton>
@@ -582,6 +706,7 @@ export default function Pulsar() {
           <TicketsGridDesktop
             className="mt-[60px]"
             pinned="individual"
+            onTicketClick={(href) => handleOpenModal(href)}
             tickets={tickets.map((t) => ({
               name: t.name,
               title: t.desktopTitle,
@@ -597,7 +722,7 @@ export default function Pulsar() {
 
           <div className="flex justify-center mt-[50px]">
       
-            <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP}>
+            <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} onClick={() => handleOpenModal(tickets[0].href)}>
               Garantir meu ingresso
             </CTAButton>
           </div>
@@ -675,13 +800,13 @@ export default function Pulsar() {
       {/* Sessão 7 - Empresas Patrocinadoras (Desktop) */}
         <section className="relative w-full mt-[74px] px-6 pb-[100px]">
           <div className="max-w-[1216px] mx-auto flex flex-col items-center">
-             <h2 className="text-[48px] font-bold text-white text-center">Empresas Patrocinadoras</h2>
+             <h2 className="text-[48px] font-bold text-white text-center">Empresa Patrocinadora da Pulse Mais</h2>
              
              <div className="mt-[50px] flex flex-wrap justify-center gap-[40px] w-full">
                 {sponsors.map((sponsor, index) => (
                    <div 
                      key={index} 
-                     className="w-[380px] h-[200px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
+                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
                    >
                       <div className="relative w-full h-full">
                         <Image 
@@ -697,8 +822,176 @@ export default function Pulsar() {
           </div>
         </section>
 
+
+      {/* Sessão 8 - Empresas Parceiras (Desktop) */}
+
+         <section className="relative w-full mt-[74px] px-6 pb-[100px]">
+          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
+             <h2 className="text-[48px] font-bold text-white text-center">Empresas Parceiras do Pulsar</h2>
+             
+             <div className="mt-[50px] flex flex-wrap justify-center gap-[40px] w-full">
+                {sponsors2.map((sponsors2, index) => (
+                   <div 
+                     key={index} 
+                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
+                   >
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={sponsors2.logo} 
+                          alt={sponsors2.name} 
+                          fill 
+                          className="object-contain" 
+                        />
+                      </div>
+                   </div>
+                ))}
+             </div>
+          </div>
+        </section>
+
         <FooterDesktop variant="blue" />
       </main>
+
+
+{/* MODAL DO FORMS */}
+{isModalOpen && (
+  <div
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4"
+    onClick={closeModal}
+  >
+    <div
+      role="dialog"
+      aria-modal="true"
+      className="relative max-h-[90vh] w-full max-w-[340px] overflow-y-auto rounded-[24px] border-[3px] border-[#FDE08B] bg-[#003870] p-[24px] text-white md:max-w-[460px] md:p-[32px]"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        type="button"
+        aria-label="Fechar"
+        onClick={closeModal}
+        className="absolute right-[16px] top-[10px] text-[26px] leading-none"
+      >
+        ×
+      </button>
+
+      {/* TERMO ABERTO: texto com rolagem e botão para voltar */}
+      {openTerm && (
+        <div>
+          <h3 className="pr-[24px] text-[20px] font-bold leading-[24px]">
+            {openTerm === 'privacidade' ? 'Aviso de Privacidade' : 'Termo de Compartilhamento de Dados'}
+          </h3>
+          <div className="mt-[16px] max-h-[55vh] overflow-y-auto rounded-[12px] bg-white/10 p-[14px]">
+            {openTerm === 'privacidade' ? (
+              <PrivacyNotice />
+            ) : (
+              <DataSharingTerm />
+            )}
+          </div>
+          <button
+            type="button"
+            onClick={() => setOpenTerm(null)}
+            className="mt-[16px] w-full rounded-full bg-[#FDE08B] px-[20px] py-[12px] text-[15px] font-bold text-[#003870]"
+          >
+            Voltar ao formulário
+          </button>
+        </div>
+      )}
+
+      {/* FORMULÁRIO: sempre montado, só escondido quando um termo está aberto (para não perder o que foi digitado) */}
+      <div className={openTerm ? 'hidden' : ''}>
+        <h3 className="text-[22px] font-bold leading-[26px]">Antes de ir pro WhatsApp</h3>
+        <p className="mt-[8px] text-[13px] font-light leading-[18px]">
+          Preencha seus dados para continuar.
+        </p>
+
+        <form onSubmit={handleSubmitForm} className="mt-[20px] flex flex-col gap-[12px]">
+          <input name="nome" required placeholder="Nome" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
+          <input name="email" type="email" required placeholder="E-mail" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
+          <input name="telefone" type="tel" required placeholder="Telefone" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
+          <input name="empresa" placeholder="Empresa" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
+          <input name="cargo" placeholder="Cargo" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
+
+          {/* 1. Imagem e voz (obrigatório) */}
+          <div>
+            <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
+              <input
+                type="checkbox"
+                name="consentimento_imagem"
+                value="Sim"
+                className="mt-[2px]"
+                onChange={(e) => e.target.checked && setConsentErrors((s) => ({ ...s, imagem: false }))}
+              />
+              <span>
+                Autorizo o uso da minha imagem e voz para divulgação do Pulsar 2027.{' '}
+                <span aria-hidden className="text-[#FDE08B]">*</span>
+              </span>
+            </label>
+            <button
+              type="button"
+              onClick={() => setOpenTerm('privacidade')}
+              className="mt-[4px] pl-[22px] text-[12px] underline"
+            >
+              Ler aviso de privacidade
+            </button>
+            {consentErrors.imagem && (
+              <p role="alert" className="mt-[4px] pl-[22px] text-[11px] leading-[14px] text-[#FFB4B4]">
+                Marque esta opção para continuar.
+              </p>
+            )}
+          </div>
+
+          {/* 2. Patrocinadores (opcional) */}
+          <div>
+            <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
+              <input type="checkbox" name="consentimento_patrocinadores" value="Sim" className="mt-[2px]" />
+              <span>
+                Autorizo o compartilhamento dos meus dados com patrocinadores do Pulsar 2027 para fins comerciais e de marketing.
+              </span>
+            </label>
+            <button
+              type="button"
+              onClick={() => setOpenTerm('compartilhamento')}
+              className="mt-[4px] pl-[22px] text-[12px] underline"
+            >
+              Ler termo de compartilhamento de dados
+            </button>
+          </div>
+
+          {/* 3. Comunicações (obrigatório) */}
+          <div>
+            <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
+              <input
+                type="checkbox"
+                name="consentimento_comunicacoes"
+                value="Sim"
+                className="mt-[2px]"
+                onChange={(e) => e.target.checked && setConsentErrors((s) => ({ ...s, comunicacoes: false }))}
+              />
+              <span>
+                Aceito receber comunicações futuras da Pulse Mais.{' '}
+                <span aria-hidden className="text-[#FDE08B]">*</span>
+              </span>
+            </label>
+            {consentErrors.comunicacoes && (
+              <p role="alert" className="mt-[4px] pl-[22px] text-[11px] leading-[14px] text-[#FFB4B4]">
+                Marque esta opção para continuar.
+              </p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="mt-[4px] rounded-full bg-[#FDE08B] px-[20px] py-[12px] text-[15px] font-bold text-[#003870] disabled:opacity-60"
+          >
+            {isSubmitting ? 'Enviando...' : 'Continuar para o WhatsApp'}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+)}
+
     </>
   )
 }
