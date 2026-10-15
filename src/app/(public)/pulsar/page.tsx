@@ -20,15 +20,16 @@ import { useState, FormEvent } from 'react'
 // Configuração das Empresas Patrocinadoras
 // ==========================================
 const sponsors = [
-  { name: 'sponsor 1', logo: '/assents/logos/ClearIt.svg' },
-  { name: 'sponsor 2', logo: '/assents/logos/clm.svg' },
-  { name: 'sponsor 4', logo: '/assents/logos/matza.svg'},
-  { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
-  { name: 'sponsor 7', logo: '/assents/logos/pub-logo.svg' }
+  { name: 'sponsor 1', logo: '/assents/logos/ClearIt.svg', scale: 1.6 },
+  { name: 'sponsor 2', logo: '/assents/logos/clm.svg', scale: 1.3 },
+  { name: 'sponsor 4', logo: '/assents/logos/matza.svg', scale: 1.8 },
+  { name: 'sponsor 6', logo: '/assents/logos/StIt.svg', scale: 1.6 },
+  { name: 'sponsor 7', logo: '/assents/logos/pub-logo.svg', scale: 1.5 },
 ]
 
 const sponsors2 = [
-  { name: 'sponsor 1', logo: '/assents/logos/Match_IT.png' }
+  { name: 'sponsor 1', logo: '/assents/logos/Match_IT.png'},
+  { name: 'sponsor 2', logo: '/assents/logos/logo-mz.svg' , scale: 0.6}
 ]
 
 // ==========================================
@@ -139,21 +140,23 @@ const eventPhotos = [
   '/assents/backgrounds/evento-pulsar-d5.png',
 ]
 
-const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwHUuPGoOO1Cy-Osq0yOqfRkmTFUEBnNOrgSb80u20BIrqphELtWuyhFkeZR9Iak5LroQ/exec'
+const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbyQzpYrTisd7KL82YkY1qQ7c68X6VGan0lChIXi8yXzyu2w-EZrMCm2vrNIxO7wiZu4Hg/exec'
 
 export default function Pulsar() {
    // =========================================================
   // 1. ESTADOS DO MODAL E FORMULÁRIO
   // =========================================================
- const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentWaLink, setCurrentWaLink] = useState('')
+  const [currentTicket, setCurrentTicket] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [consentErrors, setConsentErrors] = useState({ imagem: false, comunicacoes: false })
   const [openTerm, setOpenTerm] = useState<'privacidade' | 'compartilhamento' | null>(null)
 
   // Abre o modal e guarda qual link do WhatsApp foi clicado
-  const handleOpenModal = (link: string) => {
+  const handleOpenModal = (link: string, ticketName: string) => {
   setCurrentWaLink(link)
+  setCurrentTicket(ticketName)
   setConsentErrors({ imagem: false, comunicacoes: false })
   setOpenTerm(null)
   setIsModalOpen(true)
@@ -170,12 +173,6 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
   if (isSubmitting) return
 
   const form = new FormData(e.currentTarget)
-  const faltaImagem = form.get('consentimento_imagem') !== 'Sim'
-const faltaComunicacoes = form.get('consentimento_comunicacoes') !== 'Sim'
-if (faltaImagem || faltaComunicacoes) {
-  setConsentErrors({ imagem: faltaImagem, comunicacoes: faltaComunicacoes })
-  return
-}
 
   setIsSubmitting(true)
 
@@ -183,13 +180,25 @@ if (faltaImagem || faltaComunicacoes) {
   form.forEach((value, key) => {
     data.append(key, value.toString())
   })
- 
 
-  try {
-    await fetch(URL_APPS_SCRIPT, { method: 'POST', mode: 'no-cors', body: data, keepalive: true })
-  } catch (err) {
-    console.error('Erro ao enviar para a planilha:', err)
-  }
+  // "Não quero" marcado grava Não; desmarcado grava Sim (o script e as colunas continuam iguais)
+  data.delete('opor_imagem')
+  data.delete('opor_patrocinadores')
+  data.set('consentimento_imagem', form.get('opor_imagem') ? 'Não' : 'Sim')
+  data.set('consentimento_patrocinadores', form.get('opor_patrocinadores') ? 'Não' : 'Sim')
+
+  data.append('ingresso', currentTicket)
+
+  // Dispara o envio com keepalive: continua mesmo se a página for trocada
+  const envio = fetch(URL_APPS_SCRIPT, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data,
+    keepalive: true,
+  }).catch((err) => console.error('Erro ao enviar para a planilha:', err))
+
+  // Espera o Apps Script terminar por até 3s e redireciona
+  await Promise.race([envio, new Promise((resolve) => setTimeout(resolve, 3000))])
 
   setIsSubmitting(false)
   setIsModalOpen(false)
@@ -403,7 +412,7 @@ if (faltaImagem || faltaComunicacoes) {
                   price={ticket.price} 
                   href={ticket.href}
                   onClick={() => {
-                    handleOpenModal(ticket.href);
+                    handleOpenModal(ticket.href, ticket.name);
                   }}
                   ctaText={ticket.ctaText} 
                 />
@@ -419,7 +428,7 @@ if (faltaImagem || faltaComunicacoes) {
               variant="gold" 
               href={TICKETS_SECTION_ANCHOR}
               onClick={() => {
-                handleOpenModal(tickets[0].href);
+                handleOpenModal(tickets[0].href, tickets[0].name);
               }}
             >
               Garantir meu ingresso
@@ -489,25 +498,25 @@ if (faltaImagem || faltaComunicacoes) {
           </div>
         </section>
 
-        {/* Sessão 7 - Empresas Patrocinadoras */}
-  
+        {/* Sessão 7 - Empresas Patrocinadoras mobile */}
         <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
           <h2 className="text-[31px] font-bold text-white text-center leading-tight">
-            Empresas Patrocinadoras <br /> da Pulse Mais 
+            Empresas Patrocinadoras <br /> da Pulse Mais
           </h2>
 
           <div className="flex flex-wrap justify-center gap-[20px] mt-[40px] max-w-[350px]">
             {sponsors.map((sponsor, index) => (
-              <div 
-                key={index} 
-                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative p-[10px]"
+              <div
+                key={index}
+                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden p-[10px]"
               >
                 <div className="relative w-full h-full">
-                  <Image 
-                    src={sponsor.logo} 
-                    alt={sponsor.name} 
-                    fill 
-                    className="object-contain" 
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain"
+                    style={{ transform: `scale(${sponsor.scale ?? 1.5})` }}
                   />
                 </div>
               </div>
@@ -516,7 +525,7 @@ if (faltaImagem || faltaComunicacoes) {
         </section>
 
 
-        {/* Sessao 7.2 - Parceiras do Pulsar  */}
+        {/* Sessao 7.2 - Parceiras do Pulsar mobile */}
         <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
           <h2 className="text-[31px] font-bold text-white text-center leading-tight">
             Parceiras <br /> do Pulsar 
@@ -526,14 +535,15 @@ if (faltaImagem || faltaComunicacoes) {
             {sponsors2.map((sponsor2, index) => (
               <div 
                 key={index} 
-                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative p-[10px]"
+                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden p-[10px]"
               >
                 <div className="relative w-full h-full">
                   <Image 
                     src={sponsor2.logo} 
                     alt={sponsor2.name} 
                     fill 
-                    className="object-contain" 
+                    className="object-contain"
+                    style={{ transform: `scale(${sponsor2.scale ?? 1})` }} 
                   />
                 </div>
               </div>
@@ -706,7 +716,7 @@ if (faltaImagem || faltaComunicacoes) {
           <TicketsGridDesktop
             className="mt-[60px]"
             pinned="individual"
-            onTicketClick={(href) => handleOpenModal(href)}
+            onTicketClick={(href, name) => handleOpenModal(href, name)}
             tickets={tickets.map((t) => ({
               name: t.name,
               title: t.desktopTitle,
@@ -722,7 +732,7 @@ if (faltaImagem || faltaComunicacoes) {
 
           <div className="flex justify-center mt-[50px]">
       
-            <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} onClick={() => handleOpenModal(tickets[0].href)}>
+            <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} onClick={() => handleOpenModal(tickets[0].href, 'Não escolheu (botão geral)')}>
               Garantir meu ingresso
             </CTAButton>
           </div>
@@ -806,7 +816,7 @@ if (faltaImagem || faltaComunicacoes) {
                 {sponsors.map((sponsor, index) => (
                    <div 
                      key={index} 
-                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
+                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative overflow-hidden p-[20px]"
                    >
                       <div className="relative w-full h-full">
                         <Image 
@@ -814,6 +824,7 @@ if (faltaImagem || faltaComunicacoes) {
                           alt={sponsor.name} 
                           fill 
                           className="object-contain" 
+                          style={{ transform: `scale(${sponsor.scale ?? 1.5})` }}
                         />
                       </div>
                    </div>
@@ -833,7 +844,7 @@ if (faltaImagem || faltaComunicacoes) {
                 {sponsors2.map((sponsors2, index) => (
                    <div 
                      key={index} 
-                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
+                     className="w-[420px] h-[200px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
                    >
                       <div className="relative w-full h-full">
                         <Image 
@@ -862,7 +873,7 @@ if (faltaImagem || faltaComunicacoes) {
     <div
       role="dialog"
       aria-modal="true"
-      className="relative max-h-[90vh] w-full max-w-[340px] overflow-y-auto rounded-[24px] border-[3px] border-[#FDE08B] bg-[#003870] p-[24px] text-white md:max-w-[460px] md:p-[32px]"
+      className="relative max-h-[90vh] w-full max-w-[340px] overflow-y-auto rounded-[24px] border-[3px] border-[#FDE08B] bg-[#003870] p-[24px] text-white md:max-w-[460px] md:p-[32px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       onClick={(e) => e.stopPropagation()}
     >
       <button
@@ -911,73 +922,48 @@ if (faltaImagem || faltaComunicacoes) {
           <input name="empresa" placeholder="Empresa" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
           <input name="cargo" placeholder="Cargo" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
 
-          {/* 1. Imagem e voz (obrigatório) */}
-          <div>
-            <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
-              <input
-                type="checkbox"
-                name="consentimento_imagem"
-                value="Sim"
-                className="mt-[2px]"
-                onChange={(e) => e.target.checked && setConsentErrors((s) => ({ ...s, imagem: false }))}
-              />
-              <span>
-                Autorizo o uso da minha imagem e voz para divulgação do Pulsar 2027.{' '}
-                <span aria-hidden className="text-[#FDE08B]">*</span>
-              </span>
-            </label>
-            <button
-              type="button"
-              onClick={() => setOpenTerm('privacidade')}
-              className="mt-[4px] pl-[22px] text-[12px] underline"
-            >
-              Ler aviso de privacidade
-            </button>
-            {consentErrors.imagem && (
-              <p role="alert" className="mt-[4px] pl-[22px] text-[11px] leading-[14px] text-[#FFB4B4]">
-                Marque esta opção para continuar.
-              </p>
-            )}
-          </div>
+          {/* 1. Comunicações (opcional) */}
+          <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
+            <input type="checkbox" name="consentimento_comunicacoes" value="Sim" className="mt-[2px]" />
+            <span>
+              Quero receber e-mails e outras comunicações da Pulse Mais sobre seus projetos, eventos, campanhas de
+              arrecadação, oportunidades de parceria e formas de apoiar a organização.(opcional) 
+            </span>
+          </label>
 
-          {/* 2. Patrocinadores (opcional) */}
-          <div>
-            <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
-              <input type="checkbox" name="consentimento_patrocinadores" value="Sim" className="mt-[2px]" />
-              <span>
-                Autorizo o compartilhamento dos meus dados com patrocinadores do Pulsar 2027 para fins comerciais e de marketing.
-              </span>
-            </label>
-            <button
-              type="button"
-              onClick={() => setOpenTerm('compartilhamento')}
-              className="mt-[4px] pl-[22px] text-[12px] underline"
-            >
-              Ler termo de compartilhamento de dados
-            </button>
-          </div>
+          {/* 2. Oposição: imagem e voz (opcional) */}
+          <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
+            <input type="checkbox" name="opor_imagem" value="Sim" className="mt-[2px]" />
+            <span>
+              Não quero que minha imagem e voz sejam utilizadas individualmente em materiais de divulgação
+              institucional e promocional da Pulse Mais. (opcional)
+            </span>
+          </label>
 
-          {/* 3. Comunicações (obrigatório) */}
-          <div>
-            <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
-              <input
-                type="checkbox"
-                name="consentimento_comunicacoes"
-                value="Sim"
-                className="mt-[2px]"
-                onChange={(e) => e.target.checked && setConsentErrors((s) => ({ ...s, comunicacoes: false }))}
-              />
-              <span>
-                Aceito receber comunicações futuras da Pulse Mais.{' '}
-                <span aria-hidden className="text-[#FDE08B]">*</span>
-              </span>
-            </label>
-            {consentErrors.comunicacoes && (
-              <p role="alert" className="mt-[4px] pl-[22px] text-[11px] leading-[14px] text-[#FFB4B4]">
-                Marque esta opção para continuar.
-              </p>
-            )}
-          </div>
+          {/* 3. Oposição: patrocinadores (opcional) */}
+          <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
+            <input type="checkbox" name="opor_patrocinadores" value="Sim" className="mt-[2px]" />
+            <span>
+              Não quero que meus dados pessoais sejam compartilhados com os patrocinadores do Pulsar 2027 para que
+              entrem em contato comigo sobre seus produtos, serviços, eventos e oportunidades comerciais. (opcional){' '}
+              <button
+                type="button"
+                onClick={() => setOpenTerm('compartilhamento')}
+                className="underline"
+              >
+                Ler termo de compartilhamento de dados
+              </button>
+            </span>
+          </label>
+
+          {/* Ciência do Aviso de Privacidade */}
+          <p className="text-[11px] leading-[15px] text-white/80">
+            Ao continuar, declaro que li e estou ciente do{' '}
+            <button type="button" onClick={() => setOpenTerm('privacidade')} className="underline">
+              Aviso de Privacidade do Pulsar 2027
+            </button>
+            , que explica como meus dados pessoais serão utilizados e compartilhados e quais são meus direitos.
+          </p>
 
           <button
             type="submit"

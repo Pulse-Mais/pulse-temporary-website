@@ -16,8 +16,9 @@ interface TicketsGridDesktopProps {
   tickets: TicketCardData[]
   pinned: string
   className?: string
-  // Se vier, o clique no botão chama essa função (abrir o modal) em vez de ir direto pro link
-  onTicketClick?: (href: string) => void
+  // Se vier, o clique no botão chama essa função (abrir o modal) em vez de ir direto pro link.
+  // Recebe o link do WhatsApp e o nome do ingresso clicado.
+  onTicketClick?: (href: string, name: string) => void
 }
 
 export const TicketsGridDesktop = ({
@@ -61,7 +62,7 @@ export const TicketsGridDesktop = ({
                   não repasse o onClick. Sem onTicketClick, vira link normal pro WhatsApp.
                 */}
                 <div
-                  onClick={onTicketClick ? () => onTicketClick(ticket.href) : undefined}
+                  onClick={onTicketClick ? () => onTicketClick(ticket.href, ticket.name) : undefined}
                   className="mt-[20px] w-full cursor-pointer"
                 >
                   <CTAButton
