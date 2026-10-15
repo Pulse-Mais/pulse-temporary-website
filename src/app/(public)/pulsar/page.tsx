@@ -334,7 +334,7 @@ if (faltaImagem || faltaComunicacoes) {
                 />
                 <p className="mt-[8px]">
                   01.03.2027<br />
-                  18h30 às 22h
+                  18h30 às 22h30
                 </p>
               </li>
               <li className="flex flex-col items-center">
@@ -663,7 +663,7 @@ if (faltaImagem || faltaComunicacoes) {
               <div className="flex items-center">
                 <Image src="/assents/backgrounds/calendar-gold.svg" alt="" width={40} height={40} />
                 <p className="ml-[15px] text-[20px] font-bold leading-[26px] text-[#003870]">
-                  01 de março de 2027<br />18h30 às 22h
+                  01 de março de 2027<br />18h30 às 22h30
                 </p>
               </div>
 
