@@ -142,7 +142,7 @@ const eventPhotos = [
   '/assents/backgrounds/evento-pulsar-d5.png',
 ]
 
-const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbyQzpYrTisd7KL82YkY1qQ7c68X6VGan0lChIXi8yXzyu2w-EZrMCm2vrNIxO7wiZu4Hg/exec'
+const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwgv1Dtf2sV2gZyYSqsaPMUVt0TCXBmVU3UG489k7b6U6sfuA_ONte3z5WTj4yfeAtpZg/exec'
 
 export default function Pulsar() {
    // =========================================================
