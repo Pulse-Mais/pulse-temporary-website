@@ -29,7 +29,9 @@ const sponsors = [
 
 const sponsors2 = [
   { name: 'sponsor 1', logo: '/assents/logos/Match_IT.png'},
-  { name: 'sponsor 2', logo: '/assents/logos/logo-mz.svg' , scale: 0.6}
+  { name: 'sponsor 2', logo: '/assents/logos/logo-mz.svg' , scale: 0.6},
+  { name: 'sponsor 3', logo: '/assents/logos/adega-logo.svg', scale: 1.8, scaleDesktop: 1.9 }
+
 ]
 
 // ==========================================
@@ -810,7 +812,7 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
       {/* Sessão 7 - Empresas Patrocinadoras (Desktop) */}
         <section className="relative w-full mt-[74px] px-6 pb-[100px]">
           <div className="max-w-[1216px] mx-auto flex flex-col items-center">
-             <h2 className="text-[48px] font-bold text-white text-center">Empresa Patrocinadora da Pulse Mais</h2>
+             <h2 className="text-[48px] font-bold text-white text-center">Empresas Patrocinadoras da Pulse Mais</h2>
              
              <div className="mt-[50px] flex flex-wrap justify-center gap-[40px] w-full">
                 {sponsors.map((sponsor, index) => (
@@ -844,14 +846,15 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
                 {sponsors2.map((sponsors2, index) => (
                    <div 
                      key={index} 
-                     className="w-[420px] h-[200px] bg-white rounded-[15px] flex items-center justify-center relative p-[30px]"
+                     className="w-[420px] h-[200px] bg-white rounded-[15px] flex items-center justify-center relative overflow-hidden p-[30px]"
                    >
                       <div className="relative w-full h-full">
                         <Image 
                           src={sponsors2.logo} 
                           alt={sponsors2.name} 
                           fill 
-                          className="object-contain" 
+                          className="object-contain"
+                          style={{ transform: `scale(${sponsors2.scaleDesktop ?? 1})` }} 
                         />
                       </div>
                    </div>
