@@ -393,7 +393,7 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
         </WhiteOval>
 
         {/* Sessão 5 - Ingressos */}
-        <section id="quero-participar" className="relative flex flex-col items-center pt-[58px] pb-[84px]">
+        <section id="quero-participar-mobile" className="relative flex flex-col items-center pt-[58px] pb-[84px]">
           <h2 className="text-center text-[31px] font-bold leading-[35px] text-white">
             Quero participar<br />
             do evento
