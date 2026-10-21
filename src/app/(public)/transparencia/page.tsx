@@ -80,7 +80,7 @@ export default function Transparencia() {
           <div className="flex flex-col gap-[24px] mt-[30px]">
             {/* Botão 1 */}
             <Link
-              href="https://heyzine.com/flip-book/32d3cb5076.html"
+              href="https://heyzine.com/flip-book/36fcb05a82.html"
               target="_blank"
               className="w-[300px] h-[64px] rounded-full flex items-center justify-center bg-gradient-to-r from-[#003870] to-[#25B957] text-white text-[32px] font-bold shadow-md hover:brightness-110 transition-all"
             >
@@ -226,13 +226,13 @@ export default function Transparencia() {
             <div className="flex flex-row justify-center gap-[40px] mt-[60px] w-full flex-wrap">
                {/* Card 1 - 2022-23 */}
                <div className="flex flex-col items-center gap-[16px]">
-                  <Link href="https://heyzine.com/flip-book/32d3cb5076.html" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
+                  <Link href="https://heyzine.com/flip-book/36fcb05a82.html" target="_blank" className="relative w-[373px] h-[259px] rounded-[24px] overflow-hidden group">
                     <Image src="/assents/images/pilar-img.png" alt="BG Card" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                       <span className="text-white text-[62px] font-bold">2022-23</span>
                     </div>
                   </Link>
-                  <Link href="https://heyzine.com/flip-book/32d3cb5076.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">Acesse</Link>
+                  <Link href="https://heyzine.com/flip-book/36fcb05a82.html" target="_blank" className="text-[20px] text-[#6B6D6E] underline hover:text-[#003870]">Acesse</Link>
                </div>
 
                {/* Card 2 - 2024 */}
