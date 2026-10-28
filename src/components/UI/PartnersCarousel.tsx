@@ -24,7 +24,9 @@ const partners: Partner[] = [
   { name: 'sponsor 4', logo: '/assents/logos/matza.svg' },
   { name: 'sponsor 5', logo: '/assents/logos/fellipelli.svg' },
   { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
-  //{ name: 'sponsor 7', logo: '/assents/logos/reclame-aqui.svg' }
+  { name: 'sponsor 7', logo: '/assents/logos/logo-cionet.png' },
+  { name: 'sponsor 8', logo: '/assents/logos/logo-tidesalto.svg'},
+  { name: 'sponsor 6', logo: '/assents/logos/logo-mcio-brasil.png'}
 
 ]
 

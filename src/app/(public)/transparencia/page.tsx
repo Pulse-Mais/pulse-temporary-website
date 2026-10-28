@@ -25,7 +25,11 @@ const partners = [
  { name: 'Partner 9', logo: '/assents/logos/logo-italo.svg' },
  { name: 'Partner 10', logo: '/assents/logos/c-levels-logo.svg' },
  { name: 'Partner 11', logo: '/assents/logos/fellipelli.svg' },
- { name: 'Partner 12', logo: '/assents/logos/italo-para.svg' }
+ { name: 'Partner 12', logo: '/assents/logos/italo-para.svg' },
+{ name: 'partner 13', logo: '/assents/logos/logo-tidesalto-mobile.svg'},
+{ name: 'partner 14', logo: '/assents/logos/logo-cionet.png'},
+
+
 ]
 
 // Dados dos Patrocinadores (Section 2.5)
@@ -36,7 +40,7 @@ const sponsors = [
   { name: 'sponsor 4', logo: '/assents/logos/matza.svg'},
   { name: 'sponsor 5', logo: '/assents/logos/fellipelli.svg' },
   { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
-  { name: 'sponsor 7', logo: '/assents/logos/reclame-aqui.svg' }
+  { name: 'sponsor 7', logo: '/assents/logos/reclame-aqui.svg' },
 ]
 
 export default function Transparencia() {

@@ -33,10 +33,10 @@ const sponsors = [
 const sponsors2 = [
   { name: 'sponsor 1', logo: '/assents/logos/Match_IT.png'},
   { name: 'sponsor 2', logo: '/assents/logos/logo-mz.svg' , scale: 0.6},
-  { name: 'sponsor 3', logo: '/assents/logos/adega-logo.svg', scale: 1.8, scaleDesktop: 1.9 },
-  { name: 'sponsor 4', logo: '/assents/logos/logo-cionet.png'},
-  { name: 'sponsor 5', logo: '/assents/logos/logo-tidesalto.svg'},
-  { name: 'sponsor 6', logo: '/assents/logos/logo-mcio-brasil.png'}
+  { name: 'sponsor 3', logo: '/assents/logos/adega-logo.svg', scale: 1.8, scaleDesktop: 1.9 }
+  // { name: 'sponsor 4', logo: '/assents/logos/logo-cionet.png'},
+  // { name: 'sponsor 5', logo: '/assents/logos/logo-tidesalto.svg'},
+  // { name: 'sponsor 6', logo: '/assents/logos/logo-mcio-brasil.png'}
 
 ]
 
@@ -148,7 +148,7 @@ const eventPhotos = [
   '/assents/backgrounds/evento-pulsar-d5.png',
 ]
 
-const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbwgv1Dtf2sV2gZyYSqsaPMUVt0TCXBmVU3UG489k7b6U6sfuA_ONte3z5WTj4yfeAtpZg/exec'
+const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbw0LxRYTuH99Wy2cCNUIyPiEuSkJnpnravG27ptnJXFeGkKpXjF4K-V6o5CpJmx8Cng/exec'
 
 export default function Pulsar() {
    // =========================================================
@@ -186,14 +186,13 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
 
   const data = new URLSearchParams()
   form.forEach((value, key) => {
-    data.append(key, value.toString())
+    data.append(key, value.toString().trim())
   })
 
-  // "Não quero" marcado grava Não; desmarcado grava Sim (o script e as colunas continuam iguais)
-  data.delete('opor_imagem')
-  data.delete('opor_patrocinadores')
-  data.set('consentimento_imagem', form.get('opor_imagem') ? 'Não' : 'Sim')
-  data.set('consentimento_patrocinadores', form.get('opor_patrocinadores') ? 'Não' : 'Sim')
+  // Checkbox marcado = Sim, desmarcado = Não (do jeito que está escrito em cada cabeçalho da planilha)
+  data.set('consentimento_comunicacoes', form.get('consentimento_comunicacoes') ? 'Sim' : 'Não')
+  data.set('opor_imagem', form.get('opor_imagem') ? 'Sim' : 'Não')
+  data.set('opor_patrocinadores', form.get('opor_patrocinadores') ? 'Sim' : 'Não')
 
   data.append('ingresso', currentTicket)
 
@@ -506,34 +505,7 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
           </div>
         </section>
 
-        {/* Sessão 7 - Empresas Patrocinadoras mobile */}
-        <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
-          <h2 className="text-[31px] font-bold text-white text-center leading-tight">
-            Empresas Patrocinadoras <br /> da Pulse Mais
-          </h2>
-
-          <div className="flex flex-wrap justify-center gap-[20px] mt-[40px] max-w-[350px]">
-            {sponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden p-[10px]"
-              >
-                <div className="relative w-full h-full">
-                  <Image
-                    src={sponsor.logo}
-                    alt={sponsor.name}
-                    fill
-                    className="object-contain"
-                    style={{ transform: `scale(${sponsor.scale ?? 1.5})` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-
-        {/* Sessao 7.2 - Parceiras do Pulsar mobile */}
+        {/* Sessao 7.1 - Parceiras do Pulsar mobile */}
         <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
           <h2 className="text-[31px] font-bold text-white text-center leading-tight">
             Parceiras <br /> do Pulsar 
@@ -552,6 +524,32 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
                     fill 
                     className="object-contain"
                     style={{ transform: `scale(${sponsor2.scale ?? 1})` }} 
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sessão 7.2 - Empresas Patrocinadoras mobile */}
+        <section className="w-full flex flex-col items-center mt-[5px] pb-[89px] px-4">
+          <h2 className="text-[31px] font-bold text-white text-center leading-tight">
+            Empresas Patrocinadoras <br /> da Pulse Mais
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-[20px] mt-[40px] max-w-[350px]">
+            {sponsors.map((sponsor, index) => (
+              <div
+                key={index}
+                className="w-[180px] h-[110px] bg-white rounded-[10px] flex items-center justify-center relative overflow-hidden p-[10px]"
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain"
+                    style={{ transform: `scale(${sponsor.scale ?? 1.5})` }}
                   />
                 </div>
               </div>
@@ -815,34 +813,8 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
           </div>
         </section>
 
-      {/* Sessão 7 - Empresas Patrocinadoras (Desktop) */}
-        <section className="relative w-full mt-[74px] px-6 pb-[100px]">
-          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
-             <h2 className="text-[48px] font-bold text-white text-center">Empresas Patrocinadoras da Pulse Mais</h2>
-             
-             <div className="mt-[50px] flex flex-wrap justify-center gap-[40px] w-full">
-                {sponsors.map((sponsor, index) => (
-                   <div 
-                     key={index} 
-                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative overflow-hidden p-[20px]"
-                   >
-                      <div className="relative w-full h-full">
-                        <Image 
-                          src={sponsor.logo} 
-                          alt={sponsor.name} 
-                          fill 
-                          className="object-contain" 
-                          style={{ transform: `scale(${sponsor.scale ?? 1.5})` }}
-                        />
-                      </div>
-                   </div>
-                ))}
-             </div>
-          </div>
-        </section>
 
-
-      {/* Sessão 8 - Empresas Parceiras (Desktop) */}
+      {/* Sessão 7 - Empresas Parceiras (Desktop) */}
 
          <section className="relative w-full mt-[74px] px-6 pb-[100px]">
           <div className="max-w-[1216px] mx-auto flex flex-col items-center">
@@ -861,6 +833,33 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
                           fill 
                           className="object-contain"
                           style={{ transform: `scale(${sponsors2.scaleDesktop ?? 1})` }} 
+                        />
+                      </div>
+                   </div>
+                ))}
+             </div>
+          </div>
+        </section>
+
+
+        {/* Sessão 8 - Empresas Patrocinadoras (Desktop) */}
+        <section className="relative w-full mt-[74px] px-6 pb-[100px]">
+          <div className="max-w-[1216px] mx-auto flex flex-col items-center">
+             <h2 className="text-[48px] font-bold text-white text-center">Empresas Patrocinadoras da Pulse Mais</h2>
+             
+             <div className="mt-[50px] flex flex-wrap justify-center gap-[40px] w-full">
+                {sponsors.map((sponsor, index) => (
+                   <div 
+                     key={index} 
+                     className="w-[430px] h-[220px] bg-white rounded-[15px] flex items-center justify-center relative overflow-hidden p-[20px]"
+                   >
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={sponsor.logo} 
+                          alt={sponsor.name} 
+                          fill 
+                          className="object-contain" 
+                          style={{ transform: `scale(${sponsor.scale ?? 1.5})` }}
                         />
                       </div>
                    </div>
@@ -921,22 +920,57 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
       <div className={openTerm ? 'hidden' : ''}>
         <h3 className="text-[22px] font-bold leading-[26px]">Antes de ir pro WhatsApp</h3>
         <p className="mt-[8px] text-[13px] font-light leading-[18px]">
-          Preencha seus dados para continuar.
+          Preencha todos os campos para continuar.
         </p>
 
         <form onSubmit={handleSubmitForm} className="mt-[20px] flex flex-col gap-[12px]">
-          <input name="nome" required placeholder="Nome" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
-          <input name="email" type="email" required placeholder="E-mail" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
-          <input name="telefone" type="tel" required placeholder="Telefone" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
-          <input name="empresa" placeholder="Empresa" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
-          <input name="cargo" placeholder="Cargo" className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]" />
+          <input
+            name="nome"
+            required
+            pattern=".*\S.*\S.*"
+            title="Informe o seu nome completo."
+            placeholder="Nome"
+            className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]"
+          />
+          <input
+            name="email"
+            type="email"
+            required
+            placeholder="E-mail"
+            className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]"
+          />
+          <input
+            name="telefone"
+            type="tel"
+            required
+            pattern=".*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*"
+            title="Informe um telefone válido, com DDD."
+            placeholder="Telefone (com DDD)"
+            className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]"
+          />
+          <input
+            name="empresa"
+            required
+            pattern=".*\S.*\S.*"
+            title="Informe o nome da sua empresa."
+            placeholder="Empresa"
+            className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]"
+          />
+          <input
+            name="cargo"
+            required
+            pattern=".*\S.*\S.*"
+            title="Informe o seu cargo."
+            placeholder="Cargo"
+            className="rounded-[10px] px-[12px] py-[10px] text-[14px] text-[#003870]"
+          />
 
           {/* 1. Comunicações (opcional) */}
           <label className="flex items-start gap-[8px] text-[12px] leading-[16px]">
             <input type="checkbox" name="consentimento_comunicacoes" value="Sim" className="mt-[2px]" />
             <span>
               Quero receber e-mails e outras comunicações da Pulse Mais sobre seus projetos, eventos, campanhas de
-              arrecadação, oportunidades de parceria e formas de apoiar a organização.(opcional) 
+              arrecadação, oportunidades de parceria e formas de apoiar a organização. (opcional)
             </span>
           </label>
 
