@@ -28,8 +28,6 @@ const partners = [
  { name: 'Partner 12', logo: '/assents/logos/italo-para.svg' },
 { name: 'partner 13', logo: '/assents/logos/logo-tidesalto-mobile.svg'},
 { name: 'partner 14', logo: '/assents/logos/logo-cionet.png'},
-
-
 ]
 
 // Dados dos Patrocinadores (Section 2.5)

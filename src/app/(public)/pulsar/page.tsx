@@ -244,8 +244,8 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
             />
           </h1>
           <p className="relative mt-[35px] text-center text-[18px] leading-[20px] text-white">
-            Onde as conexões que transformam  <br />
-            o futuro do trabalho acontecem<br />
+            Que oportunidade alguém abriu  <br />
+            para você no início da sua carreira?<br />
             
           </p>
           <CTAButton variant="gold" href={TICKETS_SECTION_ANCHOR} className="relative mt-[59px]">
@@ -502,6 +502,23 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
                 </div>
               </div>
             </div>
+
+              {/* DEPOIMENTO 4 */}
+            <div className="w-[270px] min-h-[215px] border-[2px] border-[#FDE08B] rounded-[20px] p-[20px] flex flex-col justify-between bg-[#003870]">
+              <p className="text-[11px] font-normal leading-[16px] text-white">
+                “Transformação é algo intrínseco ao DNA da CLM. Apoiar a Pulse Mais é uma forma de ampliar esse impacto. Por isso, para nós, esse patrocínio faz muito sentido. Ele conecta propósito, oportunidade e desenvolvimento profissional de uma forma muito concreta.”
+              </p>
+              <div className="mt-[15px] flex items-center gap-[12px]">
+                {/* Imagem com wrapper para ficar perfeitamente redonda */}
+                <div className="relative w-[50px] h-[50px] rounded-full overflow-hidden shrink-0">
+                  <Image src="/assents/images/foto-fernando.png" alt="Fernando Camargo" fill className="object-cover" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] font-bold text-white">Fernando Camargo</span>
+                  <span className="text-[10px] font-light text-white leading-[12px] mt-1">CMO CLM investidora do <br />Pulsar 2025</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -585,11 +602,11 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
           </h1>
           
           <p className="relative z-20 text-center text-[24px] leading-[34px] text-white mt-8">
-            Onde as conexões que transformam  <br />
-            o futuro do trabalho acontecem<br />
+            Que oportunidade alguém abriu <br />
+            para você no início da sua carreira?<br />
           </p>
           
-          {/* ✨ AJUSTE: href atualizado para a âncora do desktop */}
+          
           <CTAButton variant="gold-lg" href={TICKETS_ANCHOR_DESKTOP} className="relative z-20 mt-[50px]">
             Quero estar no Pulsar
           </CTAButton>
@@ -806,6 +823,25 @@ const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
                   </div>
                   <span className="text-[20px] font-bold text-white text-center">Eyshilla Lima</span>
                   <span className="text-[15px] font-light text-white text-center leading-[1.3] mt-[4px]">Aluna formada pela<br />Pulse Mais</span>
+                </div>
+              </div>
+            </div>
+
+            {/* DEPOIMENTO 4 */}
+
+            <div className="w-[414px] h-[536px] p-[5px] rounded-[30px] bg-gradient-to-br from-[#FDE08B] via-[#D4AF37] to-[#B38D1E]">
+              <div className="w-full h-full rounded-[25px] bg-[#003870] flex flex-col px-[40px] pt-[50px] pb-[40px]">
+                <div className="flex-1">
+                  <p className="text-[15px] font-normal leading-[1.6] text-white text-left">
+                    “Transformação é algo intrínseco ao DNA da CLM. Apoiar a Pulse Mais é uma forma de ampliar esse impacto. Por isso, para nós, esse patrocínio faz muito sentido. Ele conecta propósito, oportunidade e desenvolvimento profissional de uma forma muito concreta.”
+                  </p>
+                </div>
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden shrink-0 mb-[16px]">
+                    <Image src="/assents/images/foto-fernando.png" alt="Fernando Camargo" fill className="object-cover" />
+                  </div>
+                  <span className="text-[20px] font-bold text-white text-center">Fernando Camargo</span>
+                  <span className="text-[15px] font-light text-white text-center leading-[1.3] mt-[4px]"> CMO CLM investidora do <br />Pulsar 2025</span>
                 </div>
               </div>
             </div>
