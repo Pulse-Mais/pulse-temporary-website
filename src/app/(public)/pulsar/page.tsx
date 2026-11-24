@@ -33,7 +33,9 @@ const sponsors = [
 const sponsors2 = [
   { name: 'sponsor 1', logo: '/assents/logos/Match_IT.png'},
   { name: 'sponsor 2', logo: '/assents/logos/logo-mz.svg' , scale: 0.6},
-  { name: 'sponsor 3', logo: '/assents/logos/adega-logo.svg', scale: 1.8, scaleDesktop: 1.9 }
+  { name: 'sponsor 3', logo: '/assents/logos/adega-logo.svg', scale: 1.8, scaleDesktop: 1.9 },
+  { name: 'sponsor 4', logo: '/assents/logos/logo-bylou.svg'}
+
   // { name: 'sponsor 4', logo: '/assents/logos/logo-cionet.png'},
   // { name: 'sponsor 5', logo: '/assents/logos/logo-tidesalto.svg'},
   // { name: 'sponsor 6', logo: '/assents/logos/logo-mcio-brasil.png'}

@@ -131,8 +131,9 @@ export default function Home() {
               Cadastre-se
             </CTAButton>
             {/* <CTAButton variant="green" href="https://mailchi.mp/pulsemais/inscricoes2026" className="text-center leading-tight"> */}
-            <CTAButton variant="green" href="https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1" className="text-center leading-tight">
-              Se inscreva no <br/>Programa de Mentoria
+            {/* <CTAButton variant="green" href="https://forms.monday.com/forms/1f29e8dea28ec00d8519f8210f39f81e?r=use1" className="text-center leading-tight"> */}
+            <CTAButton variant="green" href="#" className="text-center leading-tight">
+              Inscrições Programa Pulse <br/>Mais 2027 - Em breve
             </CTAButton>
           </div>
         </section>
