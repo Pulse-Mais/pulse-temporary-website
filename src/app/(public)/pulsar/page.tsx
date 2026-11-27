@@ -45,6 +45,7 @@ const sponsors2 = [
 // ==========================================
 // Configuração do WhatsApp Dinâmico
 // ==========================================
+
 const WHATSAPP_NUMBER = '5511917645950'
 
 const getWaLink = (message: string) => {

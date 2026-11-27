@@ -10,6 +10,7 @@ import {
   Image, 
   Link 
 } from "@/app/_local-components/index"
+import { MemberCard, type Member } from "@/components/UI/MemberCard"
 
 // =====================================================================
 // DADOS (CONFIGURAÇÃO)
@@ -39,6 +40,37 @@ const sponsors = [
   { name: 'sponsor 5', logo: '/assents/logos/fellipelli.svg' },
   { name: 'sponsor 6', logo: '/assents/logos/StIt.svg' },
   { name: 'sponsor 7', logo: '/assents/logos/reclame-aqui.svg' },
+]
+
+// Dados da Composição da Associação
+// photo: caminho da foto em /public (ex: '/assents/membros/nome.jpg')
+// linkedin: URL do perfil
+const associationGroups: { title: string; members: Member[] }[] = [
+  {
+    title: 'Diretoria Executiva',
+    members: [
+      { name: 'Eduardo Moura', role: 'Diretor Presidente', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'Eduardo Moura', role: 'Diretor Presidente', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'Eduardo Moura', role: 'Diretor Presidente', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+    ],
+  },
+  {
+    title: 'Conselho de Administração',
+    members: [
+      { name: 'Thiago Lima', role: 'Conselheiro', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'Cida Terci', role: 'Conselheira', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'Clarice Fialho', role: 'Conselheira', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+    ],
+  },
+  {
+    title: 'Conselho Fiscal',
+    members: [
+      { name: 'Vinicius Bitencourte', role: 'Conselho Fiscal', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'Paula Tauil', role: 'Conselho Fiscal', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'João Orlando', role: 'Conselho Fiscal', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+      { name: 'Diogo Margato', role: 'Conselho Fiscal', quote: 'O que mais me marcou foi a energia das conexões no ambiente.', photo: '', linkedin: '#' },
+    ],
+  },
 ]
 
 export default function Transparencia() {
@@ -108,6 +140,30 @@ export default function Transparencia() {
             </Link>
           </div>
         </section>
+
+        {/* Seção "Composição da Associação"
+        <section className="w-full flex flex-col items-center mt-[74px] px-4">
+          <h2 className="text-[40px] font-bold text-[#003870] text-center leading-tight">
+            Composição da <br /> Associação
+          </h2>
+          <p className="text-[16px] font-normal text-[#6B6D6E] text-center mt-[8px]">
+            Conheça as pessoas que conduzem <br /> a Pulse Mais.
+          </p>
+
+          {associationGroups.map((group) => (
+            <div key={group.title} className="w-full max-w-[358px] mt-[48px]">
+              <h3 className="flex items-center gap-[12px] text-[22px] font-bold text-[#003870]">
+                <span className="w-[6px] h-[24px] rounded-full bg-[#FCC41F] shrink-0" />
+                {group.title}
+              </h3>
+              <div className="flex flex-col items-center gap-[24px] mt-[24px]">
+                {group.members.map((member, index) => (
+                  <MemberCard key={index} {...member} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </section> */}
 
         {/* 2.4 Seção "Empresas Parceiras" */}
         <section className="w-full flex flex-col items-center mt-[74px] px-4">
@@ -261,6 +317,30 @@ export default function Transparencia() {
             </div>
           </div>
         </section>
+
+        {/* Composição da Associação Desktop
+        <section className="w-full mt-[120px] pb-[56px] px-6">
+          <div className="max-w-[1200px] mx-auto flex flex-col items-center">
+            <h2 className="text-[60px] font-bold text-[#003870] text-center">Composição da Associação</h2>
+            <p className="text-[24px] font-normal text-[#6B6D6E] text-center mt-[16px]">
+              Conheça as pessoas que conduzem a Pulse Mais.
+            </p>
+
+            {associationGroups.map((group, groupIndex) => (
+              <div key={group.title} className={`w-full ${groupIndex === 0 ? 'mt-[56px]' : 'mt-[80px]'}`}>
+                <h3 className="flex items-center gap-[16px] text-[28px] font-bold text-[#003870]">
+                  <span className="w-[8px] h-[30px] rounded-full bg-[#FCC41F] shrink-0" />
+                  {group.title}
+                </h3>
+                <div className="mt-[36px] grid grid-cols-[repeat(3,358px)] justify-between gap-y-[60px]">
+                  {group.members.map((member, index) => (
+                    <MemberCard key={index} {...member} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section> */}
 
         {/* 2.4 Parceiros Desktop */}
         <section className="w-full mt-[74px] px-6">
